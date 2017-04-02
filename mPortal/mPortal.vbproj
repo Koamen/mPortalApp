@@ -75,10 +75,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\frmEnquery.Designer.vb">
-      <DependentUpon>frmEnquery.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\frmEnquery.vb" />
     <Compile Include="Forms\frmLogin.Designer.vb">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </Compile>
@@ -110,9 +106,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\frmEnquery.resx">
-      <DependentUpon>frmEnquery.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </EmbeddedResource>
