@@ -5,8 +5,8 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
-        myConn.Open()
-        MsgBox("oK")
+        'myConn.Open()
+        'MsgBox("oK")
     End Sub
 
 
