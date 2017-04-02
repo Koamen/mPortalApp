@@ -359,7 +359,7 @@ Partial Class frmMain
         Me.cboUserRoll.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboUserRoll.FormattingEnabled = True
         Me.cboUserRoll.Location = New System.Drawing.Point(38, 357)
-        Me.cboUserRoll.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cboUserRoll.Margin = New System.Windows.Forms.Padding(2)
         Me.cboUserRoll.Name = "cboUserRoll"
         Me.cboUserRoll.Size = New System.Drawing.Size(298, 28)
         Me.cboUserRoll.TabIndex = 32
@@ -370,7 +370,7 @@ Partial Class frmMain
         Me.cboUserStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboUserStatus.FormattingEnabled = True
         Me.cboUserStatus.Location = New System.Drawing.Point(350, 357)
-        Me.cboUserStatus.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cboUserStatus.Margin = New System.Windows.Forms.Padding(2)
         Me.cboUserStatus.Name = "cboUserStatus"
         Me.cboUserStatus.Size = New System.Drawing.Size(298, 28)
         Me.cboUserStatus.TabIndex = 33
@@ -401,7 +401,7 @@ Partial Class frmMain
         Me.txtPhoneNumber.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtPhoneNumber.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPhoneNumber.Location = New System.Drawing.Point(350, 153)
-        Me.txtPhoneNumber.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtPhoneNumber.Margin = New System.Windows.Forms.Padding(2)
         Me.txtPhoneNumber.Name = "txtPhoneNumber"
         Me.txtPhoneNumber.Size = New System.Drawing.Size(298, 26)
         Me.txtPhoneNumber.TabIndex = 35
@@ -963,7 +963,7 @@ Partial Class frmMain
         Me.ClientSize = New System.Drawing.Size(700, 502)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "frmMain"
         Me.Text = "mPortal"
         Me.TableLayoutPanel1.ResumeLayout(False)
