@@ -50,49 +50,49 @@ Partial Class frmMain
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtIConfirmPassword = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cboIInstitution = New System.Windows.Forms.ComboBox()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtIPassword = New System.Windows.Forms.TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.txtIUserName = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.cboIUserRoll = New System.Windows.Forms.ComboBox()
+        Me.cboIUserStatus = New System.Windows.Forms.ComboBox()
+        Me.txtIAddress = New System.Windows.Forms.TextBox()
         Me.Label20 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.txtIPhoneNumber = New System.Windows.Forms.TextBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label21 = New System.Windows.Forms.Label()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.txtCConfirmPassword = New System.Windows.Forms.TextBox()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
-        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
+        Me.cboCInstitution = New System.Windows.Forms.ComboBox()
         Me.Label25 = New System.Windows.Forms.Label()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.txtCPassword = New System.Windows.Forms.TextBox()
         Me.Label26 = New System.Windows.Forms.Label()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.txtCUserName = New System.Windows.Forms.TextBox()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.FlowLayoutPanel3 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
-        Me.ComboBox5 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox6 = New System.Windows.Forms.ComboBox()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.cboCUserRoll = New System.Windows.Forms.ComboBox()
+        Me.cboCUserStatus = New System.Windows.Forms.ComboBox()
+        Me.txtCAddress = New System.Windows.Forms.TextBox()
         Me.Label30 = New System.Windows.Forms.Label()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
+        Me.txtCPhoneNumber = New System.Windows.Forms.TextBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -425,24 +425,24 @@ Partial Class frmMain
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 36.0!))
         Me.TableLayoutPanel3.Controls.Add(Me.Label11, 0, 0)
-        Me.TableLayoutPanel3.Controls.Add(Me.TextBox1, 3, 8)
+        Me.TableLayoutPanel3.Controls.Add(Me.txtIConfirmPassword, 3, 8)
         Me.TableLayoutPanel3.Controls.Add(Me.Label12, 3, 7)
         Me.TableLayoutPanel3.Controls.Add(Me.Label13, 1, 2)
         Me.TableLayoutPanel3.Controls.Add(Me.Label14, 1, 3)
-        Me.TableLayoutPanel3.Controls.Add(Me.ComboBox1, 1, 4)
+        Me.TableLayoutPanel3.Controls.Add(Me.cboIInstitution, 1, 4)
         Me.TableLayoutPanel3.Controls.Add(Me.Label15, 1, 5)
-        Me.TableLayoutPanel3.Controls.Add(Me.TextBox2, 1, 8)
+        Me.TableLayoutPanel3.Controls.Add(Me.txtIPassword, 1, 8)
         Me.TableLayoutPanel3.Controls.Add(Me.Label16, 1, 7)
-        Me.TableLayoutPanel3.Controls.Add(Me.TextBox3, 1, 6)
+        Me.TableLayoutPanel3.Controls.Add(Me.txtIUserName, 1, 6)
         Me.TableLayoutPanel3.Controls.Add(Me.Label17, 1, 9)
         Me.TableLayoutPanel3.Controls.Add(Me.FlowLayoutPanel2, 3, 13)
         Me.TableLayoutPanel3.Controls.Add(Me.Label18, 1, 11)
         Me.TableLayoutPanel3.Controls.Add(Me.Label19, 3, 11)
-        Me.TableLayoutPanel3.Controls.Add(Me.ComboBox2, 1, 12)
-        Me.TableLayoutPanel3.Controls.Add(Me.ComboBox3, 3, 12)
-        Me.TableLayoutPanel3.Controls.Add(Me.TextBox4, 1, 10)
+        Me.TableLayoutPanel3.Controls.Add(Me.cboIUserRoll, 1, 12)
+        Me.TableLayoutPanel3.Controls.Add(Me.cboIUserStatus, 3, 12)
+        Me.TableLayoutPanel3.Controls.Add(Me.txtIAddress, 1, 10)
         Me.TableLayoutPanel3.Controls.Add(Me.Label20, 3, 5)
-        Me.TableLayoutPanel3.Controls.Add(Me.TextBox5, 3, 6)
+        Me.TableLayoutPanel3.Controls.Add(Me.txtIPhoneNumber, 3, 6)
         Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel3.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel3.Margin = New System.Windows.Forms.Padding(0)
@@ -475,14 +475,14 @@ Partial Class frmMain
         Me.Label11.Size = New System.Drawing.Size(680, 5)
         Me.Label11.TabIndex = 26
         '
-        'TextBox1
+        'txtIConfirmPassword
         '
-        Me.TextBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(351, 222)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(296, 26)
-        Me.TextBox1.TabIndex = 21
+        Me.txtIConfirmPassword.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtIConfirmPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtIConfirmPassword.Location = New System.Drawing.Point(351, 222)
+        Me.txtIConfirmPassword.Name = "txtIConfirmPassword"
+        Me.txtIConfirmPassword.Size = New System.Drawing.Size(296, 26)
+        Me.txtIConfirmPassword.TabIndex = 21
         '
         'Label12
         '
@@ -492,7 +492,7 @@ Partial Class frmMain
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(296, 18)
         Me.Label12.TabIndex = 22
-        Me.Label12.Text = "Cormfirm Password"
+        Me.Label12.Text = "Cornfirm Password"
         '
         'Label13
         '
@@ -515,16 +515,16 @@ Partial Class frmMain
         Me.Label14.TabIndex = 15
         Me.Label14.Text = "Institution"
         '
-        'ComboBox1
+        'cboIInstitution
         '
-        Me.TableLayoutPanel3.SetColumnSpan(Me.ComboBox1, 3)
-        Me.ComboBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(39, 86)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(608, 28)
-        Me.ComboBox1.TabIndex = 16
+        Me.TableLayoutPanel3.SetColumnSpan(Me.cboIInstitution, 3)
+        Me.cboIInstitution.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cboIInstitution.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboIInstitution.FormattingEnabled = True
+        Me.cboIInstitution.Location = New System.Drawing.Point(39, 86)
+        Me.cboIInstitution.Name = "cboIInstitution"
+        Me.cboIInstitution.Size = New System.Drawing.Size(608, 28)
+        Me.cboIInstitution.TabIndex = 16
         '
         'Label15
         '
@@ -536,14 +536,14 @@ Partial Class frmMain
         Me.Label15.TabIndex = 10
         Me.Label15.Text = "User Name"
         '
-        'TextBox2
+        'txtIPassword
         '
-        Me.TextBox2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(39, 222)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(296, 26)
-        Me.TextBox2.TabIndex = 19
+        Me.txtIPassword.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtIPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtIPassword.Location = New System.Drawing.Point(39, 222)
+        Me.txtIPassword.Name = "txtIPassword"
+        Me.txtIPassword.Size = New System.Drawing.Size(296, 26)
+        Me.txtIPassword.TabIndex = 19
         '
         'Label16
         '
@@ -555,14 +555,14 @@ Partial Class frmMain
         Me.Label16.TabIndex = 20
         Me.Label16.Text = "Password"
         '
-        'TextBox3
+        'txtIUserName
         '
-        Me.TextBox3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(39, 154)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(296, 26)
-        Me.TextBox3.TabIndex = 9
+        Me.txtIUserName.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtIUserName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtIUserName.Location = New System.Drawing.Point(39, 154)
+        Me.txtIUserName.Name = "txtIUserName"
+        Me.txtIUserName.Size = New System.Drawing.Size(296, 26)
+        Me.txtIUserName.TabIndex = 9
         '
         'Label17
         '
@@ -628,37 +628,37 @@ Partial Class frmMain
         Me.Label19.TabIndex = 31
         Me.Label19.Text = "User Status"
         '
-        'ComboBox2
+        'cboIUserRoll
         '
-        Me.ComboBox2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ComboBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(38, 357)
-        Me.ComboBox2.Margin = New System.Windows.Forms.Padding(2)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(298, 28)
-        Me.ComboBox2.TabIndex = 32
+        Me.cboIUserRoll.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cboIUserRoll.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboIUserRoll.FormattingEnabled = True
+        Me.cboIUserRoll.Location = New System.Drawing.Point(38, 357)
+        Me.cboIUserRoll.Margin = New System.Windows.Forms.Padding(2)
+        Me.cboIUserRoll.Name = "cboIUserRoll"
+        Me.cboIUserRoll.Size = New System.Drawing.Size(298, 28)
+        Me.cboIUserRoll.TabIndex = 32
         '
-        'ComboBox3
+        'cboIUserStatus
         '
-        Me.ComboBox3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ComboBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(350, 357)
-        Me.ComboBox3.Margin = New System.Windows.Forms.Padding(2)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(298, 28)
-        Me.ComboBox3.TabIndex = 33
+        Me.cboIUserStatus.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cboIUserStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboIUserStatus.FormattingEnabled = True
+        Me.cboIUserStatus.Location = New System.Drawing.Point(350, 357)
+        Me.cboIUserStatus.Margin = New System.Windows.Forms.Padding(2)
+        Me.cboIUserStatus.Name = "cboIUserStatus"
+        Me.cboIUserStatus.Size = New System.Drawing.Size(298, 28)
+        Me.cboIUserStatus.TabIndex = 33
         '
-        'TextBox4
+        'txtIAddress
         '
-        Me.TableLayoutPanel3.SetColumnSpan(Me.TextBox4, 3)
-        Me.TextBox4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(39, 290)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(608, 26)
-        Me.TextBox4.TabIndex = 17
+        Me.TableLayoutPanel3.SetColumnSpan(Me.txtIAddress, 3)
+        Me.txtIAddress.Dock = System.Windows.Forms.DockStyle.Top
+        Me.txtIAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtIAddress.Location = New System.Drawing.Point(39, 290)
+        Me.txtIAddress.Name = "txtIAddress"
+        Me.txtIAddress.Size = New System.Drawing.Size(608, 26)
+        Me.txtIAddress.TabIndex = 17
         '
         'Label20
         '
@@ -671,15 +671,15 @@ Partial Class frmMain
         Me.Label20.TabIndex = 34
         Me.Label20.Text = "Phone Number"
         '
-        'TextBox5
+        'txtIPhoneNumber
         '
-        Me.TextBox5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox5.Location = New System.Drawing.Point(350, 153)
-        Me.TextBox5.Margin = New System.Windows.Forms.Padding(2)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(298, 26)
-        Me.TextBox5.TabIndex = 35
+        Me.txtIPhoneNumber.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtIPhoneNumber.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtIPhoneNumber.Location = New System.Drawing.Point(350, 153)
+        Me.txtIPhoneNumber.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtIPhoneNumber.Name = "txtIPhoneNumber"
+        Me.txtIPhoneNumber.Size = New System.Drawing.Size(298, 26)
+        Me.txtIPhoneNumber.TabIndex = 35
         '
         'TabPage3
         '
@@ -688,7 +688,7 @@ Partial Class frmMain
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Size = New System.Drawing.Size(686, 470)
         Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Institution Collector"
+        Me.TabPage3.Text = "Collector"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
         'TableLayoutPanel4
@@ -700,24 +700,24 @@ Partial Class frmMain
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 36.0!))
         Me.TableLayoutPanel4.Controls.Add(Me.Label21, 0, 0)
-        Me.TableLayoutPanel4.Controls.Add(Me.TextBox6, 3, 8)
+        Me.TableLayoutPanel4.Controls.Add(Me.txtCConfirmPassword, 3, 8)
         Me.TableLayoutPanel4.Controls.Add(Me.Label22, 3, 7)
         Me.TableLayoutPanel4.Controls.Add(Me.Label23, 1, 2)
         Me.TableLayoutPanel4.Controls.Add(Me.Label24, 1, 3)
-        Me.TableLayoutPanel4.Controls.Add(Me.ComboBox4, 1, 4)
+        Me.TableLayoutPanel4.Controls.Add(Me.cboCInstitution, 1, 4)
         Me.TableLayoutPanel4.Controls.Add(Me.Label25, 1, 5)
-        Me.TableLayoutPanel4.Controls.Add(Me.TextBox7, 1, 8)
+        Me.TableLayoutPanel4.Controls.Add(Me.txtCPassword, 1, 8)
         Me.TableLayoutPanel4.Controls.Add(Me.Label26, 1, 7)
-        Me.TableLayoutPanel4.Controls.Add(Me.TextBox8, 1, 6)
+        Me.TableLayoutPanel4.Controls.Add(Me.txtCUserName, 1, 6)
         Me.TableLayoutPanel4.Controls.Add(Me.Label27, 1, 9)
         Me.TableLayoutPanel4.Controls.Add(Me.FlowLayoutPanel3, 3, 13)
         Me.TableLayoutPanel4.Controls.Add(Me.Label28, 1, 11)
         Me.TableLayoutPanel4.Controls.Add(Me.Label29, 3, 11)
-        Me.TableLayoutPanel4.Controls.Add(Me.ComboBox5, 1, 12)
-        Me.TableLayoutPanel4.Controls.Add(Me.ComboBox6, 3, 12)
-        Me.TableLayoutPanel4.Controls.Add(Me.TextBox9, 1, 10)
+        Me.TableLayoutPanel4.Controls.Add(Me.cboCUserRoll, 1, 12)
+        Me.TableLayoutPanel4.Controls.Add(Me.cboCUserStatus, 3, 12)
+        Me.TableLayoutPanel4.Controls.Add(Me.txtCAddress, 1, 10)
         Me.TableLayoutPanel4.Controls.Add(Me.Label30, 3, 5)
-        Me.TableLayoutPanel4.Controls.Add(Me.TextBox10, 3, 6)
+        Me.TableLayoutPanel4.Controls.Add(Me.txtCPhoneNumber, 3, 6)
         Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel4.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel4.Margin = New System.Windows.Forms.Padding(0)
@@ -750,14 +750,14 @@ Partial Class frmMain
         Me.Label21.Size = New System.Drawing.Size(680, 5)
         Me.Label21.TabIndex = 26
         '
-        'TextBox6
+        'txtCConfirmPassword
         '
-        Me.TextBox6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TextBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox6.Location = New System.Drawing.Point(351, 222)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(296, 26)
-        Me.TextBox6.TabIndex = 21
+        Me.txtCConfirmPassword.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtCConfirmPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCConfirmPassword.Location = New System.Drawing.Point(351, 222)
+        Me.txtCConfirmPassword.Name = "txtCConfirmPassword"
+        Me.txtCConfirmPassword.Size = New System.Drawing.Size(296, 26)
+        Me.txtCConfirmPassword.TabIndex = 21
         '
         'Label22
         '
@@ -790,16 +790,16 @@ Partial Class frmMain
         Me.Label24.TabIndex = 15
         Me.Label24.Text = "Institution"
         '
-        'ComboBox4
+        'cboCInstitution
         '
-        Me.TableLayoutPanel4.SetColumnSpan(Me.ComboBox4, 3)
-        Me.ComboBox4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ComboBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Location = New System.Drawing.Point(39, 86)
-        Me.ComboBox4.Name = "ComboBox4"
-        Me.ComboBox4.Size = New System.Drawing.Size(608, 28)
-        Me.ComboBox4.TabIndex = 16
+        Me.TableLayoutPanel4.SetColumnSpan(Me.cboCInstitution, 3)
+        Me.cboCInstitution.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cboCInstitution.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboCInstitution.FormattingEnabled = True
+        Me.cboCInstitution.Location = New System.Drawing.Point(39, 86)
+        Me.cboCInstitution.Name = "cboCInstitution"
+        Me.cboCInstitution.Size = New System.Drawing.Size(608, 28)
+        Me.cboCInstitution.TabIndex = 16
         '
         'Label25
         '
@@ -811,14 +811,14 @@ Partial Class frmMain
         Me.Label25.TabIndex = 10
         Me.Label25.Text = "User Name"
         '
-        'TextBox7
+        'txtCPassword
         '
-        Me.TextBox7.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TextBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox7.Location = New System.Drawing.Point(39, 222)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(296, 26)
-        Me.TextBox7.TabIndex = 19
+        Me.txtCPassword.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtCPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCPassword.Location = New System.Drawing.Point(39, 222)
+        Me.txtCPassword.Name = "txtCPassword"
+        Me.txtCPassword.Size = New System.Drawing.Size(296, 26)
+        Me.txtCPassword.TabIndex = 19
         '
         'Label26
         '
@@ -830,14 +830,14 @@ Partial Class frmMain
         Me.Label26.TabIndex = 20
         Me.Label26.Text = "Password"
         '
-        'TextBox8
+        'txtCUserName
         '
-        Me.TextBox8.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TextBox8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox8.Location = New System.Drawing.Point(39, 154)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(296, 26)
-        Me.TextBox8.TabIndex = 9
+        Me.txtCUserName.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtCUserName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCUserName.Location = New System.Drawing.Point(39, 154)
+        Me.txtCUserName.Name = "txtCUserName"
+        Me.txtCUserName.Size = New System.Drawing.Size(296, 26)
+        Me.txtCUserName.TabIndex = 9
         '
         'Label27
         '
@@ -903,37 +903,37 @@ Partial Class frmMain
         Me.Label29.TabIndex = 31
         Me.Label29.Text = "User Status"
         '
-        'ComboBox5
+        'cboCUserRoll
         '
-        Me.ComboBox5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ComboBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox5.FormattingEnabled = True
-        Me.ComboBox5.Location = New System.Drawing.Point(38, 357)
-        Me.ComboBox5.Margin = New System.Windows.Forms.Padding(2)
-        Me.ComboBox5.Name = "ComboBox5"
-        Me.ComboBox5.Size = New System.Drawing.Size(298, 28)
-        Me.ComboBox5.TabIndex = 32
+        Me.cboCUserRoll.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cboCUserRoll.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboCUserRoll.FormattingEnabled = True
+        Me.cboCUserRoll.Location = New System.Drawing.Point(38, 357)
+        Me.cboCUserRoll.Margin = New System.Windows.Forms.Padding(2)
+        Me.cboCUserRoll.Name = "cboCUserRoll"
+        Me.cboCUserRoll.Size = New System.Drawing.Size(298, 28)
+        Me.cboCUserRoll.TabIndex = 32
         '
-        'ComboBox6
+        'cboCUserStatus
         '
-        Me.ComboBox6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ComboBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox6.FormattingEnabled = True
-        Me.ComboBox6.Location = New System.Drawing.Point(350, 357)
-        Me.ComboBox6.Margin = New System.Windows.Forms.Padding(2)
-        Me.ComboBox6.Name = "ComboBox6"
-        Me.ComboBox6.Size = New System.Drawing.Size(298, 28)
-        Me.ComboBox6.TabIndex = 33
+        Me.cboCUserStatus.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cboCUserStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboCUserStatus.FormattingEnabled = True
+        Me.cboCUserStatus.Location = New System.Drawing.Point(350, 357)
+        Me.cboCUserStatus.Margin = New System.Windows.Forms.Padding(2)
+        Me.cboCUserStatus.Name = "cboCUserStatus"
+        Me.cboCUserStatus.Size = New System.Drawing.Size(298, 28)
+        Me.cboCUserStatus.TabIndex = 33
         '
-        'TextBox9
+        'txtCAddress
         '
-        Me.TableLayoutPanel4.SetColumnSpan(Me.TextBox9, 3)
-        Me.TextBox9.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TextBox9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox9.Location = New System.Drawing.Point(39, 290)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(608, 26)
-        Me.TextBox9.TabIndex = 17
+        Me.TableLayoutPanel4.SetColumnSpan(Me.txtCAddress, 3)
+        Me.txtCAddress.Dock = System.Windows.Forms.DockStyle.Top
+        Me.txtCAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCAddress.Location = New System.Drawing.Point(39, 290)
+        Me.txtCAddress.Name = "txtCAddress"
+        Me.txtCAddress.Size = New System.Drawing.Size(608, 26)
+        Me.txtCAddress.TabIndex = 17
         '
         'Label30
         '
@@ -946,15 +946,15 @@ Partial Class frmMain
         Me.Label30.TabIndex = 34
         Me.Label30.Text = "Phone Number"
         '
-        'TextBox10
+        'txtCPhoneNumber
         '
-        Me.TextBox10.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TextBox10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox10.Location = New System.Drawing.Point(350, 153)
-        Me.TextBox10.Margin = New System.Windows.Forms.Padding(2)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(298, 26)
-        Me.TextBox10.TabIndex = 35
+        Me.txtCPhoneNumber.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtCPhoneNumber.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCPhoneNumber.Location = New System.Drawing.Point(350, 153)
+        Me.txtCPhoneNumber.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtCPhoneNumber.Name = "txtCPhoneNumber"
+        Me.txtCPhoneNumber.Size = New System.Drawing.Size(298, 26)
+        Me.txtCPhoneNumber.TabIndex = 35
         '
         'frmMain
         '
@@ -1012,47 +1012,47 @@ Partial Class frmMain
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents Label11 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtIConfirmPassword As TextBox
     Friend WithEvents Label12 As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents Label14 As Label
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents cboIInstitution As ComboBox
     Friend WithEvents Label15 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtIPassword As TextBox
     Friend WithEvents Label16 As Label
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents txtIUserName As TextBox
     Friend WithEvents Label17 As Label
     Friend WithEvents FlowLayoutPanel2 As FlowLayoutPanel
     Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
     Friend WithEvents Label18 As Label
     Friend WithEvents Label19 As Label
-    Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents ComboBox3 As ComboBox
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents cboIUserRoll As ComboBox
+    Friend WithEvents cboIUserStatus As ComboBox
+    Friend WithEvents txtIAddress As TextBox
     Friend WithEvents Label20 As Label
-    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents txtIPhoneNumber As TextBox
     Friend WithEvents TabPage3 As TabPage
     Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
     Friend WithEvents Label21 As Label
-    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents txtCConfirmPassword As TextBox
     Friend WithEvents Label22 As Label
     Friend WithEvents Label23 As Label
     Friend WithEvents Label24 As Label
-    Friend WithEvents ComboBox4 As ComboBox
+    Friend WithEvents cboCInstitution As ComboBox
     Friend WithEvents Label25 As Label
-    Friend WithEvents TextBox7 As TextBox
+    Friend WithEvents txtCPassword As TextBox
     Friend WithEvents Label26 As Label
-    Friend WithEvents TextBox8 As TextBox
+    Friend WithEvents txtCUserName As TextBox
     Friend WithEvents Label27 As Label
     Friend WithEvents FlowLayoutPanel3 As FlowLayoutPanel
     Friend WithEvents Button5 As Button
     Friend WithEvents Button6 As Button
     Friend WithEvents Label28 As Label
     Friend WithEvents Label29 As Label
-    Friend WithEvents ComboBox5 As ComboBox
-    Friend WithEvents ComboBox6 As ComboBox
-    Friend WithEvents TextBox9 As TextBox
+    Friend WithEvents cboCUserRoll As ComboBox
+    Friend WithEvents cboCUserStatus As ComboBox
+    Friend WithEvents txtCAddress As TextBox
     Friend WithEvents Label30 As Label
-    Friend WithEvents TextBox10 As TextBox
+    Friend WithEvents txtCPhoneNumber As TextBox
 End Class
