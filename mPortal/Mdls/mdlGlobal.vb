@@ -4,6 +4,13 @@ Imports MySql.Data.MySqlClient
 'Create a New user user id=Alias; password=AliasPassw0rd On the cloud 
 Module mdlGlobal
     Public str As String = "server=127.0.0.1; user id=Alias; password=AliasPassw0rd; database=mcollect; pooling=false; port=3306;ConnectionTimeout=30"
+    'Public User As New List(Of Array)
+    Public UserId As Integer = 0
+    Public UserName As String = ""
+    Public institutionId As Integer = 0
+    Public branchId As Integer = 0
+    Public UserRole As String = ""
+    Public UserStatus As String = ""
 
     ''Public myConn As New MySqlConnection(str)
     Private COLUMNS As String
