@@ -74,6 +74,7 @@ Partial Class frmLogin
         Me.btnExit.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btnExit.BackColor = System.Drawing.Color.SteelBlue
         Me.TableLayoutPanel1.SetColumnSpan(Me.btnExit, 2)
+        Me.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnExit.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
         Me.btnExit.ForeColor = System.Drawing.SystemColors.ButtonFace
