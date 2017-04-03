@@ -76,10 +76,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\frmBranch.Designer.vb">
-      <DependentUpon>frmBranch.vb</DependentUpon>
+    <Compile Include="Forms\frmInstitution.Designer.vb">
+      <DependentUpon>frmInstitution.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmBranch.vb" />
+    <Compile Include="Forms\frmInstitution.vb" />
     <Compile Include="Forms\frmLogin.Designer.vb">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </Compile>
@@ -112,8 +112,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\frmBranch.resx">
-      <DependentUpon>frmBranch.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\frmInstitution.resx">
+      <DependentUpon>frmInstitution.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
