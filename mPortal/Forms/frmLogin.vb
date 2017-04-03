@@ -3,7 +3,7 @@
 
     End Sub
 
-    Private Sub txtExit_Click(sender As Object, e As EventArgs) Handles txtExit.Click
-        Dispose()
+    Private Sub txtExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+        Me.Close()
     End Sub
 End Class
