@@ -76,16 +76,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\frmBranchNew.Designer.vb">
-      <DependentUpon>frmBranchNew.vb</DependentUpon>
+    <Compile Include="Forms\frmInstitution.designer.vb">
+      <DependentUpon>frmInstitution.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmBranchNew.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmCustomerEnquery.Designer.vb">
-      <DependentUpon>frmCustomerEnquery.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\frmCustomerEnquery.vb">
+    <Compile Include="Forms\frmInstitution.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmLogin.Designer.vb">
@@ -99,6 +93,12 @@
     </Compile>
     <Compile Include="Forms\frmMain.Designer.vb">
       <DependentUpon>frmMain.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MDI.Designer.vb">
+      <DependentUpon>MDI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MDI.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Mdls\CustomCrypt.vb" />
@@ -120,17 +120,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\frmBranchNew.resx">
-      <DependentUpon>frmBranchNew.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmCustomerEnquery.resx">
-      <DependentUpon>frmCustomerEnquery.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\frmInstitution.resx">
+      <DependentUpon>frmInstitution.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MDI.resx">
+      <DependentUpon>MDI.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
