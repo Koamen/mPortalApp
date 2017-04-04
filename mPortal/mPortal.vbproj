@@ -79,7 +79,9 @@
     <Compile Include="Forms\frmInstitution.designer.vb">
       <DependentUpon>frmInstitution.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmInstitution.vb" />
+    <Compile Include="Forms\frmInstitution.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\frmLogin.Designer.vb">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </Compile>

@@ -475,4 +475,8 @@ Public Class frmMain
         Save(tlpCMain, "collectors", errError, sender, txtCEmailNN, txtCPasswordNN, txtCConfirmPasswordNN, txtCEmployeeNumberNN, txtCEmailNN, txtCUserNameNN)
 
     End Sub
+
+    Private Sub txtPhoneNumberNN_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPhoneNumberNN.KeyPress, txtIPhoneNumberNN.KeyPress, txtUPhoneNumberNN.KeyPress, txtCPhoneNumberNN.KeyPress
+        Positive(sender, e)
+    End Sub
 End Class

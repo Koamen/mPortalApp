@@ -168,7 +168,7 @@ Partial Class frmMain
         Me.TableLayoutPanel1.Controls.Add(Me.TabControl1, 0, 0)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(4)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -183,7 +183,7 @@ Partial Class frmMain
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl1.Location = New System.Drawing.Point(4, 4)
-        Me.TabControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(748, 568)
@@ -194,7 +194,7 @@ Partial Class frmMain
         '
         Me.TabPage1.Controls.Add(Me.tlpMain)
         Me.TabPage1.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage1.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Size = New System.Drawing.Size(740, 539)
         Me.TabPage1.TabIndex = 0
@@ -294,7 +294,7 @@ Partial Class frmMain
         '
         Me.txtPasswordNN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPasswordNN.Location = New System.Drawing.Point(52, 223)
-        Me.txtPasswordNN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtPasswordNN.Margin = New System.Windows.Forms.Padding(4)
         Me.txtPasswordNN.MaxLength = 20
         Me.txtPasswordNN.Name = "txtPasswordNN"
         Me.txtPasswordNN.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -314,11 +314,10 @@ Partial Class frmMain
         '
         'txtUserNameNN
         '
-        Me.txtUserNameNN.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtUserNameNN.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtUserNameNN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUserNameNN.Location = New System.Drawing.Point(52, 155)
-        Me.txtUserNameNN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtUserNameNN.Margin = New System.Windows.Forms.Padding(4)
         Me.txtUserNameNN.MaxLength = 64
         Me.txtUserNameNN.Name = "txtUserNameNN"
         Me.txtUserNameNN.Size = New System.Drawing.Size(307, 30)
@@ -376,7 +375,7 @@ Partial Class frmMain
         Me.cboUserStatusNN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboUserStatusNN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboUserStatusNN.FormattingEnabled = True
-        Me.cboUserStatusNN.Items.AddRange(New Object() {"Active", "Inactive"})
+        Me.cboUserStatusNN.Items.AddRange(New Object() {"active", "inactive"})
         Me.cboUserStatusNN.Location = New System.Drawing.Point(379, 425)
         Me.cboUserStatusNN.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cboUserStatusNN.Name = "cboUserStatusNN"
@@ -418,10 +417,10 @@ Partial Class frmMain
         '
         'txtAddress
         '
-        Me.txtAddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtAddress.Location = New System.Drawing.Point(380, 359)
-        Me.txtAddress.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtAddress.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtAddress.MaxLength = 60
         Me.txtAddress.Name = "txtAddress"
         Me.txtAddress.Size = New System.Drawing.Size(304, 30)
         Me.txtAddress.TabIndex = 7
@@ -441,7 +440,7 @@ Partial Class frmMain
         '
         Me.txtConfirmPasswordNN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtConfirmPasswordNN.Location = New System.Drawing.Point(52, 291)
-        Me.txtConfirmPasswordNN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtConfirmPasswordNN.Margin = New System.Windows.Forms.Padding(4)
         Me.txtConfirmPasswordNN.MaxLength = 20
         Me.txtConfirmPasswordNN.Name = "txtConfirmPasswordNN"
         Me.txtConfirmPasswordNN.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -473,7 +472,7 @@ Partial Class frmMain
         Me.txtEmployeeNumberNN.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtEmployeeNumberNN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtEmployeeNumberNN.Location = New System.Drawing.Point(380, 223)
-        Me.txtEmployeeNumberNN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtEmployeeNumberNN.Margin = New System.Windows.Forms.Padding(4)
         Me.txtEmployeeNumberNN.MaxLength = 20
         Me.txtEmployeeNumberNN.Name = "txtEmployeeNumberNN"
         Me.txtEmployeeNumberNN.Size = New System.Drawing.Size(304, 30)
@@ -515,7 +514,8 @@ Partial Class frmMain
         '
         Me.txtEmailNN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtEmailNN.Location = New System.Drawing.Point(380, 155)
-        Me.txtEmailNN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtEmailNN.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtEmailNN.MaxLength = 60
         Me.txtEmailNN.Name = "txtEmailNN"
         Me.txtEmailNN.Size = New System.Drawing.Size(304, 30)
         Me.txtEmailNN.TabIndex = 2
@@ -536,9 +536,9 @@ Partial Class frmMain
         '
         Me.TabPage2.Controls.Add(Me.tlpIMain)
         Me.TabPage2.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage2.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Size = New System.Drawing.Size(740, 540)
+        Me.TabPage2.Size = New System.Drawing.Size(740, 539)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Institution Admin"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -598,7 +598,7 @@ Partial Class frmMain
         Me.tlpIMain.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 18.0!))
         Me.tlpIMain.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
         Me.tlpIMain.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.tlpIMain.Size = New System.Drawing.Size(740, 540)
+        Me.tlpIMain.Size = New System.Drawing.Size(740, 539)
         Me.tlpIMain.TabIndex = 28
         '
         'Label11
@@ -644,7 +644,7 @@ Partial Class frmMain
         Me.cboIInstitutionNN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboIInstitutionNN.FormattingEnabled = True
         Me.cboIInstitutionNN.Location = New System.Drawing.Point(52, 87)
-        Me.cboIInstitutionNN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cboIInstitutionNN.Margin = New System.Windows.Forms.Padding(4)
         Me.cboIInstitutionNN.Name = "cboIInstitutionNN"
         Me.cboIInstitutionNN.Size = New System.Drawing.Size(635, 33)
         Me.cboIInstitutionNN.TabIndex = 0
@@ -660,7 +660,7 @@ Partial Class frmMain
         Me.FlowLayoutPanel2.Location = New System.Drawing.Point(379, 475)
         Me.FlowLayoutPanel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.FlowLayoutPanel2.Name = "FlowLayoutPanel2"
-        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(309, 63)
+        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(309, 62)
         Me.FlowLayoutPanel2.TabIndex = 29
         '
         'btnIExit
@@ -744,11 +744,11 @@ Partial Class frmMain
         '
         'txtIAddress
         '
-        Me.txtIAddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtIAddress.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtIAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtIAddress.Location = New System.Drawing.Point(380, 359)
-        Me.txtIAddress.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtIAddress.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtIAddress.MaxLength = 60
         Me.txtIAddress.Name = "txtIAddress"
         Me.txtIAddress.Size = New System.Drawing.Size(307, 30)
         Me.txtIAddress.TabIndex = 8
@@ -780,7 +780,7 @@ Partial Class frmMain
         Me.txtIEmployeeNumberNN.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtIEmployeeNumberNN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtIEmployeeNumberNN.Location = New System.Drawing.Point(380, 223)
-        Me.txtIEmployeeNumberNN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtIEmployeeNumberNN.Margin = New System.Windows.Forms.Padding(4)
         Me.txtIEmployeeNumberNN.MaxLength = 20
         Me.txtIEmployeeNumberNN.Name = "txtIEmployeeNumberNN"
         Me.txtIEmployeeNumberNN.Size = New System.Drawing.Size(307, 30)
@@ -825,7 +825,7 @@ Partial Class frmMain
         Me.txtIConfirmPasswordNN.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtIConfirmPasswordNN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtIConfirmPasswordNN.Location = New System.Drawing.Point(52, 359)
-        Me.txtIConfirmPasswordNN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtIConfirmPasswordNN.Margin = New System.Windows.Forms.Padding(4)
         Me.txtIConfirmPasswordNN.MaxLength = 20
         Me.txtIConfirmPasswordNN.Name = "txtIConfirmPasswordNN"
         Me.txtIConfirmPasswordNN.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -847,7 +847,7 @@ Partial Class frmMain
         Me.txtIPasswordNN.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtIPasswordNN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtIPasswordNN.Location = New System.Drawing.Point(52, 291)
-        Me.txtIPasswordNN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtIPasswordNN.Margin = New System.Windows.Forms.Padding(4)
         Me.txtIPasswordNN.MaxLength = 20
         Me.txtIPasswordNN.Name = "txtIPasswordNN"
         Me.txtIPasswordNN.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -880,7 +880,8 @@ Partial Class frmMain
         Me.txtIEmailNN.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtIEmailNN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtIEmailNN.Location = New System.Drawing.Point(380, 155)
-        Me.txtIEmailNN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtIEmailNN.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtIEmailNN.MaxLength = 60
         Me.txtIEmailNN.Name = "txtIEmailNN"
         Me.txtIEmailNN.Size = New System.Drawing.Size(307, 30)
         Me.txtIEmailNN.TabIndex = 2
@@ -888,11 +889,10 @@ Partial Class frmMain
         '
         'txtIUserNameNN
         '
-        Me.txtIUserNameNN.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtIUserNameNN.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtIUserNameNN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtIUserNameNN.Location = New System.Drawing.Point(52, 223)
-        Me.txtIUserNameNN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtIUserNameNN.Margin = New System.Windows.Forms.Padding(4)
         Me.txtIUserNameNN.MaxLength = 64
         Me.txtIUserNameNN.Name = "txtIUserNameNN"
         Me.txtIUserNameNN.Size = New System.Drawing.Size(307, 30)
@@ -939,7 +939,7 @@ Partial Class frmMain
         Me.TabPage4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TabPage4.Size = New System.Drawing.Size(740, 540)
+        Me.TabPage4.Size = New System.Drawing.Size(740, 539)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Users"
         Me.TabPage4.UseVisualStyleBackColor = True
@@ -999,7 +999,7 @@ Partial Class frmMain
         Me.tlpUMain.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 18.0!))
         Me.tlpUMain.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
         Me.tlpUMain.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.tlpUMain.Size = New System.Drawing.Size(734, 536)
+        Me.tlpUMain.Size = New System.Drawing.Size(734, 535)
         Me.tlpUMain.TabIndex = 29
         '
         'Label37
@@ -1045,7 +1045,7 @@ Partial Class frmMain
         Me.cboUInstitutionNN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboUInstitutionNN.FormattingEnabled = True
         Me.cboUInstitutionNN.Location = New System.Drawing.Point(52, 87)
-        Me.cboUInstitutionNN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cboUInstitutionNN.Margin = New System.Windows.Forms.Padding(4)
         Me.cboUInstitutionNN.Name = "cboUInstitutionNN"
         Me.cboUInstitutionNN.Size = New System.Drawing.Size(629, 33)
         Me.cboUInstitutionNN.TabIndex = 0
@@ -1061,7 +1061,7 @@ Partial Class frmMain
         Me.FlowLayoutPanel4.Location = New System.Drawing.Point(376, 475)
         Me.FlowLayoutPanel4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.FlowLayoutPanel4.Name = "FlowLayoutPanel4"
-        Me.FlowLayoutPanel4.Size = New System.Drawing.Size(306, 59)
+        Me.FlowLayoutPanel4.Size = New System.Drawing.Size(306, 58)
         Me.FlowLayoutPanel4.TabIndex = 29
         '
         'btnUExit
@@ -1145,11 +1145,11 @@ Partial Class frmMain
         '
         'txtUAddress
         '
-        Me.txtUAddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtUAddress.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtUAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUAddress.Location = New System.Drawing.Point(377, 359)
-        Me.txtUAddress.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtUAddress.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtUAddress.MaxLength = 60
         Me.txtUAddress.Name = "txtUAddress"
         Me.txtUAddress.Size = New System.Drawing.Size(304, 30)
         Me.txtUAddress.TabIndex = 8
@@ -1181,7 +1181,7 @@ Partial Class frmMain
         Me.txtUEmployeeNumberNN.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtUEmployeeNumberNN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUEmployeeNumberNN.Location = New System.Drawing.Point(377, 223)
-        Me.txtUEmployeeNumberNN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtUEmployeeNumberNN.Margin = New System.Windows.Forms.Padding(4)
         Me.txtUEmployeeNumberNN.MaxLength = 20
         Me.txtUEmployeeNumberNN.Name = "txtUEmployeeNumberNN"
         Me.txtUEmployeeNumberNN.Size = New System.Drawing.Size(304, 30)
@@ -1227,7 +1227,7 @@ Partial Class frmMain
         Me.txtUConfimPasswordNN.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtUConfimPasswordNN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUConfimPasswordNN.Location = New System.Drawing.Point(52, 359)
-        Me.txtUConfimPasswordNN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtUConfimPasswordNN.Margin = New System.Windows.Forms.Padding(4)
         Me.txtUConfimPasswordNN.MaxLength = 20
         Me.txtUConfimPasswordNN.Name = "txtUConfimPasswordNN"
         Me.txtUConfimPasswordNN.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -1249,7 +1249,7 @@ Partial Class frmMain
         Me.txtUPasswordNN.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtUPasswordNN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUPasswordNN.Location = New System.Drawing.Point(52, 291)
-        Me.txtUPasswordNN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtUPasswordNN.Margin = New System.Windows.Forms.Padding(4)
         Me.txtUPasswordNN.MaxLength = 20
         Me.txtUPasswordNN.Name = "txtUPasswordNN"
         Me.txtUPasswordNN.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -1282,7 +1282,8 @@ Partial Class frmMain
         Me.txtUEmailNN.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtUEmailNN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUEmailNN.Location = New System.Drawing.Point(377, 155)
-        Me.txtUEmailNN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtUEmailNN.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtUEmailNN.MaxLength = 60
         Me.txtUEmailNN.Name = "txtUEmailNN"
         Me.txtUEmailNN.Size = New System.Drawing.Size(304, 30)
         Me.txtUEmailNN.TabIndex = 2
@@ -1290,11 +1291,10 @@ Partial Class frmMain
         '
         'txtUUserNameNN
         '
-        Me.txtUUserNameNN.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtUUserNameNN.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtUUserNameNN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUUserNameNN.Location = New System.Drawing.Point(52, 223)
-        Me.txtUUserNameNN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtUUserNameNN.Margin = New System.Windows.Forms.Padding(4)
         Me.txtUUserNameNN.MaxLength = 64
         Me.txtUUserNameNN.Name = "txtUUserNameNN"
         Me.txtUUserNameNN.Size = New System.Drawing.Size(304, 30)
@@ -1338,9 +1338,9 @@ Partial Class frmMain
         '
         Me.TabPage3.Controls.Add(Me.tlpCMain)
         Me.TabPage3.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage3.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(740, 540)
+        Me.TabPage3.Size = New System.Drawing.Size(740, 539)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Collector"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -1398,7 +1398,7 @@ Partial Class frmMain
         Me.tlpCMain.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 18.0!))
         Me.tlpCMain.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
         Me.tlpCMain.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.tlpCMain.Size = New System.Drawing.Size(740, 540)
+        Me.tlpCMain.Size = New System.Drawing.Size(740, 539)
         Me.tlpCMain.TabIndex = 30
         '
         'Label4
@@ -1444,7 +1444,7 @@ Partial Class frmMain
         Me.cboCInstitutionNN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboCInstitutionNN.FormattingEnabled = True
         Me.cboCInstitutionNN.Location = New System.Drawing.Point(52, 87)
-        Me.cboCInstitutionNN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cboCInstitutionNN.Margin = New System.Windows.Forms.Padding(4)
         Me.cboCInstitutionNN.Name = "cboCInstitutionNN"
         Me.cboCInstitutionNN.Size = New System.Drawing.Size(635, 33)
         Me.cboCInstitutionNN.TabIndex = 0
@@ -1460,7 +1460,7 @@ Partial Class frmMain
         Me.FlowLayoutPanel3.Location = New System.Drawing.Point(379, 475)
         Me.FlowLayoutPanel3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.FlowLayoutPanel3.Name = "FlowLayoutPanel3"
-        Me.FlowLayoutPanel3.Size = New System.Drawing.Size(309, 63)
+        Me.FlowLayoutPanel3.Size = New System.Drawing.Size(309, 62)
         Me.FlowLayoutPanel3.TabIndex = 29
         '
         'btnCExit
@@ -1521,11 +1521,11 @@ Partial Class frmMain
         '
         'txtCAddress
         '
-        Me.txtCAddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtCAddress.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtCAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCAddress.Location = New System.Drawing.Point(380, 359)
-        Me.txtCAddress.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCAddress.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtCAddress.MaxLength = 60
         Me.txtCAddress.Name = "txtCAddress"
         Me.txtCAddress.Size = New System.Drawing.Size(307, 30)
         Me.txtCAddress.TabIndex = 8
@@ -1557,7 +1557,7 @@ Partial Class frmMain
         Me.txtCEmployeeNumberNN.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtCEmployeeNumberNN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCEmployeeNumberNN.Location = New System.Drawing.Point(380, 223)
-        Me.txtCEmployeeNumberNN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCEmployeeNumberNN.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCEmployeeNumberNN.MaxLength = 20
         Me.txtCEmployeeNumberNN.Name = "txtCEmployeeNumberNN"
         Me.txtCEmployeeNumberNN.Size = New System.Drawing.Size(307, 30)
@@ -1603,7 +1603,7 @@ Partial Class frmMain
         Me.txtCConfirmPasswordNN.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtCConfirmPasswordNN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCConfirmPasswordNN.Location = New System.Drawing.Point(52, 359)
-        Me.txtCConfirmPasswordNN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCConfirmPasswordNN.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCConfirmPasswordNN.MaxLength = 20
         Me.txtCConfirmPasswordNN.Name = "txtCConfirmPasswordNN"
         Me.txtCConfirmPasswordNN.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -1625,7 +1625,7 @@ Partial Class frmMain
         Me.txtCPasswordNN.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtCPasswordNN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCPasswordNN.Location = New System.Drawing.Point(52, 291)
-        Me.txtCPasswordNN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCPasswordNN.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCPasswordNN.MaxLength = 20
         Me.txtCPasswordNN.Name = "txtCPasswordNN"
         Me.txtCPasswordNN.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -1658,7 +1658,8 @@ Partial Class frmMain
         Me.txtCEmailNN.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtCEmailNN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCEmailNN.Location = New System.Drawing.Point(380, 155)
-        Me.txtCEmailNN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCEmailNN.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtCEmailNN.MaxLength = 60
         Me.txtCEmailNN.Name = "txtCEmailNN"
         Me.txtCEmailNN.Size = New System.Drawing.Size(307, 30)
         Me.txtCEmailNN.TabIndex = 2
@@ -1666,11 +1667,10 @@ Partial Class frmMain
         '
         'txtCUserNameNN
         '
-        Me.txtCUserNameNN.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtCUserNameNN.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtCUserNameNN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCUserNameNN.Location = New System.Drawing.Point(52, 223)
-        Me.txtCUserNameNN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCUserNameNN.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCUserNameNN.MaxLength = 64
         Me.txtCUserNameNN.Name = "txtCUserNameNN"
         Me.txtCUserNameNN.Size = New System.Drawing.Size(307, 30)
