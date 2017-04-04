@@ -332,7 +332,7 @@ Partial Class frmInstitution
         Me.btnExit.Location = New System.Drawing.Point(216, 2)
         Me.btnExit.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnExit.Name = "btnExit"
-        Me.btnExit.Size = New System.Drawing.Size(86, 44)
+        Me.btnExit.Size = New System.Drawing.Size(86, 39)
         Me.btnExit.TabIndex = 2
         Me.btnExit.Text = "Exit"
         Me.btnExit.UseVisualStyleBackColor = True
@@ -342,7 +342,7 @@ Partial Class frmInstitution
         Me.btnCancel.Location = New System.Drawing.Point(132, 2)
         Me.btnCancel.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(78, 44)
+        Me.btnCancel.Size = New System.Drawing.Size(78, 39)
         Me.btnCancel.TabIndex = 1
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = True
@@ -355,7 +355,7 @@ Partial Class frmInstitution
         Me.btnSave.Location = New System.Drawing.Point(43, 2)
         Me.btnSave.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(83, 44)
+        Me.btnSave.Size = New System.Drawing.Size(83, 39)
         Me.btnSave.TabIndex = 0
         Me.btnSave.Text = "Save"
         Me.btnSave.UseVisualStyleBackColor = False
