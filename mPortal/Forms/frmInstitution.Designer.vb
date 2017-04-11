@@ -46,11 +46,11 @@ Partial Class frmInstitution
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.txtLogoThumbnailNN = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.cboStatusNN = New System.Windows.Forms.ComboBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.errError = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.cboStatusNN = New System.Windows.Forms.ComboBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.tlpMain.SuspendLayout()
@@ -373,25 +373,6 @@ Partial Class frmInstitution
         Me.txtLogoThumbnailNN.Tag = "thumbnail_url"
         Me.txtLogoThumbnailNN.Visible = False
         '
-        'TabPage2
-        '
-        Me.TabPage2.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage2.Margin = New System.Windows.Forms.Padding(4)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(4)
-        Me.TabPage2.Size = New System.Drawing.Size(695, 494)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Activation"
-        Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'OpenFileDialog1
-        '
-        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
-        'errError
-        '
-        Me.errError.ContainerControl = Me
-        '
         'Label10
         '
         Me.Label10.AutoSize = True
@@ -415,6 +396,25 @@ Partial Class frmInstitution
         Me.cboStatusNN.Size = New System.Drawing.Size(151, 33)
         Me.cboStatusNN.TabIndex = 33
         Me.cboStatusNN.Tag = "status"
+        '
+        'TabPage2
+        '
+        Me.TabPage2.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage2.Margin = New System.Windows.Forms.Padding(4)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(4)
+        Me.TabPage2.Size = New System.Drawing.Size(695, 494)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Activation"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'errError
+        '
+        Me.errError.ContainerControl = Me
         '
         'frmInstitution
         '

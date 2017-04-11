@@ -547,7 +547,7 @@ Module mdlGlobal
         End Try
     End Sub
 
-    Public Sub SaveInst(tlpMain As TableLayoutPanel, tableName As String, errError As ErrorProvider, sender As Button, txtEmail As TextBox, Optional field1 As Object = Nothing, Optional field2 As Object = Nothing, Optional field3 As Object = Nothing)
+    Public Sub SaveInst(tlpMain As TableLayoutPanel, tableName As String, errError As ErrorProvider, sender As Button, Optional txtEmail As TextBox = Nothing, Optional field1 As Object = Nothing, Optional field2 As Object = Nothing, Optional field3 As Object = Nothing)
         Try
             errError.Clear()
 
@@ -649,7 +649,10 @@ Module mdlGlobal
             ''End If
 
             Try
-                Dim addr = New Net.Mail.MailAddress(txtEmail.Text)
+                If txtEmail IsNot Nothing Then
+                    Dim addr = New Net.Mail.MailAddress(txtEmail.Text)
+
+                End If
             Catch
                 valide = False
                 MsgBox("SORRY WRONG EMAIL FORMAT...")

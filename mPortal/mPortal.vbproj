@@ -47,6 +47,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.4">
+      <HintPath>..\..\..\..\..\..\CLICCKSYS\RESOURCES\Bunifu_UI_v1.4\Bunifu_UI_v1.4.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="MySql.Data.Entity.EF6, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="MySql.Web, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
@@ -76,6 +79,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\frmBranchNew.designer.vb">
+      <DependentUpon>frmBranchNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmBranchNew.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\frmInstitution.designer.vb">
       <DependentUpon>frmInstitution.vb</DependentUpon>
     </Compile>
@@ -95,10 +104,10 @@
       <DependentUpon>frmMain.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MDI.Designer.vb">
-      <DependentUpon>MDI.vb</DependentUpon>
+    <Compile Include="Forms\mdiMain.Designer.vb">
+      <DependentUpon>mdiMain.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MDI.vb">
+    <Compile Include="Forms\mdiMain.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Mdls\CustomCrypt.vb" />
@@ -120,6 +129,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\frmBranchNew.resx">
+      <DependentUpon>frmBranchNew.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmInstitution.resx">
       <DependentUpon>frmInstitution.vb</DependentUpon>
     </EmbeddedResource>
@@ -129,8 +141,8 @@
     <EmbeddedResource Include="Forms\frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MDI.resx">
-      <DependentUpon>MDI.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\mdiMain.resx">
+      <DependentUpon>mdiMain.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -156,6 +168,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\alias mPortal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Black1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Organization_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Branch_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User Male_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Under Computer_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Administrator Male_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Receive Cash_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Money Bag_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shutdown_64px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

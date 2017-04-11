@@ -31,9 +31,9 @@ Partial Class frmLogin
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.LogoPictureBox = New System.Windows.Forms.PictureBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.lblPop = New System.Windows.Forms.Label()
-        Me.LogoPictureBox = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -187,6 +187,20 @@ Partial Class frmLogin
         Me.Label2.TabIndex = 127
         Me.Label2.Text = "Password"
         '
+        'LogoPictureBox
+        '
+        Me.LogoPictureBox.BackColor = System.Drawing.Color.White
+        Me.TableLayoutPanel1.SetColumnSpan(Me.LogoPictureBox, 3)
+        Me.LogoPictureBox.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.LogoPictureBox.Image = Global.mPortal.My.Resources.Resources.alias_mPortal
+        Me.LogoPictureBox.Location = New System.Drawing.Point(221, 81)
+        Me.LogoPictureBox.Margin = New System.Windows.Forms.Padding(4)
+        Me.LogoPictureBox.Name = "LogoPictureBox"
+        Me.LogoPictureBox.Size = New System.Drawing.Size(267, 177)
+        Me.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.LogoPictureBox.TabIndex = 116
+        Me.LogoPictureBox.TabStop = False
+        '
         'TextBox2
         '
         Me.TextBox2.BackColor = System.Drawing.Color.SteelBlue
@@ -211,20 +225,6 @@ Partial Class frmLogin
         Me.lblPop.Size = New System.Drawing.Size(68, 16)
         Me.lblPop.TabIndex = 129
         Me.lblPop.Text = "Label15"
-        '
-        'LogoPictureBox
-        '
-        Me.LogoPictureBox.BackColor = System.Drawing.Color.White
-        Me.TableLayoutPanel1.SetColumnSpan(Me.LogoPictureBox, 3)
-        Me.LogoPictureBox.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.LogoPictureBox.Image = Global.mPortal.My.Resources.Resources.alias_mPortal
-        Me.LogoPictureBox.Location = New System.Drawing.Point(221, 81)
-        Me.LogoPictureBox.Margin = New System.Windows.Forms.Padding(4)
-        Me.LogoPictureBox.Name = "LogoPictureBox"
-        Me.LogoPictureBox.Size = New System.Drawing.Size(267, 177)
-        Me.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.LogoPictureBox.TabIndex = 116
-        Me.LogoPictureBox.TabStop = False
         '
         'frmLogin
         '
