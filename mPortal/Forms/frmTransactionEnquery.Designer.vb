@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmCustomerEnquery
+Partial Class frmTransactionEnquery
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -68,7 +68,7 @@ Partial Class frmCustomerEnquery
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.198443!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(919, 537)
-        Me.TableLayoutPanel1.TabIndex = 0
+        Me.TableLayoutPanel1.TabIndex = 1
         '
         'FlowLayoutPanel1
         '
@@ -220,7 +220,7 @@ Partial Class frmCustomerEnquery
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage4.Size = New System.Drawing.Size(609, 351)
         Me.TabPage4.TabIndex = 1
-        Me.TabPage4.Text = "Accounts"
+        Me.TabPage4.Text = "Transactions"
         Me.TabPage4.UseVisualStyleBackColor = True
         '
         'DataGridView3
@@ -232,15 +232,14 @@ Partial Class frmCustomerEnquery
         Me.DataGridView3.Size = New System.Drawing.Size(603, 345)
         Me.DataGridView3.TabIndex = 0
         '
-        'frmCustomerEnquery
+        'frmTransactionEnquery
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(919, 537)
         Me.Controls.Add(Me.TableLayoutPanel1)
-        Me.Name = "frmCustomerEnquery"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "CustomerEnquery"
+        Me.Name = "frmTransactionEnquery"
+        Me.Text = "frmTransactionEnquery"
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.FlowLayoutPanel1.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
