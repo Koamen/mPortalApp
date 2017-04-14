@@ -7,6 +7,7 @@
         RefreshAComboBox(cboInstitution, "SELECT  DISTINCT(name) AS InstitutionName, id AS InstitutionID FROM institutions WHERE id = 4 ORDER BY  InstitutionName", "InstitutionName", "InstitutionID")
         cboInstitution.SelectedIndex = 0
         cboInstitution.Enabled = 0
+
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
