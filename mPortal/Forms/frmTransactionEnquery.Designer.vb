@@ -54,8 +54,8 @@ Partial Class frmTransactionEnquery
         Me.tTransactionStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.btnExit = New System.Windows.Forms.Button()
-        Me.btnCancel = New System.Windows.Forms.Button()
-        Me.btnSave = New System.Windows.Forms.Button()
+        Me.btnExport = New System.Windows.Forms.Button()
+        Me.btnReload = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.txtTotal = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -76,6 +76,7 @@ Partial Class frmTransactionEnquery
         Me.Label3 = New System.Windows.Forms.Label()
         Me.dtFrom = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TabControl2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
@@ -312,8 +313,8 @@ Partial Class frmTransactionEnquery
         'FlowLayoutPanel1
         '
         Me.FlowLayoutPanel1.Controls.Add(Me.btnExit)
-        Me.FlowLayoutPanel1.Controls.Add(Me.btnCancel)
-        Me.FlowLayoutPanel1.Controls.Add(Me.btnSave)
+        Me.FlowLayoutPanel1.Controls.Add(Me.btnExport)
+        Me.FlowLayoutPanel1.Controls.Add(Me.btnReload)
         Me.FlowLayoutPanel1.Controls.Add(Me.Panel2)
         Me.FlowLayoutPanel1.Controls.Add(Me.Label4)
         Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -334,28 +335,28 @@ Partial Class frmTransactionEnquery
         Me.btnExit.Text = "Exit"
         Me.btnExit.UseVisualStyleBackColor = True
         '
-        'btnCancel
+        'btnExport
         '
-        Me.btnCancel.Location = New System.Drawing.Point(592, 2)
-        Me.btnCancel.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(97, 33)
-        Me.btnCancel.TabIndex = 16
-        Me.btnCancel.Text = "Export"
-        Me.btnCancel.UseVisualStyleBackColor = True
+        Me.btnExport.Location = New System.Drawing.Point(592, 2)
+        Me.btnExport.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnExport.Name = "btnExport"
+        Me.btnExport.Size = New System.Drawing.Size(97, 33)
+        Me.btnExport.TabIndex = 16
+        Me.btnExport.Text = "Export"
+        Me.btnExport.UseVisualStyleBackColor = True
         '
-        'btnSave
+        'btnReload
         '
-        Me.btnSave.BackColor = System.Drawing.Color.LightSteelBlue
-        Me.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnSave.Location = New System.Drawing.Point(489, 2)
-        Me.btnSave.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(97, 33)
-        Me.btnSave.TabIndex = 15
-        Me.btnSave.Text = "ReLoad"
-        Me.btnSave.UseVisualStyleBackColor = False
+        Me.btnReload.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.btnReload.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.btnReload.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnReload.Location = New System.Drawing.Point(489, 2)
+        Me.btnReload.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnReload.Name = "btnReload"
+        Me.btnReload.Size = New System.Drawing.Size(97, 33)
+        Me.btnReload.TabIndex = 15
+        Me.btnReload.Text = "ReLoad"
+        Me.btnReload.UseVisualStyleBackColor = False
         '
         'Panel2
         '
@@ -536,6 +537,7 @@ Partial Class frmTransactionEnquery
         Me.TableLayoutPanel3.Controls.Add(Me.Label3, 2, 1)
         Me.TableLayoutPanel3.Controls.Add(Me.dtFrom, 3, 1)
         Me.TableLayoutPanel3.Controls.Add(Me.Label2, 4, 1)
+        Me.TableLayoutPanel3.Controls.Add(Me.Label5, 0, 0)
         Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel3.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
@@ -581,14 +583,28 @@ Partial Class frmTransactionEnquery
         Me.Label2.Text = "TO:"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'Label5
+        '
+        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label5.AutoSize = True
+        Me.TableLayoutPanel3.SetColumnSpan(Me.Label5, 2)
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(3, 21)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(225, 20)
+        Me.Label5.TabIndex = 4
+        Me.Label5.Text = "TRANSACTION ENQUIRY"
+        '
         'frmTransactionEnquery
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1205, 665)
         Me.Controls.Add(Me.TableLayoutPanel1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmTransactionEnquery"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmTransactionEnquery"
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TabControl2.ResumeLayout(False)
@@ -605,6 +621,7 @@ Partial Class frmTransactionEnquery
         CType(Me.dgvBranch, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.TableLayoutPanel3.ResumeLayout(False)
+        Me.TableLayoutPanel3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -612,8 +629,8 @@ Partial Class frmTransactionEnquery
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
     Friend WithEvents btnExit As Button
-    Friend WithEvents btnCancel As Button
-    Friend WithEvents btnSave As Button
+    Friend WithEvents btnExport As Button
+    Friend WithEvents btnReload As Button
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents cboInstitution As ComboBox
@@ -655,4 +672,5 @@ Partial Class frmTransactionEnquery
     Friend WithEvents tReference As DataGridViewTextBoxColumn
     Friend WithEvents tAmount As DataGridViewTextBoxColumn
     Friend WithEvents tTransactionStatus As DataGridViewTextBoxColumn
+    Friend WithEvents Label5 As Label
 End Class

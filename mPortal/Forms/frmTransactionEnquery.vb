@@ -24,10 +24,23 @@
     End Sub
 
     Private Sub dgvCollector_Click(sender As Object, e As EventArgs) Handles dgvCollector.Click
+        LoadTransactions()
+    End Sub
+
+    Private Sub txtTotal_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtTotal.KeyPress
+        e.Handled = True
+    End Sub
+
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnReload.Click
+        LoadTransactions()
+    End Sub
+
+    Private Sub LoadTransactions()
         txtTotal.Text = 0.00
+
         Dim S As String = dtFrom.Value.Date.ToString("yyyy-MM-dd")
 
-        If dgvCollector.Focused And dgvCollector.SelectedRows.Count = 1 Then
+        If dgvCollector.SelectedRows.Count = 1 Then
             RefreshADgv(dgvCollections, "SELECT C.`date` AS `DATE`,i.name AS `INSTITUTION NAME`, b.`BranchName`  AS `BRANCH`, coltrs.`name` AS `COLLECTOR NAME`, ctmrs.`name` AS `CUSTOMER NAME`" &
                                         ", c.id AS `TRANSACTION ID`,C.`trans_type` AS `TRANSACTION TYPE`, C.`reference` AS `REFERENCE`, C.`amount` AS `AMOUNT`, C.`status` AS `TRANSACTION STATUS`" &
                                         " FROM collections c " &
@@ -47,12 +60,9 @@
             End If
             txtTotal.Text = String.Format("{0:N2}", total)
         End If
-
     End Sub
 
-    Private Sub txtTotal_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtTotal.KeyPress
-        e.Handled = True
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnExport.Click
+
     End Sub
-
-
 End Class

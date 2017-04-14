@@ -14,4 +14,15 @@
     Private Sub BunifuTileButton3_Click(sender As Object, e As EventArgs) Handles BunifuTileButton3.Click
 
     End Sub
+
+    Private Sub BunifuTileButton6_Click(sender As Object, e As EventArgs) Handles BunifuTileButton6.Click
+        Dim frmTE As New frmTransactionEnquery
+        frmTE.Show(Me)
+
+    End Sub
+
+    Private Sub BunifuTileButton7_Click(sender As Object, e As EventArgs) Handles BunifuTileButton7.Click
+        Dim frmCE As New frmCustomerEnquery
+        frmCE.ShowDialog(Me)
+    End Sub
 End Class

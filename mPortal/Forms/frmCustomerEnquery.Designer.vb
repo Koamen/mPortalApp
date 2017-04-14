@@ -22,83 +22,270 @@ Partial Class frmCustomerEnquery
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.btnExit = New System.Windows.Forms.Button()
-        Me.btnCancel = New System.Windows.Forms.Button()
-        Me.btnSave = New System.Windows.Forms.Button()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.dgvBranch = New System.Windows.Forms.DataGridView()
-        Me.cboInstitution = New System.Windows.Forms.ComboBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
         Me.TabControl2 = New System.Windows.Forms.TabControl()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.dgvCollector = New System.Windows.Forms.DataGridView()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
-        Me.DataGridView3 = New System.Windows.Forms.DataGridView()
+        Me.dgvCollections = New System.Windows.Forms.DataGridView()
+        Me.tDATE = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tInstitutionName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tBranch = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tCollectorName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tCustomerName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tTransactionId = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tTransactionType = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tReference = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tAmount = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tTransactionStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.btnExit = New System.Windows.Forms.Button()
+        Me.btnExport = New System.Windows.Forms.Button()
+        Me.btnReload = New System.Windows.Forms.Button()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.txtTotal = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.dgvBranch = New System.Windows.Forms.DataGridView()
         Me.Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BranchName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Address = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Mobile = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Telephone = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.cboInstitution = New System.Windows.Forms.ComboBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
+        Me.dtTo = New System.Windows.Forms.DateTimePicker()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.dtFrom = New System.Windows.Forms.DateTimePicker()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.CId = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CustomerName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cPhone = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cEmail = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cAddress = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TableLayoutPanel1.SuspendLayout()
-        Me.FlowLayoutPanel1.SuspendLayout()
-        Me.TabControl1.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
-        CType(Me.dgvBranch, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.FlowLayoutPanel2.SuspendLayout()
         Me.TabControl2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
+        CType(Me.dgvCollector, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage4.SuspendLayout()
-        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvCollections, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FlowLayoutPanel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        Me.TabControl1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        Me.TableLayoutPanel2.SuspendLayout()
+        CType(Me.dgvBranch, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        Me.TableLayoutPanel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
         '
         Me.TableLayoutPanel1.ColumnCount = 2
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.99566!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.00434!))
-        Me.TableLayoutPanel1.Controls.Add(Me.FlowLayoutPanel1, 1, 1)
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 402.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel1.Controls.Add(Me.TabControl2, 1, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.FlowLayoutPanel1, 1, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.TabControl1, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.FlowLayoutPanel2, 1, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.Panel1, 1, 0)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(4)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 2
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.80156!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.198443!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25.0!))
+        Me.TableLayoutPanel1.RowCount = 3
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(1225, 661)
-        Me.TableLayoutPanel1.TabIndex = 0
+        Me.TableLayoutPanel1.TabIndex = 2
+        '
+        'TabControl2
+        '
+        Me.TabControl2.Controls.Add(Me.TabPage3)
+        Me.TabControl2.Controls.Add(Me.TabPage4)
+        Me.TabControl2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TabControl2.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TabControl2.Location = New System.Drawing.Point(402, 100)
+        Me.TabControl2.Margin = New System.Windows.Forms.Padding(0)
+        Me.TabControl2.Name = "TabControl2"
+        Me.TabControl2.SelectedIndex = 0
+        Me.TabControl2.Size = New System.Drawing.Size(823, 504)
+        Me.TabControl2.TabIndex = 0
+        '
+        'TabPage3
+        '
+        Me.TabPage3.Controls.Add(Me.dgvCollector)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 26)
+        Me.TabPage3.Margin = New System.Windows.Forms.Padding(4)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(4)
+        Me.TabPage3.Size = New System.Drawing.Size(815, 474)
+        Me.TabPage3.TabIndex = 0
+        Me.TabPage3.Text = "Customer"
+        Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'dgvCollector
+        '
+        Me.dgvCollector.AllowUserToAddRows = False
+        Me.dgvCollector.AllowUserToDeleteRows = False
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(212, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(252, Byte), Integer))
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Segoe UI", 7.8!)
+        Me.dgvCollector.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle9
+        Me.dgvCollector.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvCollector.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CId, Me.CustomerName, Me.cPhone, Me.cEmail, Me.cAddress})
+        Me.dgvCollector.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvCollector.Location = New System.Drawing.Point(4, 4)
+        Me.dgvCollector.Margin = New System.Windows.Forms.Padding(4)
+        Me.dgvCollector.Name = "dgvCollector"
+        Me.dgvCollector.ReadOnly = True
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvCollector.RowHeadersDefaultCellStyle = DataGridViewCellStyle10
+        Me.dgvCollector.RowHeadersWidth = 20
+        Me.dgvCollector.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvCollector.Size = New System.Drawing.Size(807, 466)
+        Me.dgvCollector.TabIndex = 4
+        '
+        'TabPage4
+        '
+        Me.TabPage4.Controls.Add(Me.dgvCollections)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 26)
+        Me.TabPage4.Margin = New System.Windows.Forms.Padding(4)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Padding = New System.Windows.Forms.Padding(4)
+        Me.TabPage4.Size = New System.Drawing.Size(815, 474)
+        Me.TabPage4.TabIndex = 1
+        Me.TabPage4.Text = "Transactions"
+        Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'dgvCollections
+        '
+        Me.dgvCollections.AllowUserToAddRows = False
+        Me.dgvCollections.AllowUserToDeleteRows = False
+        DataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(CType(CType(212, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(252, Byte), Integer))
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Segoe UI", 7.8!)
+        Me.dgvCollections.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle11
+        Me.dgvCollections.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvCollections.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.tDATE, Me.tInstitutionName, Me.tBranch, Me.tCollectorName, Me.tCustomerName, Me.tTransactionId, Me.tTransactionType, Me.tReference, Me.tAmount, Me.tTransactionStatus})
+        Me.dgvCollections.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvCollections.Location = New System.Drawing.Point(4, 4)
+        Me.dgvCollections.Margin = New System.Windows.Forms.Padding(4)
+        Me.dgvCollections.Name = "dgvCollections"
+        Me.dgvCollections.ReadOnly = True
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvCollections.RowHeadersDefaultCellStyle = DataGridViewCellStyle14
+        Me.dgvCollections.RowHeadersWidth = 20
+        Me.dgvCollections.Size = New System.Drawing.Size(807, 466)
+        Me.dgvCollections.TabIndex = 5
+        '
+        'tDATE
+        '
+        DataGridViewCellStyle12.Format = "D"
+        DataGridViewCellStyle12.NullValue = Nothing
+        Me.tDATE.DefaultCellStyle = DataGridViewCellStyle12
+        Me.tDATE.HeaderText = "DATE"
+        Me.tDATE.Name = "tDATE"
+        Me.tDATE.ReadOnly = True
+        '
+        'tInstitutionName
+        '
+        Me.tInstitutionName.HeaderText = "INSTITUTION NAME"
+        Me.tInstitutionName.Name = "tInstitutionName"
+        Me.tInstitutionName.ReadOnly = True
+        '
+        'tBranch
+        '
+        Me.tBranch.HeaderText = "BRANCH"
+        Me.tBranch.Name = "tBranch"
+        Me.tBranch.ReadOnly = True
+        '
+        'tCollectorName
+        '
+        Me.tCollectorName.HeaderText = "COLLECTOR NAME"
+        Me.tCollectorName.Name = "tCollectorName"
+        Me.tCollectorName.ReadOnly = True
+        '
+        'tCustomerName
+        '
+        Me.tCustomerName.HeaderText = "CUSTOMER NAME"
+        Me.tCustomerName.Name = "tCustomerName"
+        Me.tCustomerName.ReadOnly = True
+        '
+        'tTransactionId
+        '
+        Me.tTransactionId.HeaderText = "TRANSACTION ID"
+        Me.tTransactionId.Name = "tTransactionId"
+        Me.tTransactionId.ReadOnly = True
+        '
+        'tTransactionType
+        '
+        Me.tTransactionType.HeaderText = "TRANSACTION TYPE"
+        Me.tTransactionType.Name = "tTransactionType"
+        Me.tTransactionType.ReadOnly = True
+        '
+        'tReference
+        '
+        Me.tReference.HeaderText = "REFERENCE"
+        Me.tReference.Name = "tReference"
+        Me.tReference.ReadOnly = True
+        '
+        'tAmount
+        '
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle13.Format = "N2"
+        Me.tAmount.DefaultCellStyle = DataGridViewCellStyle13
+        Me.tAmount.HeaderText = "AMOUNT"
+        Me.tAmount.Name = "tAmount"
+        Me.tAmount.ReadOnly = True
+        '
+        'tTransactionStatus
+        '
+        Me.tTransactionStatus.HeaderText = "TRANSACTION STATUS"
+        Me.tTransactionStatus.Name = "tTransactionStatus"
+        Me.tTransactionStatus.ReadOnly = True
         '
         'FlowLayoutPanel1
         '
         Me.FlowLayoutPanel1.Controls.Add(Me.btnExit)
-        Me.FlowLayoutPanel1.Controls.Add(Me.btnCancel)
-        Me.FlowLayoutPanel1.Controls.Add(Me.btnSave)
-        Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.FlowLayoutPanel1.Controls.Add(Me.btnExport)
+        Me.FlowLayoutPanel1.Controls.Add(Me.btnReload)
+        Me.FlowLayoutPanel1.Controls.Add(Me.Panel2)
+        Me.FlowLayoutPanel1.Controls.Add(Me.Label4)
+        Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(906, 617)
-        Me.FlowLayoutPanel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(406, 608)
+        Me.FlowLayoutPanel1.Margin = New System.Windows.Forms.Padding(4)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(315, 40)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(815, 49)
         Me.FlowLayoutPanel1.TabIndex = 0
         '
         'btnExit
         '
-        Me.btnExit.Location = New System.Drawing.Point(215, 2)
+        Me.btnExit.Location = New System.Drawing.Point(715, 2)
         Me.btnExit.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(97, 33)
@@ -106,157 +293,128 @@ Partial Class frmCustomerEnquery
         Me.btnExit.Text = "Exit"
         Me.btnExit.UseVisualStyleBackColor = True
         '
-        'btnCancel
+        'btnExport
         '
-        Me.btnCancel.Location = New System.Drawing.Point(112, 2)
-        Me.btnCancel.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(97, 33)
-        Me.btnCancel.TabIndex = 16
-        Me.btnCancel.Text = "Cancel"
-        Me.btnCancel.UseVisualStyleBackColor = True
+        Me.btnExport.Location = New System.Drawing.Point(612, 2)
+        Me.btnExport.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnExport.Name = "btnExport"
+        Me.btnExport.Size = New System.Drawing.Size(97, 33)
+        Me.btnExport.TabIndex = 16
+        Me.btnExport.Text = "Export"
+        Me.btnExport.UseVisualStyleBackColor = True
         '
-        'btnSave
+        'btnReload
         '
-        Me.btnSave.BackColor = System.Drawing.Color.LightSteelBlue
-        Me.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnSave.Location = New System.Drawing.Point(9, 2)
-        Me.btnSave.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(97, 33)
-        Me.btnSave.TabIndex = 15
-        Me.btnSave.Text = "Save"
-        Me.btnSave.UseVisualStyleBackColor = False
+        Me.btnReload.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.btnReload.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.btnReload.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnReload.Location = New System.Drawing.Point(509, 2)
+        Me.btnReload.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnReload.Name = "btnReload"
+        Me.btnReload.Size = New System.Drawing.Size(97, 33)
+        Me.btnReload.TabIndex = 15
+        Me.btnReload.Text = "ReLoad"
+        Me.btnReload.UseVisualStyleBackColor = False
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.txtTotal)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel2.Location = New System.Drawing.Point(303, 3)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(200, 31)
+        Me.Panel2.TabIndex = 3
+        '
+        'txtTotal
+        '
+        Me.txtTotal.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtTotal.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTotal.Location = New System.Drawing.Point(0, 0)
+        Me.txtTotal.Name = "txtTotal"
+        Me.txtTotal.Size = New System.Drawing.Size(200, 30)
+        Me.txtTotal.TabIndex = 0
+        Me.txtTotal.Text = "0.00"
+        Me.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label4
+        '
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(227, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(70, 31)
+        Me.Label4.TabIndex = 18
+        Me.Label4.Text = "TOTAL:"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TabControl1.Location = New System.Drawing.Point(4, 4)
-        Me.TabControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabControl1.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.TabControl1.Location = New System.Drawing.Point(0, 0)
+        Me.TabControl1.Margin = New System.Windows.Forms.Padding(0)
         Me.TabControl1.Name = "TabControl1"
+        Me.TableLayoutPanel1.SetRowSpan(Me.TabControl1, 2)
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(383, 605)
+        Me.TabControl1.Size = New System.Drawing.Size(402, 604)
         Me.TabControl1.TabIndex = 1
         '
         'TabPage1
         '
-        Me.TabPage1.Controls.Add(Me.dgvBranch)
-        Me.TabPage1.Controls.Add(Me.cboInstitution)
-        Me.TabPage1.Controls.Add(Me.Label1)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage1.Controls.Add(Me.TableLayoutPanel2)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 26)
+        Me.TabPage1.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.TabPage1.Size = New System.Drawing.Size(375, 576)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(4)
+        Me.TabPage1.Size = New System.Drawing.Size(394, 574)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Details"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'TableLayoutPanel2
+        '
+        Me.TableLayoutPanel2.ColumnCount = 2
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.71958!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.28043!))
+        Me.TableLayoutPanel2.Controls.Add(Me.dgvBranch, 0, 1)
+        Me.TableLayoutPanel2.Controls.Add(Me.Label1, 0, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.cboInstitution, 1, 0)
+        Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(4, 4)
+        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
+        Me.TableLayoutPanel2.RowCount = 2
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.338028!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93.66197!))
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(386, 566)
+        Me.TableLayoutPanel2.TabIndex = 3
         '
         'dgvBranch
         '
         Me.dgvBranch.AllowUserToAddRows = False
         Me.dgvBranch.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvBranch.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(CType(CType(212, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(252, Byte), Integer))
+        DataGridViewCellStyle15.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.dgvBranch.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle15
         Me.dgvBranch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvBranch.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id, Me.BranchName, Me.Address, Me.Mobile, Me.Telephone})
-        Me.dgvBranch.Location = New System.Drawing.Point(4, 42)
-        Me.dgvBranch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TableLayoutPanel2.SetColumnSpan(Me.dgvBranch, 2)
+        Me.dgvBranch.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvBranch.Location = New System.Drawing.Point(4, 39)
+        Me.dgvBranch.Margin = New System.Windows.Forms.Padding(4)
         Me.dgvBranch.Name = "dgvBranch"
         Me.dgvBranch.ReadOnly = True
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Symbol", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvBranch.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle16.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        DataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvBranch.RowHeadersDefaultCellStyle = DataGridViewCellStyle16
         Me.dgvBranch.RowHeadersWidth = 20
-        Me.dgvBranch.Size = New System.Drawing.Size(369, 532)
-        Me.dgvBranch.TabIndex = 2
-        '
-        'cboInstitution
-        '
-        Me.cboInstitution.FormattingEnabled = True
-        Me.cboInstitution.Location = New System.Drawing.Point(84, 9)
-        Me.cboInstitution.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.cboInstitution.Name = "cboInstitution"
-        Me.cboInstitution.Size = New System.Drawing.Size(284, 24)
-        Me.cboInstitution.TabIndex = 1
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(7, 12)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(68, 17)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Institution"
-        '
-        'FlowLayoutPanel2
-        '
-        Me.FlowLayoutPanel2.Controls.Add(Me.TabControl2)
-        Me.FlowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.FlowLayoutPanel2.Location = New System.Drawing.Point(395, 145)
-        Me.FlowLayoutPanel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.FlowLayoutPanel2.Name = "FlowLayoutPanel2"
-        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(826, 464)
-        Me.FlowLayoutPanel2.TabIndex = 2
-        '
-        'TabControl2
-        '
-        Me.TabControl2.Controls.Add(Me.TabPage3)
-        Me.TabControl2.Controls.Add(Me.TabPage4)
-        Me.TabControl2.Location = New System.Drawing.Point(4, 4)
-        Me.TabControl2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.TabControl2.Name = "TabControl2"
-        Me.TabControl2.SelectedIndex = 0
-        Me.TabControl2.Size = New System.Drawing.Size(823, 464)
-        Me.TabControl2.TabIndex = 0
-        '
-        'TabPage3
-        '
-        Me.TabPage3.Controls.Add(Me.DataGridView2)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.TabPage3.Size = New System.Drawing.Size(815, 435)
-        Me.TabPage3.TabIndex = 0
-        Me.TabPage3.Text = "Collectors"
-        Me.TabPage3.UseVisualStyleBackColor = True
-        '
-        'TabPage4
-        '
-        Me.TabPage4.Controls.Add(Me.DataGridView3)
-        Me.TabPage4.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.TabPage4.Size = New System.Drawing.Size(815, 435)
-        Me.TabPage4.TabIndex = 1
-        Me.TabPage4.Text = "Accounts"
-        Me.TabPage4.UseVisualStyleBackColor = True
-        '
-        'DataGridView3
-        '
-        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.DataGridView3.Location = New System.Drawing.Point(4, 6)
-        Me.DataGridView3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.DataGridView3.Name = "DataGridView3"
-        Me.DataGridView3.Size = New System.Drawing.Size(807, 425)
-        Me.DataGridView3.TabIndex = 0
+        Me.dgvBranch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvBranch.Size = New System.Drawing.Size(378, 523)
+        Me.dgvBranch.TabIndex = 3
         '
         'Id
         '
@@ -293,62 +451,146 @@ Partial Class frmCustomerEnquery
         Me.Telephone.ReadOnly = True
         Me.Telephone.Visible = False
         '
-        'DataGridView2
+        'Label1
         '
-        Me.DataGridView2.AllowUserToAddRows = False
-        Me.DataGridView2.AllowUserToDeleteRows = False
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5})
-        Me.DataGridView2.Location = New System.Drawing.Point(151, 39)
-        Me.DataGridView2.Margin = New System.Windows.Forms.Padding(4)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.ReadOnly = True
-        Me.DataGridView2.RowHeadersWidth = 20
-        Me.DataGridView2.Size = New System.Drawing.Size(369, 346)
-        Me.DataGridView2.TabIndex = 3
+        Me.Label1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(4, 0)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(95, 35)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Institution"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'DataGridViewTextBoxColumn1
+        'cboInstitution
         '
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Id"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DataGridViewTextBoxColumn1.Visible = False
+        Me.cboInstitution.FormattingEnabled = True
+        Me.cboInstitution.Location = New System.Drawing.Point(107, 4)
+        Me.cboInstitution.Margin = New System.Windows.Forms.Padding(4)
+        Me.cboInstitution.Name = "cboInstitution"
+        Me.cboInstitution.Size = New System.Drawing.Size(270, 25)
+        Me.cboInstitution.TabIndex = 1
         '
-        'DataGridViewTextBoxColumn2
+        'Panel1
         '
-        Me.DataGridViewTextBoxColumn2.HeaderText = "BRANCH  NAME"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        Me.DataGridViewTextBoxColumn2.Width = 340
+        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.TableLayoutPanel3)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(405, 3)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(817, 94)
+        Me.Panel1.TabIndex = 2
         '
-        'DataGridViewTextBoxColumn3
+        'TableLayoutPanel3
         '
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Address"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        Me.DataGridViewTextBoxColumn3.Visible = False
+        Me.TableLayoutPanel3.ColumnCount = 6
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 61.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 178.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 47.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 157.0!))
+        Me.TableLayoutPanel3.Controls.Add(Me.dtTo, 5, 1)
+        Me.TableLayoutPanel3.Controls.Add(Me.Label3, 2, 1)
+        Me.TableLayoutPanel3.Controls.Add(Me.dtFrom, 3, 1)
+        Me.TableLayoutPanel3.Controls.Add(Me.Label2, 4, 1)
+        Me.TableLayoutPanel3.Controls.Add(Me.Label5, 0, 0)
+        Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel3.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
+        Me.TableLayoutPanel3.RowCount = 2
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.02128!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.97872!))
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(817, 94)
+        Me.TableLayoutPanel3.TabIndex = 4
         '
-        'DataGridViewTextBoxColumn4
+        'dtTo
         '
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Mobile"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.ReadOnly = True
-        Me.DataGridViewTextBoxColumn4.Visible = False
+        Me.dtTo.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dtTo.Location = New System.Drawing.Point(663, 66)
+        Me.dtTo.Name = "dtTo"
+        Me.dtTo.Size = New System.Drawing.Size(151, 22)
+        Me.dtTo.TabIndex = 3
+        Me.dtTo.Visible = False
         '
-        'DataGridViewTextBoxColumn5
+        'Label3
         '
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Telephone"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        Me.DataGridViewTextBoxColumn5.ReadOnly = True
-        Me.DataGridViewTextBoxColumn5.Visible = False
+        Me.Label3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label3.Location = New System.Drawing.Point(377, 63)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(55, 31)
+        Me.Label3.TabIndex = 1
+        Me.Label3.Text = "FROM:"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Label3.Visible = False
+        '
+        'dtFrom
+        '
+        Me.dtFrom.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dtFrom.Location = New System.Drawing.Point(438, 66)
+        Me.dtFrom.Name = "dtFrom"
+        Me.dtFrom.Size = New System.Drawing.Size(172, 22)
+        Me.dtFrom.TabIndex = 2
+        Me.dtFrom.Visible = False
+        '
+        'Label2
+        '
+        Me.Label2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label2.Location = New System.Drawing.Point(616, 63)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(41, 31)
+        Me.Label2.TabIndex = 0
+        Me.Label2.Text = "TO:"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Label2.Visible = False
+        '
+        'Label5
+        '
+        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label5.AutoSize = True
+        Me.TableLayoutPanel3.SetColumnSpan(Me.Label5, 2)
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(3, 21)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(199, 20)
+        Me.Label5.TabIndex = 4
+        Me.Label5.Text = "CUSTOMER ENQUIRY"
+        '
+        'CId
+        '
+        Me.CId.HeaderText = "CId"
+        Me.CId.Name = "CId"
+        Me.CId.ReadOnly = True
+        Me.CId.Visible = False
+        '
+        'CustomerName
+        '
+        Me.CustomerName.HeaderText = "COLLECTOR NAME"
+        Me.CustomerName.Name = "CustomerName"
+        Me.CustomerName.ReadOnly = True
+        Me.CustomerName.Width = 275
+        '
+        'cPhone
+        '
+        Me.cPhone.HeaderText = "PHONE"
+        Me.cPhone.Name = "cPhone"
+        Me.cPhone.ReadOnly = True
+        Me.cPhone.Width = 120
+        '
+        'cEmail
+        '
+        Me.cEmail.HeaderText = "EMAIL"
+        Me.cEmail.Name = "cEmail"
+        Me.cEmail.ReadOnly = True
+        Me.cEmail.Width = 120
+        '
+        'cAddress
+        '
+        Me.cAddress.HeaderText = "ADDRESS"
+        Me.cAddress.Name = "cAddress"
+        Me.cAddress.ReadOnly = True
+        Me.cAddress.Width = 175
         '
         'frmCustomerEnquery
         '
@@ -356,50 +598,74 @@ Partial Class frmCustomerEnquery
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1225, 661)
         Me.Controls.Add(Me.TableLayoutPanel1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmCustomerEnquery"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CustomerEnquery"
         Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.FlowLayoutPanel1.ResumeLayout(False)
-        Me.TabControl1.ResumeLayout(False)
-        Me.TabPage1.ResumeLayout(False)
-        Me.TabPage1.PerformLayout()
-        CType(Me.dgvBranch, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.FlowLayoutPanel2.ResumeLayout(False)
         Me.TabControl2.ResumeLayout(False)
         Me.TabPage3.ResumeLayout(False)
+        CType(Me.dgvCollector, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage4.ResumeLayout(False)
-        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvCollections, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.FlowLayoutPanel1.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
+        Me.TabControl1.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        Me.TableLayoutPanel2.ResumeLayout(False)
+        CType(Me.dgvBranch, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.TableLayoutPanel3.ResumeLayout(False)
+        Me.TableLayoutPanel3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
-    Friend WithEvents btnExit As Button
-    Friend WithEvents btnCancel As Button
-    Friend WithEvents btnSave As Button
-    Friend WithEvents TabControl1 As TabControl
-    Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents dgvBranch As DataGridView
-    Friend WithEvents cboInstitution As ComboBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents FlowLayoutPanel2 As FlowLayoutPanel
     Friend WithEvents TabControl2 As TabControl
     Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents dgvCollector As DataGridView
     Friend WithEvents TabPage4 As TabPage
-    Friend WithEvents DataGridView3 As DataGridView
+    Friend WithEvents dgvCollections As DataGridView
+    Friend WithEvents tDATE As DataGridViewTextBoxColumn
+    Friend WithEvents tInstitutionName As DataGridViewTextBoxColumn
+    Friend WithEvents tBranch As DataGridViewTextBoxColumn
+    Friend WithEvents tCollectorName As DataGridViewTextBoxColumn
+    Friend WithEvents tCustomerName As DataGridViewTextBoxColumn
+    Friend WithEvents tTransactionId As DataGridViewTextBoxColumn
+    Friend WithEvents tTransactionType As DataGridViewTextBoxColumn
+    Friend WithEvents tReference As DataGridViewTextBoxColumn
+    Friend WithEvents tAmount As DataGridViewTextBoxColumn
+    Friend WithEvents tTransactionStatus As DataGridViewTextBoxColumn
+    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents btnExit As Button
+    Friend WithEvents btnExport As Button
+    Friend WithEvents btnReload As Button
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents txtTotal As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
+    Friend WithEvents dgvBranch As DataGridView
     Friend WithEvents Id As DataGridViewTextBoxColumn
     Friend WithEvents BranchName As DataGridViewTextBoxColumn
     Friend WithEvents Address As DataGridViewTextBoxColumn
     Friend WithEvents Mobile As DataGridViewTextBoxColumn
     Friend WithEvents Telephone As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridView2 As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+    Friend WithEvents Label1 As Label
+    Friend WithEvents cboInstitution As ComboBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
+    Friend WithEvents dtTo As DateTimePicker
+    Friend WithEvents Label3 As Label
+    Friend WithEvents dtFrom As DateTimePicker
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents CId As DataGridViewTextBoxColumn
+    Friend WithEvents CustomerName As DataGridViewTextBoxColumn
+    Friend WithEvents cPhone As DataGridViewTextBoxColumn
+    Friend WithEvents cEmail As DataGridViewTextBoxColumn
+    Friend WithEvents cAddress As DataGridViewTextBoxColumn
 End Class
