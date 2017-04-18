@@ -8,21 +8,26 @@ Public Class frmMain
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'RefreshAComboBox(cboInstitutionNN, "SELECT  DISTINCT(name) AS InstitutionName, id AS InstitutionID FROM institutions  ORDER BY  InstitutionName", "InstitutionName", "InstitutionID")
-        TabControl1.SelectedIndex = 3
+        'TabControl1.SelectedIndex = 3
         cboUserRollNN.Text = "super_user"
-        RefreshAComboBox(cboIInstitutionNN, "SELECT  DISTINCT(name) AS InstitutionName, id AS InstitutionID FROM institutions WHERE id = 4 ORDER BY  InstitutionName", "InstitutionName", "InstitutionID")
-        cboIInstitutionNN.SelectedIndex = 0
+        RefreshAComboBox(cboIInstitutionNN, "SELECT  DISTINCT(name) AS InstitutionName, id AS InstitutionID FROM institutions ORDER BY  InstitutionName", "InstitutionName", "InstitutionID")
+        cboIInstitutionNN.SelectedValue = institutionId
         cboIInstitutionNN.Enabled = 0
-        RefreshAComboBox(cboIBranchNN, "SELECT  DISTINCT(BranchName) AS BranchName, id AS BranchID FROM branch WHERE Institution_id = 4 ORDER BY  BranchName", "BranchName", "BranchID")
-        RefreshAComboBox(cboUInstitutionNN, "SELECT  DISTINCT(name) AS InstitutionName, id AS InstitutionID FROM institutions WHERE id = 4 ORDER BY  InstitutionName", "InstitutionName", "InstitutionID")
-        cboUInstitutionNN.SelectedIndex = 0
+        RefreshAComboBox(cboIBranchNN, "SELECT  DISTINCT(BranchName) AS BranchName, id AS BranchID FROM branch WHERE Institution_id = " & institutionId & " ORDER BY  BranchName", "BranchName", "BranchID")
+        RefreshAComboBox(cboUInstitutionNN, "SELECT  DISTINCT(name) AS InstitutionName, id AS InstitutionID FROM institutions ORDER BY  InstitutionName", "InstitutionName", "InstitutionID")
+        cboUInstitutionNN.SelectedValue = institutionId
         cboUInstitutionNN.Enabled = 0
-        RefreshAComboBox(cboUBranchNN, "SELECT  DISTINCT(BranchName) AS BranchName, id AS BranchID FROM branch WHERE Institution_id = 4 ORDER BY  BranchName", "BranchName", "BranchID")
-        RefreshAComboBox(cboCInstitutionNN, "SELECT  DISTINCT(name) AS InstitutionName, id AS InstitutionID FROM institutions WHERE id = 4 ORDER BY  InstitutionName", "InstitutionName", "InstitutionID")
-        cboCInstitutionNN.SelectedIndex = 0
+        RefreshAComboBox(cboUBranchNN, "SELECT  DISTINCT(BranchName) AS BranchName, id AS BranchID FROM branch WHERE Institution_id = " & institutionId & " ORDER BY  BranchName", "BranchName", "BranchID")
+        RefreshAComboBox(cboCInstitutionNN, "SELECT  DISTINCT(name) AS InstitutionName, id AS InstitutionID FROM institutions  ORDER BY  InstitutionName", "InstitutionName", "InstitutionID")
+        cboCInstitutionNN.SelectedValue = institutionId
         cboCInstitutionNN.Enabled = 0
-        RefreshAComboBox(cboCBranchNN, "SELECT  DISTINCT(BranchName) AS BranchName, id AS BranchID FROM branch WHERE Institution_id = 4 ORDER BY  BranchName", "BranchName", "BranchID")
+        RefreshAComboBox(cboCBranchNN, "SELECT  DISTINCT(BranchName) AS BranchName, id AS BranchID FROM branch WHERE Institution_id = " & institutionId & " ORDER BY  BranchName", "BranchName", "BranchID")
 
+        If UserRole = "super_user" Then
+            cboIInstitutionNN.Enabled = True
+            cboUInstitutionNN.Enabled = True
+            cboCInstitutionNN.Enabled = True
+        End If
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
@@ -479,4 +484,35 @@ Public Class frmMain
     Private Sub txtPhoneNumberNN_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPhoneNumberNN.KeyPress, txtIPhoneNumberNN.KeyPress, txtUPhoneNumberNN.KeyPress, txtCPhoneNumberNN.KeyPress
         Positive(sender, e)
     End Sub
+
+    Private Sub cboIInstitutionNN_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboIInstitutionNN.SelectedIndexChanged
+        refreshBranch(cboIBranchNN, cboIInstitutionNN)
+    End Sub
+
+    Private Sub cboCInstitutionNN_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboCInstitutionNN.SelectedIndexChanged
+        refreshBranch(cboCBranchNN, cboCInstitutionNN)
+    End Sub
+
+    Private Sub cboUInstitutionNN_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboUInstitutionNN.SelectedIndexChanged
+        Try
+            refreshBranch(cboUBranchNN, cboUInstitutionNN)
+        Catch ex As Exception
+            MsgBox("An error occured, please retry or contact Admin.")
+        End Try
+    End Sub
+    Sub refreshBranch(cboB As ComboBox, cboInst As ComboBox)
+        Try
+            If cboInst.Focused Then
+                RefreshAComboBox(cboB, "SELECT  DISTINCT(BranchName) AS BranchName, id AS BranchID FROM branch WHERE Institution_id = " & cboInst.SelectedValue & " ORDER BY  BranchName", "BranchName", "BranchID")
+                If cboB.Items.Count > 0 Then
+                    cboB.SelectedIndex = 0
+                    Exit Sub
+                End If
+                cboB.DroppedDown = True
+            End If
+        Catch ex As Exception
+            MsgBox("An error occured, please retry or contact Admin.")
+        End Try
+    End Sub
+
 End Class

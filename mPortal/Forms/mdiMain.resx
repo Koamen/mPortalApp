@@ -120,28 +120,4 @@
   <metadata name="BunifuElipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="BunifuGauge1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAGgAAABmCAYAAAAnFtTRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAP+SURBVHhe7Zs9TFNRGIYZOzKyyWScjKObbPiHaVTsDxRq
-        KaWNqDUQgYCW3p92dHRkNHFhZDHBjU3i5MigkZiYdNF00OT4fuQ0qc0R21J6/94neRMa2nu/7/16T797
-        7jkjhBBCCCGEEEIIIdGiUqmMQxNa29B1/fcl/RYyDMRwKQDY11I96ACSz7zCMa7qQ5KzImaKqdARZDK+
-        Xx1Dr3H8uD4V6RaYNi7maRNN5g5aDegNzjuhQyAmYNAYjJLCmEwclnYRxxUdEhFgyCiMqUPNNqO81o5c
-        yTrEaAIDYtA6zJAhxmSS15IvjDQVozrk6ICkZTiTzspkjN90hHijM+xJspJ0hwl+VxNxh7/jQ5JJSbYj
-        +cAI8a/rVMIHkkOO5sQDJmnJYzqtcICkdjqSDLoOQlMkJCMttCnJoGtXpxhc9G+OKbmwqK5TDR4ojnRr
-        gW0IupV8CXXKwQFBy31O0FrpfiUteHBmyBFsDEEH5SZ0UDpG3sGYGkKgMn1jSiLs8n/ToIe20P/u/EvI
-        399TQghSHq4Zg4+I9rQV/iPqV09L8MGfc3YILmyzBf3qUFviH2TsNQQaWfnuKkJQvHr+ln+uInxb5L7H
-        r09FPRN88cd90bxTKM86i+qJtaJebleMwUZRKJA/nh2l7NzHydq0ainl5FTJeqo2qpvGwCOkA22Rt0y5
-        6d/tBWpX3J1VObukVqtrpgRCL1xFY9ombyjYywlTYUy6VUsqGQqXrWdqa/uFMaGwCQUqaqu8AYbvm4rR
-        jRLOQ7VkP1Zr1Q1jciGRtzML9525hsn8XiVDYdYuqrK1akqyW7UWyIv8MqPR1FZ5w5Sb+mUy/CySoXDG
-        yatHVlltVrdMSbergWGk3DnW47Usiszi/54/k0Ic3i18vFF7YDR5kLrnzqlFe9k0FB4i+VPvNcQcvG+v
-        43NDFWLwZp9SejN3wWToeeqOm1ZzTkGtVJ9//19xWuB9ciN92GncsITze7NrImst3TSZOAxlrMJbHUZX
-        wCTZZ2Q08LyFc3uzZkFmEEzmDUNJd+GyDqNrYNanTvOGIRSorEMYLpla/qIUKW+XrLSdf5e2F94n3dyX
-        u26mgd+NnyZjB6G4O/NDh9ATMOs8HyZKM3LSQaIgsk9WVIRkr6y/1yrkrFJcCpl1ilUpomjanf8qhRSz
-        TUU4TWjtP+tD9wSM6methFx1YvyeNl2UhU42LetDR4OMXUhIIdNOvt4qZNzNfJNC3naTzVaBUs7CB/2R
-        nhBj24yXpkGMlx11LePjYjrETcb9cq0yH5usJ4KxvIkQQgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEII
-        IYQQQgghhBBCCCGEEEIIIYQQQgghhBBCBsrIyB/ycmvbrdrR2QAAAABJRU5ErkJggg==
-</value>
-  </data>
 </root>

@@ -22,14 +22,15 @@ Partial Class frmTransactionEnquery
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TabControl2 = New System.Windows.Forms.TabControl()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
@@ -77,6 +78,13 @@ Partial Class frmTransactionEnquery
         Me.dtFrom = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.cmsCustLoad = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.cmsExport = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.cvs = New System.Windows.Forms.ToolStripMenuItem()
+        Me.excel = New System.Windows.Forms.ToolStripMenuItem()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TabControl2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
@@ -91,6 +99,8 @@ Partial Class frmTransactionEnquery
         CType(Me.dgvBranch, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
+        Me.cmsCustLoad.SuspendLayout()
+        Me.cmsExport.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -142,9 +152,9 @@ Partial Class frmTransactionEnquery
         '
         Me.dgvCollector.AllowUserToAddRows = False
         Me.dgvCollector.AllowUserToDeleteRows = False
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(212, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(252, Byte), Integer))
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Segoe UI", 7.8!)
-        Me.dgvCollector.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(212, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(252, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 7.8!)
+        Me.dgvCollector.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvCollector.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvCollector.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CId, Me.CollectorName, Me.cPhone, Me.cEmail, Me.cAddress, Me.cEmployeeNumber})
         Me.dgvCollector.Dock = System.Windows.Forms.DockStyle.Fill
@@ -152,14 +162,14 @@ Partial Class frmTransactionEnquery
         Me.dgvCollector.Margin = New System.Windows.Forms.Padding(4)
         Me.dgvCollector.Name = "dgvCollector"
         Me.dgvCollector.ReadOnly = True
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvCollector.RowHeadersDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvCollector.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvCollector.RowHeadersWidth = 20
         Me.dgvCollector.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvCollector.Size = New System.Drawing.Size(787, 470)
@@ -222,9 +232,9 @@ Partial Class frmTransactionEnquery
         '
         Me.dgvCollections.AllowUserToAddRows = False
         Me.dgvCollections.AllowUserToDeleteRows = False
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(CType(CType(212, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(252, Byte), Integer))
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Segoe UI", 7.8!)
-        Me.dgvCollections.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(212, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(252, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 7.8!)
+        Me.dgvCollections.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvCollections.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvCollections.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.tDATE, Me.tInstitutionName, Me.tBranch, Me.tCollectorName, Me.tCustomerName, Me.tTransactionId, Me.tTransactionType, Me.tReference, Me.tAmount, Me.tTransactionStatus})
         Me.dgvCollections.Dock = System.Windows.Forms.DockStyle.Fill
@@ -232,23 +242,23 @@ Partial Class frmTransactionEnquery
         Me.dgvCollections.Margin = New System.Windows.Forms.Padding(4)
         Me.dgvCollections.Name = "dgvCollections"
         Me.dgvCollections.ReadOnly = True
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvCollections.RowHeadersDefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvCollections.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvCollections.RowHeadersWidth = 20
         Me.dgvCollections.Size = New System.Drawing.Size(787, 470)
         Me.dgvCollections.TabIndex = 5
         '
         'tDATE
         '
-        DataGridViewCellStyle12.Format = "D"
-        DataGridViewCellStyle12.NullValue = Nothing
-        Me.tDATE.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle4.Format = "D"
+        DataGridViewCellStyle4.NullValue = Nothing
+        Me.tDATE.DefaultCellStyle = DataGridViewCellStyle4
         Me.tDATE.HeaderText = "DATE"
         Me.tDATE.Name = "tDATE"
         Me.tDATE.ReadOnly = True
@@ -297,9 +307,9 @@ Partial Class frmTransactionEnquery
         '
         'tAmount
         '
-        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle13.Format = "N2"
-        Me.tAmount.DefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle5.Format = "N2"
+        Me.tAmount.DefaultCellStyle = DataGridViewCellStyle5
         Me.tAmount.HeaderText = "AMOUNT"
         Me.tAmount.Name = "tAmount"
         Me.tAmount.ReadOnly = True
@@ -337,12 +347,12 @@ Partial Class frmTransactionEnquery
         '
         'btnExport
         '
-        Me.btnExport.Location = New System.Drawing.Point(592, 2)
+        Me.btnExport.Location = New System.Drawing.Point(590, 2)
         Me.btnExport.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnExport.Name = "btnExport"
-        Me.btnExport.Size = New System.Drawing.Size(97, 33)
+        Me.btnExport.Size = New System.Drawing.Size(99, 33)
         Me.btnExport.TabIndex = 16
-        Me.btnExport.Text = "Export"
+        Me.btnExport.Text = "Export | »"
         Me.btnExport.UseVisualStyleBackColor = True
         '
         'btnReload
@@ -350,19 +360,19 @@ Partial Class frmTransactionEnquery
         Me.btnReload.BackColor = System.Drawing.Color.LightSteelBlue
         Me.btnReload.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.btnReload.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnReload.Location = New System.Drawing.Point(489, 2)
+        Me.btnReload.Location = New System.Drawing.Point(463, 2)
         Me.btnReload.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnReload.Name = "btnReload"
-        Me.btnReload.Size = New System.Drawing.Size(97, 33)
+        Me.btnReload.Size = New System.Drawing.Size(121, 33)
         Me.btnReload.TabIndex = 15
-        Me.btnReload.Text = "ReLoad"
+        Me.btnReload.Text = "Custom Load | »"
         Me.btnReload.UseVisualStyleBackColor = False
         '
         'Panel2
         '
         Me.Panel2.Controls.Add(Me.txtTotal)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel2.Location = New System.Drawing.Point(283, 3)
+        Me.Panel2.Location = New System.Drawing.Point(257, 3)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(200, 31)
         Me.Panel2.TabIndex = 3
@@ -381,7 +391,7 @@ Partial Class frmTransactionEnquery
         'Label4
         '
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(207, 0)
+        Me.Label4.Location = New System.Drawing.Point(181, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(70, 31)
         Me.Label4.TabIndex = 18
@@ -434,9 +444,9 @@ Partial Class frmTransactionEnquery
         '
         Me.dgvBranch.AllowUserToAddRows = False
         Me.dgvBranch.AllowUserToDeleteRows = False
-        DataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(CType(CType(212, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(252, Byte), Integer))
-        DataGridViewCellStyle15.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.dgvBranch.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(212, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(252, Byte), Integer))
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.dgvBranch.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
         Me.dgvBranch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvBranch.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id, Me.BranchName, Me.Address, Me.Mobile, Me.Telephone})
         Me.TableLayoutPanel2.SetColumnSpan(Me.dgvBranch, 2)
@@ -445,14 +455,14 @@ Partial Class frmTransactionEnquery
         Me.dgvBranch.Margin = New System.Windows.Forms.Padding(4)
         Me.dgvBranch.Name = "dgvBranch"
         Me.dgvBranch.ReadOnly = True
-        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle16.Font = New System.Drawing.Font("Segoe UI", 8.0!)
-        DataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvBranch.RowHeadersDefaultCellStyle = DataGridViewCellStyle16
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvBranch.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.dgvBranch.RowHeadersWidth = 20
         Me.dgvBranch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvBranch.Size = New System.Drawing.Size(378, 526)
@@ -507,6 +517,7 @@ Partial Class frmTransactionEnquery
         '
         'cboInstitution
         '
+        Me.cboInstitution.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboInstitution.FormattingEnabled = True
         Me.cboInstitution.Location = New System.Drawing.Point(107, 4)
         Me.cboInstitution.Margin = New System.Windows.Forms.Padding(4)
@@ -532,7 +543,7 @@ Partial Class frmTransactionEnquery
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 61.0!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 178.0!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 47.0!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 157.0!))
         Me.TableLayoutPanel3.Controls.Add(Me.dtTo, 5, 1)
         Me.TableLayoutPanel3.Controls.Add(Me.Label3, 2, 1)
         Me.TableLayoutPanel3.Controls.Add(Me.dtFrom, 3, 1)
@@ -595,6 +606,50 @@ Partial Class frmTransactionEnquery
         Me.Label5.TabIndex = 4
         Me.Label5.Text = "TRANSACTION ENQUIRY"
         '
+        'cmsCustLoad
+        '
+        Me.cmsCustLoad.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.cmsCustLoad.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.ToolStripMenuItem2, Me.ToolStripMenuItem3})
+        Me.cmsCustLoad.Name = "cmsExport"
+        Me.cmsCustLoad.Size = New System.Drawing.Size(256, 76)
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(255, 24)
+        Me.ToolStripMenuItem1.Text = "All Institution's Transaction"
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(255, 24)
+        Me.ToolStripMenuItem2.Text = "Branch's Transactions"
+        '
+        'ToolStripMenuItem3
+        '
+        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(255, 24)
+        Me.ToolStripMenuItem3.Text = "Collector's Transactions"
+        '
+        'cmsExport
+        '
+        Me.cmsExport.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.cmsExport.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.cvs, Me.excel})
+        Me.cmsExport.Name = "cmsExport"
+        Me.cmsExport.Size = New System.Drawing.Size(181, 52)
+        '
+        'cvs
+        '
+        Me.cvs.Name = "cvs"
+        Me.cvs.Size = New System.Drawing.Size(180, 24)
+        Me.cvs.Text = "Export To CSV"
+        '
+        'excel
+        '
+        Me.excel.Name = "excel"
+        Me.excel.Size = New System.Drawing.Size(180, 24)
+        Me.excel.Text = "Export To Excel"
+        '
         'frmTransactionEnquery
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -622,6 +677,8 @@ Partial Class frmTransactionEnquery
         Me.Panel1.ResumeLayout(False)
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel3.PerformLayout()
+        Me.cmsCustLoad.ResumeLayout(False)
+        Me.cmsExport.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -653,8 +710,6 @@ Partial Class frmTransactionEnquery
     Friend WithEvents cEmail As DataGridViewTextBoxColumn
     Friend WithEvents cAddress As DataGridViewTextBoxColumn
     Friend WithEvents cEmployeeNumber As DataGridViewTextBoxColumn
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Panel2 As Panel
     Friend WithEvents txtTotal As TextBox
     Friend WithEvents dtTo As DateTimePicker
     Friend WithEvents dtFrom As DateTimePicker
@@ -662,6 +717,9 @@ Partial Class frmTransactionEnquery
     Friend WithEvents Label2 As Label
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel1 As Panel
     Friend WithEvents tDATE As DataGridViewTextBoxColumn
     Friend WithEvents tInstitutionName As DataGridViewTextBoxColumn
     Friend WithEvents tBranch As DataGridViewTextBoxColumn
@@ -672,5 +730,11 @@ Partial Class frmTransactionEnquery
     Friend WithEvents tReference As DataGridViewTextBoxColumn
     Friend WithEvents tAmount As DataGridViewTextBoxColumn
     Friend WithEvents tTransactionStatus As DataGridViewTextBoxColumn
-    Friend WithEvents Label5 As Label
+    Friend WithEvents cmsCustLoad As ContextMenuStrip
+    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
+    Friend WithEvents cmsExport As ContextMenuStrip
+    Friend WithEvents cvs As ToolStripMenuItem
+    Friend WithEvents excel As ToolStripMenuItem
 End Class

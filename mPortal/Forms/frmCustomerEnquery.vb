@@ -1,21 +1,25 @@
 ﻿Public Class frmCustomerEnquery
-    Private Sub TableLayoutPanel1_Paint(sender As Object, e As PaintEventArgs)
-
-    End Sub
-
-    Private Sub frmCustomerEnquery_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        RefreshAComboBox(cboInstitution, "SELECT  DISTINCT(name) AS InstitutionName, id AS InstitutionID FROM institutions WHERE id = 4 ORDER BY  InstitutionName", "InstitutionName", "InstitutionID")
-        cboInstitution.SelectedIndex = 0
+    Private Sub frmTransactionEnquery_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        RefreshAComboBox(cboInstitution, "SELECT  DISTINCT(name) AS InstitutionName, id AS InstitutionID FROM institutions ORDER BY  InstitutionName", "InstitutionName", "InstitutionID")
+        cboInstitution.SelectedValue = institutionId
         cboInstitution.Enabled = 0
+        RefreshADgv(dgvBranch, "select id,BranchName,Address,Mobile,Telephone from branch where institution_id = " & institutionId & " ORDER BY  BranchName")
+
+        If UserRole = "super_user" Then
+            cboInstitution.Enabled = True
+        End If
     End Sub
 
-    Private Sub btnExit_Click(sender As Object, e As EventArgs)
-        Me.Close()
+    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+        Me.Dispose()
     End Sub
 
     Private Sub cboInstitution_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboInstitution.SelectedIndexChanged
         If cboInstitution.Focused Then
-            RefreshADgv(dgvBranch, "select id,BranchName,Address,Mobile,Telephone from branch where institution_id = " & cboInstitution.SelectedItem.ToString & " ORDER BY  BranchName")
+            dgvCustomers.DataSource = Nothing
+            dgvCollector.Rows.Clear()
+            txtTotal.Text = 0
+            RefreshADgv(dgvBranch, "select id,BranchName,Address,Mobile,Telephone from branch where institution_id = " & cboInstitution.SelectedValue & " ORDER BY  BranchName")
         End If
     End Sub
 
@@ -26,30 +30,51 @@
         TabControl2.SelectedIndex = 0
     End Sub
 
-    Private Sub LoadCustomer()
+    Private Sub dgvCollector_Click(sender As Object, e As EventArgs) Handles dgvCollector.Click
+        If dgvCollector.SelectedRows.Count = 1 Then
+            LoadCustomer("c.collector_id = ", dgvCollector.SelectedRows.Item(0).Cells(0).Value.ToString)
+        End If
+    End Sub
+    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
+        If cboInstitution.SelectedIndex > -1 Then
+            LoadCustomer("c.institution_id = ", cboInstitution.SelectedValue)
+        End If
+    End Sub
+    Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
+        If dgvBranch.SelectedRows.Count = 1 Then
+            LoadCustomer("c.branchid = ", dgvBranch.SelectedRows.Item(0).Cells(0).Value.ToString)
+        End If
+    End Sub
+    Private Sub ToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem3.Click
+        If dgvCollector.SelectedRows.Count = 1 Then
+            LoadCustomer("c.collector_id = ", dgvCollector.SelectedRows.Item(0).Cells(0).Value.ToString)
+        End If
+    End Sub
+
+    Private Sub LoadCustomer(col As String, id As Integer)
         txtTotal.Text = 0.00
 
         Dim S As String = dtFrom.Value.Date.ToString("yyyy-MM-dd")
 
-        If dgvCollector.SelectedRows.Count = 1 Then
-            RefreshADgv(dgvCollections, "SELECT C.`date` AS `DATE`,i.name AS `INSTITUTION NAME`, b.`BranchName`  AS `BRANCH`, coltrs.`name` AS `COLLECTOR NAME`, ctmrs.`name` AS `CUSTOMER NAME`" &
-                                        ", c.id AS `TRANSACTION ID`,C.`trans_type` AS `TRANSACTION TYPE`, C.`reference` AS `REFERENCE`, C.`amount` AS `AMOUNT`, C.`status` AS `TRANSACTION STATUS`" &
-                                        " FROM collections c " &
-                                        " INNER Join institutions i  ON c.institution_id = i.id  " &
-                                        " INNER JOIN branch b ON c.`Branchid`=b.`id` " &
-                                        " INNER Join collectors coltrs  ON c.`collector_id`=coltrs.`id` " &
-                                        " INNER JOIN customers ctmrs  ON c.`customer_id`=ctmrs.`id` " &
-                                        " WHERE c.collector_id = " &
-                                        dgvCollector.SelectedRows.Item(0).Cells(0).Value.ToString & " AND (C.`date` between  '" & dtFrom.Value.Date.ToString("yyyy-MM-dd") & "' AND '" & dtTo.Value.Date.ToString("yyyy-MM-dd") & "')  ORDER BY  `Date`")
+        RefreshCustDgv(dgvCustomers, "SELECT   DATE(C.`date_created`) AS `DATE`,i.name AS `INSTITUTION NAME`, b.`BranchName`  AS `BRANCH`, coltrs.`name` AS `COLLECTOR NAME`, c.id AS `CUSTOMER ID`, c.`name` AS `CUSTOMER FULL NAME`, c.`first_name` AS `FIRST NAME`, c.`last_name` AS `LAST NAME`,C.`email` AS `EMAIL`, C.`phone` AS `PHONE NUMBER`, C.`gender` AS `GENDER`, C.`address` AS `ADDRESS`,  c.`id_type` AS `ID TYPE`, c.`card_no` AS `ID NUMBER`," &
+                                     " c.`account_type` AS `ACCOUNT TYPE`,c.`account_no` AS `ACCOUNT NUMBER`,c.`balance` AS `BALANCE`,c.`status` AS `STATUS` FROM customers c  INNER JOIN institutions i  ON c.institution_id = i.id   INNER JOIN branch b ON c.`Branchid`=b.`id`  INNER JOIN collectors coltrs  ON c.`collector_id`=coltrs.`id`  INNER JOIN customers ctmrs  ON c.`customer_id`=ctmrs.`id`  " &
+                                     " WHERE " & col &
+                                    id & "  ORDER BY  `CUSTOMER FULL NAME`")
+        'dgvCollector.SelectedRows.Item(0).Cells(0).Value.ToString & " AND (C.`date` between  '" & dtFrom.Value.Date.ToString("yyyy-MM-dd") & "' AND '" & dtTo.Value.Date.ToString("yyyy-MM-dd") & "')  ORDER BY  `Date`")
 
-            TabControl2.SelectedIndex = 1
-            Dim total As Decimal = 0D
-            If dgvCollections.Rows.Count > 0 Then
-                For Each r In dgvCollections.Rows
-                    total += CDec(r.cells(8).value)
-                Next
-            End If
-            txtTotal.Text = String.Format("{0:N2}", total)
+        TabControl2.SelectedIndex = 1
+        Dim total As Integer = 0
+        If dgvCustomers.Rows.Count > 0 Then
+            total += dgvCustomers.Rows.Count
         End If
+        txtTotal.Text = total
+    End Sub
+
+    Private Sub btnReload_Click(sender As Object, e As EventArgs) Handles btnReload.Click
+        cmsCustLoad.Show(btnReload, 0, btnReload.Height)
+    End Sub
+
+    Private Sub btnExport_Click(sender As Object, e As EventArgs) Handles btnExport.Click
+
     End Sub
 End Class

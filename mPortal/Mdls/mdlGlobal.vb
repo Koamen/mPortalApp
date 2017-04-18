@@ -86,7 +86,35 @@ Module mdlGlobal
     End Sub
 
 
+    Public Sub RefreshCustDgv(dgvName As DataGridView, SQL As String)
+        If IsNothing(dgvName.DataSource) Then
+            dgvName.Rows.Clear()
+        End If
+        dgvName.DataSource = Nothing
+        Dim table As New DataTable()
+        Using cn As New MySqlConnection(str)
+            Using comm As New MySqlCommand(SQL, cn)
+                Using da As New MySqlDataAdapter(comm)
+                    Try
+                        Cursor.Current = Cursors.WaitCursor
 
+                        cn.Open()
+                        da.Fill(table)
+                        If table.Rows.Count > 0 Then
+                            dgvName.DataSource = New BindingSource(table, Nothing)
+                        End If
+                    Catch ex As Exception
+                        MsgBox("Contact Administrator!" & vbCrLf & "Error while connecting to SQL Server. " & vbCrLf & ex.Message & vbCrLf & ex.Source, MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "Server Error")
+                    Finally
+                        Cursor.Current = Cursors.Default
+                        If cn.State = ConnectionState.Open Then
+                            cn.Close()
+                        End If
+                    End Try
+                End Using
+            End Using
+        End Using
+    End Sub
 
     Public Function FindAlistOfThings(SQL As String) As List(Of Array)
         Dim FoundList As New List(Of Array)

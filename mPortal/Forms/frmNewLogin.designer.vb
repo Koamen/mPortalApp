@@ -57,16 +57,17 @@ Partial Class frmNewLogin
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.TableLayoutPanel1.SetColumnSpan(Me.Label4, 5)
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 13.0!)
+        Me.TableLayoutPanel1.SetColumnSpan(Me.Label4, 6)
+        Me.Label4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.Label4.ForeColor = System.Drawing.SystemColors.Control
         Me.Label4.Location = New System.Drawing.Point(224, 294)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(639, 90)
+        Me.Label4.Size = New System.Drawing.Size(1174, 102)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Welcome to Mobile Teller Management System. Please Login to Continue." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Have a Nic" &
-    "e Day"
+    "e Day..."
         '
         'Label5
         '
@@ -134,7 +135,7 @@ Partial Class frmNewLogin
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(1394, 50)
         Me.Label9.TabIndex = 11
-        Me.Label9.Text = "Copyright @ ClickSys, 2017"
+        Me.Label9.Text = "Copyright @ ClickSys ltd, 2017"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label10
@@ -272,7 +273,7 @@ Partial Class frmNewLogin
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(120, 42)
         Me.Button2.TabIndex = 16
-        Me.Button2.Text = "Cancel"
+        Me.Button2.Text = "Exit"
         Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button2.UseVisualStyleBackColor = False
         '

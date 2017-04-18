@@ -1,8 +1,11 @@
 ﻿Public Class frmBranchNew
     Private Sub frmBranchNew_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        RefreshAComboBox(cboInstitutionIDNN, "SELECT  DISTINCT(name) AS InstitutionName, id AS InstitutionID FROM institutions WHERE id = 4 ORDER BY  InstitutionName", "InstitutionName", "InstitutionID")
-        cboInstitutionIDNN.SelectedIndex = 0
+        RefreshAComboBox(cboInstitutionIDNN, "SELECT  DISTINCT(name) AS InstitutionName, id AS InstitutionID FROM institutions ORDER BY  InstitutionName", "InstitutionName", "InstitutionID")
+        cboInstitutionIDNN.SelectedValue = institutionId
         cboInstitutionIDNN.Enabled = 0
+        If UserRole = "super_user" Then
+            cboInstitutionIDNN.Enabled = True
+        End If
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click

@@ -4,7 +4,7 @@ Public Class frmLogin
 
 
     Private Sub txtExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
-        Me.Close()
+        End
     End Sub
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
@@ -48,7 +48,12 @@ Public Class frmLogin
                         UserRole = dt.Rows.Item(0).Item("role").ToString
                         UserStatus = dt.Rows.Item(0).Item("status").ToString
 
-                        Dim f As New frmMain
+                        If UserStatus = "inactive" Then
+                            showPopup(txtUserName, "YOUR ACCOUNT HAS BEEN DEACTIVATED. PLEASE CONTACT THE ADMINISTRATOR.")
+                            Exit Sub
+                        End If
+
+                        Dim f As New mdiMain
                         f.Show()
 
                         Me.Close()

@@ -314,6 +314,7 @@ Partial Class frmBranchNew
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(811, 633)
         Me.Controls.Add(Me.TabControl1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmBranchNew"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
