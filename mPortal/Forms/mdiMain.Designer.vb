@@ -38,10 +38,7 @@ Partial Class mdiMain
         Me.BunifuSeparator1 = New Bunifu.Framework.UI.BunifuSeparator()
         Me.BunifuCircleProgressbar1 = New Bunifu.Framework.UI.BunifuCircleProgressbar()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.btnInstitution = New Bunifu.Framework.UI.BunifuTileButton()
         Me.btnIUser = New Bunifu.Framework.UI.BunifuTileButton()
         Me.btnSuperAdmin = New Bunifu.Framework.UI.BunifuTileButton()
@@ -52,7 +49,7 @@ Partial Class mdiMain
         CType(Me.BunifuImageButton1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
-        Me.Panel5.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -121,13 +118,13 @@ Partial Class mdiMain
         '
         'Label2
         '
-        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label2.AutoSize = True
+        Me.Label2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(411, 66)
+        Me.Label2.Location = New System.Drawing.Point(411, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(136, 29)
+        Me.Label2.Size = New System.Drawing.Size(216, 162)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Dashboard"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -169,7 +166,6 @@ Partial Class mdiMain
         Me.TableLayoutPanel1.Controls.Add(Me.BunifuSeparator1, 1, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.BunifuCircleProgressbar1, 1, 3)
         Me.TableLayoutPanel1.Controls.Add(Me.Panel3, 0, 6)
-        Me.TableLayoutPanel1.Controls.Add(Me.Panel5, 2, 3)
         Me.TableLayoutPanel1.Controls.Add(Me.btnInstitution, 7, 3)
         Me.TableLayoutPanel1.Controls.Add(Me.btnIUser, 3, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.btnSuperAdmin, 5, 3)
@@ -309,6 +305,7 @@ Partial Class mdiMain
         '
         Me.Panel3.BackColor = System.Drawing.Color.Black
         Me.TableLayoutPanel1.SetColumnSpan(Me.Panel3, 11)
+        Me.Panel3.Controls.Add(Me.Label6)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel3.ForeColor = System.Drawing.Color.Black
         Me.Panel3.Location = New System.Drawing.Point(0, 459)
@@ -317,51 +314,16 @@ Partial Class mdiMain
         Me.Panel3.Size = New System.Drawing.Size(1203, 20)
         Me.Panel3.TabIndex = 23
         '
-        'Panel5
+        'Label6
         '
-        Me.Panel5.BackColor = System.Drawing.Color.SeaGreen
-        Me.TableLayoutPanel1.SetColumnSpan(Me.Panel5, 3)
-        Me.Panel5.Controls.Add(Me.Label5)
-        Me.Panel5.Controls.Add(Me.Label4)
-        Me.Panel5.Controls.Add(Me.Label3)
-        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel5.Location = New System.Drawing.Point(228, 230)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(296, 148)
-        Me.Panel5.TabIndex = 25
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI Light", 7.8!, System.Drawing.FontStyle.Bold)
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(16, 100)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(136, 19)
-        Me.Label5.TabIndex = 2
-        Me.Label5.Text = "Monthly Collection"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI Light", 7.8!, System.Drawing.FontStyle.Bold)
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(16, 65)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(129, 19)
-        Me.Label4.TabIndex = 1
-        Me.Label4.Text = "Weekly Collection"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI Light", 7.8!, System.Drawing.FontStyle.Bold)
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(16, 32)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(115, 19)
-        Me.Label3.TabIndex = 0
-        Me.Label3.Text = "Daily Collection"
+        Me.Label6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(0, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(1203, 20)
+        Me.Label6.TabIndex = 0
+        Me.Label6.Text = "Copyright © Alias Solutions, 2017"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btnInstitution
         '
@@ -472,8 +434,7 @@ Partial Class mdiMain
         CType(Me.BunifuImageButton1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.Panel5.ResumeLayout(False)
-        Me.Panel5.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
@@ -498,9 +459,6 @@ Partial Class mdiMain
     Friend WithEvents BunifuSeparator1 As Bunifu.Framework.UI.BunifuSeparator
     Friend WithEvents BunifuCircleProgressbar1 As Bunifu.Framework.UI.BunifuCircleProgressbar
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents Panel5 As Panel
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label3 As Label
     Friend WithEvents btnIUser As Bunifu.Framework.UI.BunifuTileButton
+    Friend WithEvents Label6 As Label
 End Class

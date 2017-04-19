@@ -4,9 +4,6 @@
         frmInst.ShowDialog()
     End Sub
 
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs)
-    End Sub
-
     Private Sub BunifuImageButton1_Click(sender As Object, e As EventArgs) Handles BunifuImageButton1.Click
         frmLogin.Show()
         Me.Dispose()
@@ -69,9 +66,16 @@
             btnIAdmin.Enabled = True
             btnIUser.Enabled = True
             btnIcollectors.Enabled = True
+        ElseIf UserRole.ToUpper = "USER" Then
+            Label2.Enabled = False
         End If
 
-
-
     End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+        Dim frmDB As New frmDashB
+        frmDashB.ShowDialog(Me)
+    End Sub
+
+
 End Class

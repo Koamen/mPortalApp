@@ -135,7 +135,7 @@ Partial Class frmNewLogin
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(1394, 50)
         Me.Label9.TabIndex = 11
-        Me.Label9.Text = "Copyright @ ClickSys ltd, 2017"
+        Me.Label9.Text = "Copyright © ClickSys™ ltd, 2017"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label10

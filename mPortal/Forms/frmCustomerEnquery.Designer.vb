@@ -102,9 +102,9 @@ Partial Class frmCustomerEnquery
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 3
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1429, 715)
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.16666!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.833333!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1400, 700)
         Me.TableLayoutPanel1.TabIndex = 2
         '
         'TabControl2
@@ -117,7 +117,7 @@ Partial Class frmCustomerEnquery
         Me.TabControl2.Margin = New System.Windows.Forms.Padding(0)
         Me.TabControl2.Name = "TabControl2"
         Me.TabControl2.SelectedIndex = 0
-        Me.TabControl2.Size = New System.Drawing.Size(1027, 553)
+        Me.TabControl2.Size = New System.Drawing.Size(998, 552)
         Me.TabControl2.TabIndex = 0
         '
         'TabPage3
@@ -127,7 +127,7 @@ Partial Class frmCustomerEnquery
         Me.TabPage3.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(4)
-        Me.TabPage3.Size = New System.Drawing.Size(1019, 523)
+        Me.TabPage3.Size = New System.Drawing.Size(990, 522)
         Me.TabPage3.TabIndex = 0
         Me.TabPage3.Text = "Collector"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -156,7 +156,7 @@ Partial Class frmCustomerEnquery
         Me.dgvCollector.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvCollector.RowHeadersWidth = 20
         Me.dgvCollector.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvCollector.Size = New System.Drawing.Size(1011, 515)
+        Me.dgvCollector.Size = New System.Drawing.Size(982, 514)
         Me.dgvCollector.TabIndex = 5
         '
         'CId
@@ -171,34 +171,35 @@ Partial Class frmCustomerEnquery
         Me.CollectorName.HeaderText = "COLLECTOR NAME"
         Me.CollectorName.Name = "CollectorName"
         Me.CollectorName.ReadOnly = True
-        Me.CollectorName.Width = 275
+        Me.CollectorName.Width = 330
         '
         'cPhone
         '
         Me.cPhone.HeaderText = "PHONE"
         Me.cPhone.Name = "cPhone"
         Me.cPhone.ReadOnly = True
-        Me.cPhone.Width = 120
+        Me.cPhone.Width = 130
         '
         'cEmail
         '
         Me.cEmail.HeaderText = "EMAIL"
         Me.cEmail.Name = "cEmail"
         Me.cEmail.ReadOnly = True
-        Me.cEmail.Width = 120
+        Me.cEmail.Width = 150
         '
         'cAddress
         '
         Me.cAddress.HeaderText = "ADDRESS"
         Me.cAddress.Name = "cAddress"
         Me.cAddress.ReadOnly = True
-        Me.cAddress.Width = 175
+        Me.cAddress.Width = 220
         '
         'cEmployeeNumber
         '
         Me.cEmployeeNumber.HeaderText = "EMPLOYEE NUMBER"
         Me.cEmployeeNumber.Name = "cEmployeeNumber"
         Me.cEmployeeNumber.ReadOnly = True
+        Me.cEmployeeNumber.Width = 120
         '
         'TabPage4
         '
@@ -207,7 +208,7 @@ Partial Class frmCustomerEnquery
         Me.TabPage4.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(4)
-        Me.TabPage4.Size = New System.Drawing.Size(1019, 523)
+        Me.TabPage4.Size = New System.Drawing.Size(990, 522)
         Me.TabPage4.TabIndex = 1
         Me.TabPage4.Text = "Customers"
         Me.TabPage4.UseVisualStyleBackColor = True
@@ -234,7 +235,7 @@ Partial Class frmCustomerEnquery
         DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvCustomers.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvCustomers.RowHeadersWidth = 20
-        Me.dgvCustomers.Size = New System.Drawing.Size(1011, 515)
+        Me.dgvCustomers.Size = New System.Drawing.Size(982, 514)
         Me.dgvCustomers.TabIndex = 5
         '
         'FlowLayoutPanel1
@@ -246,15 +247,15 @@ Partial Class frmCustomerEnquery
         Me.FlowLayoutPanel1.Controls.Add(Me.Label4)
         Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(406, 657)
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(406, 656)
         Me.FlowLayoutPanel1.Margin = New System.Windows.Forms.Padding(4)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(1019, 54)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(990, 40)
         Me.FlowLayoutPanel1.TabIndex = 0
         '
         'btnExit
         '
-        Me.btnExit.Location = New System.Drawing.Point(943, 2)
+        Me.btnExit.Location = New System.Drawing.Point(914, 2)
         Me.btnExit.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(73, 33)
@@ -264,12 +265,12 @@ Partial Class frmCustomerEnquery
         '
         'btnExport
         '
-        Me.btnExport.Location = New System.Drawing.Point(800, 2)
+        Me.btnExport.Location = New System.Drawing.Point(835, 2)
         Me.btnExport.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnExport.Name = "btnExport"
-        Me.btnExport.Size = New System.Drawing.Size(137, 33)
+        Me.btnExport.Size = New System.Drawing.Size(73, 33)
         Me.btnExport.TabIndex = 16
-        Me.btnExport.Text = "Custom Import"
+        Me.btnExport.Text = "Import"
         Me.btnExport.UseVisualStyleBackColor = True
         '
         'btnReload
@@ -277,7 +278,7 @@ Partial Class frmCustomerEnquery
         Me.btnReload.BackColor = System.Drawing.Color.LightSteelBlue
         Me.btnReload.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.btnReload.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnReload.Location = New System.Drawing.Point(665, 2)
+        Me.btnReload.Location = New System.Drawing.Point(700, 2)
         Me.btnReload.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnReload.Name = "btnReload"
         Me.btnReload.Size = New System.Drawing.Size(129, 33)
@@ -289,7 +290,7 @@ Partial Class frmCustomerEnquery
         '
         Me.Panel2.Controls.Add(Me.txtTotal)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel2.Location = New System.Drawing.Point(459, 3)
+        Me.Panel2.Location = New System.Drawing.Point(494, 3)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(200, 31)
         Me.Panel2.TabIndex = 3
@@ -308,7 +309,7 @@ Partial Class frmCustomerEnquery
         'Label4
         '
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(243, 0)
+        Me.Label4.Location = New System.Drawing.Point(278, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(210, 31)
         Me.Label4.TabIndex = 18
@@ -325,7 +326,7 @@ Partial Class frmCustomerEnquery
         Me.TabControl1.Name = "TabControl1"
         Me.TableLayoutPanel1.SetRowSpan(Me.TabControl1, 2)
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(402, 653)
+        Me.TabControl1.Size = New System.Drawing.Size(402, 652)
         Me.TabControl1.TabIndex = 1
         '
         'TabPage1
@@ -335,7 +336,7 @@ Partial Class frmCustomerEnquery
         Me.TabPage1.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(4)
-        Me.TabPage1.Size = New System.Drawing.Size(394, 623)
+        Me.TabPage1.Size = New System.Drawing.Size(394, 622)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Details"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -354,7 +355,7 @@ Partial Class frmCustomerEnquery
         Me.TableLayoutPanel2.RowCount = 2
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.338028!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93.66197!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(386, 615)
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(386, 614)
         Me.TableLayoutPanel2.TabIndex = 3
         '
         'dgvBranch
@@ -382,7 +383,7 @@ Partial Class frmCustomerEnquery
         Me.dgvBranch.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvBranch.RowHeadersWidth = 20
         Me.dgvBranch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvBranch.Size = New System.Drawing.Size(378, 569)
+        Me.dgvBranch.Size = New System.Drawing.Size(378, 568)
         Me.dgvBranch.TabIndex = 3
         '
         'Id
@@ -394,10 +395,10 @@ Partial Class frmCustomerEnquery
         '
         'BranchName
         '
-        Me.BranchName.HeaderText = "BRANCH  NAME"
+        Me.BranchName.HeaderText = "BRANCH / KIOSK NAME"
         Me.BranchName.Name = "BranchName"
         Me.BranchName.ReadOnly = True
-        Me.BranchName.Width = 340
+        Me.BranchName.Width = 350
         '
         'Address
         '
@@ -449,7 +450,7 @@ Partial Class frmCustomerEnquery
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(405, 3)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1021, 94)
+        Me.Panel1.Size = New System.Drawing.Size(992, 94)
         Me.Panel1.TabIndex = 2
         '
         'TableLayoutPanel3
@@ -460,7 +461,7 @@ Partial Class frmCustomerEnquery
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 77.0!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 178.0!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 47.0!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 157.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 158.0!))
         Me.TableLayoutPanel3.Controls.Add(Me.dtTo, 5, 1)
         Me.TableLayoutPanel3.Controls.Add(Me.Label3, 2, 1)
         Me.TableLayoutPanel3.Controls.Add(Me.dtFrom, 3, 1)
@@ -472,15 +473,15 @@ Partial Class frmCustomerEnquery
         Me.TableLayoutPanel3.RowCount = 2
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.02128!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.97872!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(1021, 94)
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(992, 94)
         Me.TableLayoutPanel3.TabIndex = 4
         '
         'dtTo
         '
         Me.dtTo.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dtTo.Location = New System.Drawing.Point(867, 66)
+        Me.dtTo.Location = New System.Drawing.Point(837, 66)
         Me.dtTo.Name = "dtTo"
-        Me.dtTo.Size = New System.Drawing.Size(151, 22)
+        Me.dtTo.Size = New System.Drawing.Size(152, 22)
         Me.dtTo.TabIndex = 3
         Me.dtTo.Visible = False
         '
@@ -488,7 +489,7 @@ Partial Class frmCustomerEnquery
         '
         Me.Label3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(565, 63)
+        Me.Label3.Location = New System.Drawing.Point(535, 63)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(71, 31)
         Me.Label3.TabIndex = 1
@@ -499,7 +500,7 @@ Partial Class frmCustomerEnquery
         'dtFrom
         '
         Me.dtFrom.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dtFrom.Location = New System.Drawing.Point(642, 66)
+        Me.dtFrom.Location = New System.Drawing.Point(612, 66)
         Me.dtFrom.Name = "dtFrom"
         Me.dtFrom.Size = New System.Drawing.Size(172, 22)
         Me.dtFrom.TabIndex = 2
@@ -509,7 +510,7 @@ Partial Class frmCustomerEnquery
         '
         Me.Label2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(820, 63)
+        Me.Label2.Location = New System.Drawing.Point(790, 63)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(41, 31)
         Me.Label2.TabIndex = 0
@@ -534,7 +535,7 @@ Partial Class frmCustomerEnquery
         Me.cmsCustLoad.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.cmsCustLoad.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.ToolStripMenuItem2, Me.ToolStripMenuItem3})
         Me.cmsCustLoad.Name = "cmsExport"
-        Me.cmsCustLoad.Size = New System.Drawing.Size(255, 82)
+        Me.cmsCustLoad.Size = New System.Drawing.Size(255, 110)
         '
         'ToolStripMenuItem1
         '
@@ -558,7 +559,7 @@ Partial Class frmCustomerEnquery
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1429, 715)
+        Me.ClientSize = New System.Drawing.Size(1400, 700)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(4)
@@ -598,11 +599,6 @@ Partial Class frmCustomerEnquery
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents dgvBranch As DataGridView
-    Friend WithEvents Id As DataGridViewTextBoxColumn
-    Friend WithEvents BranchName As DataGridViewTextBoxColumn
-    Friend WithEvents Address As DataGridViewTextBoxColumn
-    Friend WithEvents Mobile As DataGridViewTextBoxColumn
-    Friend WithEvents Telephone As DataGridViewTextBoxColumn
     Friend WithEvents Label1 As Label
     Friend WithEvents cboInstitution As ComboBox
     Friend WithEvents Panel1 As Panel
@@ -617,14 +613,19 @@ Partial Class frmCustomerEnquery
     Friend WithEvents TabPage4 As TabPage
     Friend WithEvents dgvCustomers As DataGridView
     Friend WithEvents dgvCollector As DataGridView
+    Friend WithEvents cmsCustLoad As ContextMenuStrip
+    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
     Friend WithEvents CId As DataGridViewTextBoxColumn
     Friend WithEvents CollectorName As DataGridViewTextBoxColumn
     Friend WithEvents cPhone As DataGridViewTextBoxColumn
     Friend WithEvents cEmail As DataGridViewTextBoxColumn
     Friend WithEvents cAddress As DataGridViewTextBoxColumn
     Friend WithEvents cEmployeeNumber As DataGridViewTextBoxColumn
-    Friend WithEvents cmsCustLoad As ContextMenuStrip
-    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
+    Friend WithEvents Id As DataGridViewTextBoxColumn
+    Friend WithEvents BranchName As DataGridViewTextBoxColumn
+    Friend WithEvents Address As DataGridViewTextBoxColumn
+    Friend WithEvents Mobile As DataGridViewTextBoxColumn
+    Friend WithEvents Telephone As DataGridViewTextBoxColumn
 End Class

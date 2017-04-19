@@ -1,5 +1,4 @@
 ﻿Imports System.IO
-Imports System.Windows.Forms
 Imports Microsoft.Office.Interop.Excel
 Public Class frmTransactionEnquery
     Private Sub frmTransactionEnquery_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -32,44 +31,31 @@ Public Class frmTransactionEnquery
         End If
         TabControl2.SelectedIndex = 0
     End Sub
-    Private Sub dgvCollector_Click(sender As Object, e As EventArgs) Handles dgvCollector.Click
+    Private Sub dgvCollector_Click(sender As Object, e As EventArgs) Handles dgvCollector.Click, ToolStripMenuItem3.Click
         If dgvCollector.SelectedRows.Count = 1 Then
-            LoadTransactions("c.collector_id = ", dgvCollector.SelectedRows.Item(0).Cells(0).Value.ToString)
+            LoadTransactions("c.collector_id = ", dgvCollector.SelectedRows.Item(0).Cells(0).Value.ToString, dgvCollections, dtFrom, dtTo)
+            ShowTransactions()
         End If
     End Sub
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
         If cboInstitution.SelectedIndex > -1 Then
-            LoadTransactions("c.institution_id = ", cboInstitution.SelectedValue)
+            LoadTransactions("c.institution_id = ", cboInstitution.SelectedValue, dgvCollections, dtFrom, dtTo)
+            ShowTransactions()
         End If
     End Sub
     Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
         If dgvBranch.SelectedRows.Count = 1 Then
-            LoadTransactions("c.branchid = ", dgvBranch.SelectedRows.Item(0).Cells(0).Value.ToString)
+            LoadTransactions("c.branchid = ", dgvBranch.SelectedRows.Item(0).Cells(0).Value.ToString, dgvCollections, dtFrom, dtTo)
+            ShowTransactions()
         End If
     End Sub
-    Private Sub ToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem3.Click
-        If dgvCollector.SelectedRows.Count = 1 Then
-            LoadTransactions("c.collector_id = ", dgvCollector.SelectedRows.Item(0).Cells(0).Value.ToString)
-        End If
-    End Sub
+
     Private Sub txtTotal_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtTotal.KeyPress
         e.Handled = True
     End Sub
-    Private Sub LoadTransactions(col As String, id As Integer)
+
+    Private Sub ShowTransactions()
         txtTotal.Text = 0.00
-
-        Dim S As String = dtFrom.Value.Date.ToString("yyyy-MM-dd")
-
-        RefreshADgv(dgvCollections, "SELECT C.`date` AS `DATE`,i.name AS `INSTITUTION NAME`, b.`BranchName`  AS `BRANCH`, coltrs.`name` AS `COLLECTOR NAME`, ctmrs.`name` AS `CUSTOMER NAME`" &
-                                    ", c.id AS `TRANSACTION ID`,C.`trans_type` AS `TRANSACTION TYPE`, C.`reference` AS `REFERENCE`, C.`amount` AS `AMOUNT`, C.`status` AS `TRANSACTION STATUS`" &
-                                    " FROM collections c " &
-                                    " INNER Join institutions i  ON c.institution_id = i.id  " &
-                                    " INNER JOIN branch b ON c.`Branchid`=b.`id` " &
-                                    " INNER Join collectors coltrs  ON c.`collector_id`=coltrs.`id` " &
-                                    " INNER JOIN customers ctmrs  ON c.`customer_id`=ctmrs.`id` " &
-                                    " WHERE " & col &
-                                    id & " AND (C.`date` between  '" & dtFrom.Value.Date.ToString("yyyy-MM-dd") & "' AND '" & dtTo.Value.Date.ToString("yyyy-MM-dd") & "')  ORDER BY  `Date`")
-
         TabControl2.SelectedIndex = 1
         Dim total As Decimal = 0D
         If dgvCollections.Rows.Count > 0 Then
@@ -79,7 +65,6 @@ Public Class frmTransactionEnquery
         End If
         txtTotal.Text = String.Format("{0:N2}", total)
     End Sub
-
     Private Sub btnExport_Click(sender As Object, e As EventArgs) Handles btnExport.Click
         cmsExport.Show(btnExport, 0, btnExport.Height)
     End Sub
@@ -114,7 +99,7 @@ Public Class frmTransactionEnquery
 
             If saveFileDialog1.ShowDialog() = DialogResult.OK Then
                 Dim fileName As String = saveFileDialog1.FileName.ToString.Substring(0, saveFileDialog1.FileName.ToString.Length - 4) & " FROM " & dtFrom.Value.Date.ToString("dd-MM-yyyy") & " TO " & dtTo.Value.Date.ToString("dd-MM-yyyy") & ".txt"
-                Using sw As New IO.StreamWriter(fileName)
+                Using sw As New StreamWriter(fileName)
                     sw.WriteLine(String.Join(",", headers))
                     For Each r In rows
                         sw.WriteLine(String.Join(",", r))

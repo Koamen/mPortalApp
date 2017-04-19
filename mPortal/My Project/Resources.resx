@@ -136,20 +136,20 @@
   <data name="Receive Cash_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Receive Cash_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="User Male_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\User Male_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Under Computer_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Under Computer_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Home_96px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Home_96px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="User Male_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\User Male_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Home_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Home_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Cancel_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cancel_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Home_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Home_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Branch_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Branch_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alias mPortal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\alias mPortal.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,16 +166,19 @@
   <data name="Shutdown_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Shutdown_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Under Computer_64px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Under Computer_64px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Home" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Home.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Branch_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Branch_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Home_96px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Home_96px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Black1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Black1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Under Computer_64px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Under Computer_64px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Refresh_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Refresh_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

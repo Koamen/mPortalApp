@@ -186,6 +186,81 @@ Module mdlGlobal
     End Function
 #End Region
 
+#Region "Load"
+    Public Sub LoadsTransactions(col As String, id As Integer, dgvCollections As DataGridView, dtFrom As DateTimePicker, dtTo As DateTimePicker)
+
+        Dim S As String = dtFrom.Value.Date.ToString("yyyy-MM-dd")
+
+        RefreshADgv(dgvCollections, "SELECT C.`date` AS `DATE`,i.name AS `INSTITUTION NAME`, b.`BranchName`  AS `BRANCH`, coltrs.`name` AS `COLLECTOR NAME`, ctmrs.`name` AS `CUSTOMER NAME`" &
+                                    ", c.id AS `TRANSACTION ID`,C.`trans_type` AS `TRANSACTION TYPE`, C.`reference` AS `REFERENCE`, C.`amount` AS `AMOUNT`, C.`status` AS `TRANSACTION STATUS`" &
+                                    " FROM collections c " &
+                                    " INNER Join institutions i  ON c.institution_id = i.id  " &
+                                    " INNER JOIN branch b ON c.`Branchid`=b.`id` " &
+                                    " INNER Join collectors coltrs  ON c.`collector_id`=coltrs.`id` " &
+                                    " INNER JOIN customers ctmrs  ON c.`customer_id`=ctmrs.`id` " &
+                                    " WHERE " & col &
+                                    id & " AND (C.`date` between  '" & dtFrom.Value.Date.ToString("yyyy-MM-dd") & "' AND '" & dtTo.Value.Date.ToString("yyyy-MM-dd") & "')  ORDER BY  `Date`")
+    End Sub
+
+    Public Sub LoadTransactions(col As String, id As Integer, dgvCollections As DataGridView, dtFrom As DateTimePicker, dtTo As DateTimePicker)
+
+        Dim S As String = dtFrom.Value.Date.ToString("yyyy-MM-dd")
+        'If UserRole = "super_admin" Then
+        RefreshADgv(dgvCollections, "SELECT C.`date` AS `DATE`,i.name AS `INSTITUTION NAME`, b.`BranchName`  AS `BRANCH`, coltrs.`name` AS `COLLECTOR NAME`, ctmrs.`name` AS `CUSTOMER NAME`" &
+                                    ", c.id AS `TRANSACTION ID`,C.`trans_type` AS `TRANSACTION TYPE`, C.`reference` AS `REFERENCE`, C.`amount` AS `AMOUNT`, C.`status` AS `TRANSACTION STATUS`" &
+                                    " FROM collections c " &
+                                    " INNER Join institutions i  ON c.institution_id = i.id  " &
+                                    " INNER JOIN branch b ON c.`Branchid`=b.`id` " &
+                                    " INNER Join collectors coltrs  ON c.`collector_id`=coltrs.`id` " &
+                                    " INNER JOIN customers ctmrs  ON c.`customer_id`=ctmrs.`id` " &
+                                    " WHERE " & col &
+                                    id & " AND (C.`date` between  '" & dtFrom.Value.Date.ToString("yyyy-MM-dd") & "' AND '" & dtTo.Value.Date.ToString("yyyy-MM-dd") & "')  ORDER BY  `Date`")
+
+        'Else
+        '    RefreshADgv(dgvCollections, "SELECT C.`date` AS `DATE`,i.name AS `INSTITUTION NAME`, b.`BranchName`  AS `BRANCH`, coltrs.`name` AS `COLLECTOR NAME`, ctmrs.`name` AS `CUSTOMER NAME`" &
+        '                                ", c.id AS `TRANSACTION ID`,C.`trans_type` AS `TRANSACTION TYPE`, C.`reference` AS `REFERENCE`, C.`amount` AS `AMOUNT`, C.`status` AS `TRANSACTION STATUS`" &
+        '                                " FROM collections c " &
+        '                                " INNER Join institutions i  ON c.institution_id = i.id  " &
+        '                                " INNER JOIN branch b ON c.`Branchid`=b.`id` " &
+        '                                " INNER Join collectors coltrs  ON c.`collector_id`=coltrs.`id` " &
+        '                                " INNER JOIN customers ctmrs  ON c.`customer_id`=ctmrs.`id` " &
+        '                                " WHERE i.id = " & institutionId & "  and " & col &
+        '                                id & " AND (C.`date` between  '" & dtFrom.Value.Date.ToString("yyyy-MM-dd") & "' AND '" & dtTo.Value.Date.ToString("yyyy-MM-dd") & "')  ORDER BY  `Date`")
+        'End If
+
+    End Sub
+
+    Public Sub RefreshAttachDgv(dgvName As DataGridView, SQL As String)
+        If IsNothing(dgvName.DataSource) Then
+            dgvName.Rows.Clear()
+        End If
+        dgvName.DataSource = Nothing
+        Dim table As New DataTable()
+        Using cn As New MySqlConnection(str)
+            Using comm As New MySqlCommand(SQL, cn)
+                Using da As New MySqlDataAdapter(comm)
+                    Try
+                        Cursor.Current = Cursors.WaitCursor
+
+                        cn.Open()
+                        da.Fill(table)
+                        If table.Rows.Count > 0 Then
+                            dgvName.DataSource = New BindingSource(table, Nothing)
+                        End If
+                    Catch ex As Exception
+                        MsgBox("Contact Administrator!" & vbCrLf & "Error while connecting to SQL Server. " & vbCrLf & ex.Message & vbCrLf & ex.Source, MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "Server Error")
+                    Finally
+                        Cursor.Current = Cursors.Default
+                        If cn.State = ConnectionState.Open Then
+                            cn.Close()
+                        End If
+                    End Try
+                End Using
+            End Using
+        End Using
+    End Sub
+#End Region
+
 #Region "Saving"
     Public Sub Save(tlpMain As TableLayoutPanel, tableName As String, errError As ErrorProvider, sender As Button, txtEmailNN As TextBox, txtPasswordNN As TextBox, txtConfirmPasswordNN As TextBox, Optional field1 As Object = Nothing, Optional field2 As Object = Nothing, Optional field3 As Object = Nothing)
         Try

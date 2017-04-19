@@ -481,7 +481,7 @@ Public Class frmMain
 
     End Sub
 
-    Private Sub txtPhoneNumberNN_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPhoneNumberNN.KeyPress, txtIPhoneNumberNN.KeyPress, txtUPhoneNumberNN.KeyPress, txtCPhoneNumberNN.KeyPress
+    Private Sub txtPhoneNumberNN_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPhoneNumberNN.KeyPress, txtIPhoneNumberNN.KeyPress, txtUPhoneNumberNN.KeyPress, txtCPhoneNumberNN.KeyPress, txtcCollectorLimitNN.KeyPress
         Positive(sender, e)
     End Sub
 
@@ -513,6 +513,10 @@ Public Class frmMain
         Catch ex As Exception
             MsgBox("An error occured, please retry or contact Admin.")
         End Try
+    End Sub
+
+    Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
+
     End Sub
 
 End Class

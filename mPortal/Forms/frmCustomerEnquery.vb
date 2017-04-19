@@ -30,9 +30,9 @@
         TabControl2.SelectedIndex = 0
     End Sub
 
-    Private Sub dgvCollector_Click(sender As Object, e As EventArgs) Handles dgvCollector.Click
+    Private Sub dgvCollector_Click(sender As Object, e As EventArgs) Handles dgvCollector.Click, ToolStripMenuItem3.Click
         If dgvCollector.SelectedRows.Count = 1 Then
-            LoadCustomer("c.collector_id = ", dgvCollector.SelectedRows.Item(0).Cells(0).Value.ToString)
+            LoadCustomer("c.collector_id = ", dgvCollector.SelectedRows.Item(0).Cells(5).Value.ToString)
         End If
     End Sub
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
@@ -45,11 +45,11 @@
             LoadCustomer("c.branchid = ", dgvBranch.SelectedRows.Item(0).Cells(0).Value.ToString)
         End If
     End Sub
-    Private Sub ToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem3.Click
-        If dgvCollector.SelectedRows.Count = 1 Then
-            LoadCustomer("c.collector_id = ", dgvCollector.SelectedRows.Item(0).Cells(0).Value.ToString)
-        End If
-    End Sub
+    'Private Sub ToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem3.Click
+    '    If dgvCollector.SelectedRows.Count = 1 Then
+    '        LoadCustomer("c.collector_id = ", dgvCollector.SelectedRows.Item(0).Cells(5).Value.ToString)
+    '    End If
+    'End Sub
 
     Private Sub LoadCustomer(col As String, id As Integer)
         txtTotal.Text = 0.00
