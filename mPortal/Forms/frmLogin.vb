@@ -22,7 +22,7 @@ Public Class frmLogin
 
             Dim crypt As New CustomCrypt
             Dim key As String = "123"
-            Dim pass = crypt.Encrypt(txtPassword.Text, key)
+            Dim pass = GetMD5Hash(txtPassword.Text)
             Dim Sql As String = "SELECT  * FROM users WHERE name = '" & txtUserName.Text & "' AND password = '" & pass & "' LIMIT 0, 1"
 
 

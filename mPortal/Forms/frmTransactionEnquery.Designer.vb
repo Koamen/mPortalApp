@@ -23,24 +23,18 @@ Partial Class frmTransactionEnquery
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TabControl2 = New System.Windows.Forms.TabControl()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.dgvCollector = New System.Windows.Forms.DataGridView()
-        Me.CId = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CollectorName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cPhone = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cEmail = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cAddress = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cEmployeeNumber = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.dgvCollections = New System.Windows.Forms.DataGridView()
         Me.tDATE = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -49,9 +43,10 @@ Partial Class frmTransactionEnquery
         Me.tCollectorName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tCustomerName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tTransactionId = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AccNum = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tAmount = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tTransactionType = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tReference = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tAmount = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tTransactionStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.btnExit = New System.Windows.Forms.Button()
@@ -73,6 +68,15 @@ Partial Class frmTransactionEnquery
         Me.dtFrom = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.AccountNumber = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Balance = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Nominal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AccountDescription = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Details = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ChqNo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Debit = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Credit = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cmsCustLoad = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
@@ -80,6 +84,13 @@ Partial Class frmTransactionEnquery
         Me.cmsExport = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.cvs = New System.Windows.Forms.ToolStripMenuItem()
         Me.excel = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExportToAliasCBSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CId = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CollectorName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cPhone = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cEmail = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cAddress = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cEmployeeNumber = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BranchName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Address = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -99,6 +110,7 @@ Partial Class frmTransactionEnquery
         CType(Me.dgvBranch, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.cmsCustLoad.SuspendLayout()
         Me.cmsExport.SuspendLayout()
         Me.SuspendLayout()
@@ -152,9 +164,9 @@ Partial Class frmTransactionEnquery
         '
         Me.dgvCollector.AllowUserToAddRows = False
         Me.dgvCollector.AllowUserToDeleteRows = False
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(212, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(252, Byte), Integer))
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Segoe UI", 7.8!)
-        Me.dgvCollector.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(212, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(252, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 7.8!)
+        Me.dgvCollector.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvCollector.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvCollector.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CId, Me.CollectorName, Me.cPhone, Me.cEmail, Me.cAddress, Me.cEmployeeNumber})
         Me.dgvCollector.Dock = System.Windows.Forms.DockStyle.Fill
@@ -162,60 +174,18 @@ Partial Class frmTransactionEnquery
         Me.dgvCollector.Margin = New System.Windows.Forms.Padding(4)
         Me.dgvCollector.Name = "dgvCollector"
         Me.dgvCollector.ReadOnly = True
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvCollector.RowHeadersDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvCollector.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvCollector.RowHeadersWidth = 20
         Me.dgvCollector.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvCollector.Size = New System.Drawing.Size(982, 517)
         Me.dgvCollector.TabIndex = 4
-        '
-        'CId
-        '
-        Me.CId.HeaderText = "CId"
-        Me.CId.Name = "CId"
-        Me.CId.ReadOnly = True
-        Me.CId.Visible = False
-        '
-        'CollectorName
-        '
-        Me.CollectorName.HeaderText = "COLLECTOR NAME"
-        Me.CollectorName.Name = "CollectorName"
-        Me.CollectorName.ReadOnly = True
-        Me.CollectorName.Width = 300
-        '
-        'cPhone
-        '
-        Me.cPhone.HeaderText = "PHONE"
-        Me.cPhone.Name = "cPhone"
-        Me.cPhone.ReadOnly = True
-        Me.cPhone.Width = 130
-        '
-        'cEmail
-        '
-        Me.cEmail.HeaderText = "EMAIL"
-        Me.cEmail.Name = "cEmail"
-        Me.cEmail.ReadOnly = True
-        Me.cEmail.Width = 180
-        '
-        'cAddress
-        '
-        Me.cAddress.HeaderText = "ADDRESS"
-        Me.cAddress.Name = "cAddress"
-        Me.cAddress.ReadOnly = True
-        Me.cAddress.Width = 220
-        '
-        'cEmployeeNumber
-        '
-        Me.cEmployeeNumber.HeaderText = "EMPLOYEE NUMBER"
-        Me.cEmployeeNumber.Name = "cEmployeeNumber"
-        Me.cEmployeeNumber.ReadOnly = True
-        Me.cEmployeeNumber.Width = 120
         '
         'TabPage4
         '
@@ -233,33 +203,33 @@ Partial Class frmTransactionEnquery
         '
         Me.dgvCollections.AllowUserToAddRows = False
         Me.dgvCollections.AllowUserToDeleteRows = False
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(CType(CType(212, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(252, Byte), Integer))
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Segoe UI", 7.8!)
-        Me.dgvCollections.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(212, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(252, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 7.8!)
+        Me.dgvCollections.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvCollections.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvCollections.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.tDATE, Me.tInstitutionName, Me.tBranch, Me.tCollectorName, Me.tCustomerName, Me.tTransactionId, Me.tTransactionType, Me.tReference, Me.tAmount, Me.tTransactionStatus})
+        Me.dgvCollections.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.tDATE, Me.tInstitutionName, Me.tBranch, Me.tCollectorName, Me.tCustomerName, Me.tTransactionId, Me.AccNum, Me.tAmount, Me.tTransactionType, Me.tReference, Me.tTransactionStatus})
         Me.dgvCollections.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvCollections.Location = New System.Drawing.Point(4, 4)
         Me.dgvCollections.Margin = New System.Windows.Forms.Padding(4)
         Me.dgvCollections.Name = "dgvCollections"
         Me.dgvCollections.ReadOnly = True
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvCollections.RowHeadersDefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvCollections.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvCollections.RowHeadersWidth = 20
         Me.dgvCollections.Size = New System.Drawing.Size(982, 517)
         Me.dgvCollections.TabIndex = 5
         '
         'tDATE
         '
-        DataGridViewCellStyle12.Format = "D"
-        DataGridViewCellStyle12.NullValue = Nothing
-        Me.tDATE.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle4.Format = "D"
+        DataGridViewCellStyle4.NullValue = Nothing
+        Me.tDATE.DefaultCellStyle = DataGridViewCellStyle4
         Me.tDATE.HeaderText = "DATE"
         Me.tDATE.Name = "tDATE"
         Me.tDATE.ReadOnly = True
@@ -294,6 +264,21 @@ Partial Class frmTransactionEnquery
         Me.tTransactionId.Name = "tTransactionId"
         Me.tTransactionId.ReadOnly = True
         '
+        'AccNum
+        '
+        Me.AccNum.HeaderText = "ACCOUNT NUMBER"
+        Me.AccNum.Name = "AccNum"
+        Me.AccNum.ReadOnly = True
+        '
+        'tAmount
+        '
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle5.Format = "N2"
+        Me.tAmount.DefaultCellStyle = DataGridViewCellStyle5
+        Me.tAmount.HeaderText = "AMOUNT"
+        Me.tAmount.Name = "tAmount"
+        Me.tAmount.ReadOnly = True
+        '
         'tTransactionType
         '
         Me.tTransactionType.HeaderText = "TRANSACTION TYPE"
@@ -305,15 +290,6 @@ Partial Class frmTransactionEnquery
         Me.tReference.HeaderText = "REFERENCE"
         Me.tReference.Name = "tReference"
         Me.tReference.ReadOnly = True
-        '
-        'tAmount
-        '
-        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle13.Format = "N2"
-        Me.tAmount.DefaultCellStyle = DataGridViewCellStyle13
-        Me.tAmount.HeaderText = "AMOUNT"
-        Me.tAmount.Name = "tAmount"
-        Me.tAmount.ReadOnly = True
         '
         'tTransactionStatus
         '
@@ -445,9 +421,9 @@ Partial Class frmTransactionEnquery
         '
         Me.dgvBranch.AllowUserToAddRows = False
         Me.dgvBranch.AllowUserToDeleteRows = False
-        DataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(CType(CType(212, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(252, Byte), Integer))
-        DataGridViewCellStyle15.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.dgvBranch.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(212, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(252, Byte), Integer))
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.dgvBranch.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
         Me.dgvBranch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvBranch.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id, Me.BranchName, Me.Address, Me.Mobile, Me.Telephone})
         Me.TableLayoutPanel2.SetColumnSpan(Me.dgvBranch, 2)
@@ -456,14 +432,14 @@ Partial Class frmTransactionEnquery
         Me.dgvBranch.Margin = New System.Windows.Forms.Padding(4)
         Me.dgvBranch.Name = "dgvBranch"
         Me.dgvBranch.ReadOnly = True
-        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle16.Font = New System.Drawing.Font("Segoe UI", 8.0!)
-        DataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvBranch.RowHeadersDefaultCellStyle = DataGridViewCellStyle16
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvBranch.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.dgvBranch.RowHeadersWidth = 20
         Me.dgvBranch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvBranch.Size = New System.Drawing.Size(378, 570)
@@ -515,12 +491,14 @@ Partial Class frmTransactionEnquery
         Me.TableLayoutPanel3.Controls.Add(Me.dtFrom, 3, 1)
         Me.TableLayoutPanel3.Controls.Add(Me.Label2, 4, 1)
         Me.TableLayoutPanel3.Controls.Add(Me.Label5, 0, 0)
+        Me.TableLayoutPanel3.Controls.Add(Me.DataGridView1, 5, 0)
         Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel3.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 2
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.02128!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.97872!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(992, 94)
         Me.TableLayoutPanel3.TabIndex = 4
         '
@@ -572,56 +550,171 @@ Partial Class frmTransactionEnquery
         Me.Label5.TabIndex = 4
         Me.Label5.Text = "TRANSACTION ENQUIRY"
         '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.AccountNumber, Me.Balance, Me.Nominal, Me.AccountDescription, Me.Details, Me.ChqNo, Me.Debit, Me.Credit})
+        Me.DataGridView1.Location = New System.Drawing.Point(837, 3)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.RowTemplate.Height = 24
+        Me.DataGridView1.Size = New System.Drawing.Size(152, 57)
+        Me.DataGridView1.TabIndex = 5
+        Me.DataGridView1.Visible = False
+        '
+        'AccountNumber
+        '
+        Me.AccountNumber.HeaderText = "ACCOUNT NUMBER"
+        Me.AccountNumber.Name = "AccountNumber"
+        Me.AccountNumber.ReadOnly = True
+        Me.AccountNumber.Width = 80
+        '
+        'Balance
+        '
+        Me.Balance.HeaderText = "BALANCE"
+        Me.Balance.Name = "Balance"
+        Me.Balance.ReadOnly = True
+        Me.Balance.Width = 80
+        '
+        'Nominal
+        '
+        Me.Nominal.HeaderText = "NOMINAL"
+        Me.Nominal.Name = "Nominal"
+        Me.Nominal.ReadOnly = True
+        Me.Nominal.Width = 80
+        '
+        'AccountDescription
+        '
+        Me.AccountDescription.HeaderText = "ACCOUNT DESCRIPTION"
+        Me.AccountDescription.Name = "AccountDescription"
+        Me.AccountDescription.ReadOnly = True
+        Me.AccountDescription.Width = 80
+        '
+        'Details
+        '
+        Me.Details.HeaderText = "DETAILS"
+        Me.Details.Name = "Details"
+        Me.Details.ReadOnly = True
+        Me.Details.Width = 80
+        '
+        'ChqNo
+        '
+        Me.ChqNo.HeaderText = "CHQ No."
+        Me.ChqNo.Name = "ChqNo"
+        Me.ChqNo.ReadOnly = True
+        '
+        'Debit
+        '
+        Me.Debit.HeaderText = "DEBIT"
+        Me.Debit.Name = "Debit"
+        Me.Debit.ReadOnly = True
+        '
+        'Credit
+        '
+        Me.Credit.HeaderText = "CREDIT"
+        Me.Credit.Name = "Credit"
+        Me.Credit.ReadOnly = True
+        '
         'cmsCustLoad
         '
         Me.cmsCustLoad.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.cmsCustLoad.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.ToolStripMenuItem2, Me.ToolStripMenuItem3})
         Me.cmsCustLoad.Name = "cmsExport"
-        Me.cmsCustLoad.Size = New System.Drawing.Size(262, 82)
+        Me.cmsCustLoad.Size = New System.Drawing.Size(256, 76)
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(261, 26)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(255, 24)
         Me.ToolStripMenuItem1.Text = "All Institution's Transaction"
         '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(261, 26)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(255, 24)
         Me.ToolStripMenuItem2.Text = "Branch's Transactions"
         '
         'ToolStripMenuItem3
         '
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(261, 26)
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(255, 24)
         Me.ToolStripMenuItem3.Text = "Collector's Transactions"
         '
         'cmsExport
         '
         Me.cmsExport.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.cmsExport.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.cvs, Me.excel})
+        Me.cmsExport.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.cvs, Me.excel, Me.ExportToAliasCBSToolStripMenuItem})
         Me.cmsExport.Name = "cmsExport"
-        Me.cmsExport.Size = New System.Drawing.Size(187, 56)
+        Me.cmsExport.Size = New System.Drawing.Size(209, 76)
         '
         'cvs
         '
         Me.cvs.Name = "cvs"
-        Me.cvs.Size = New System.Drawing.Size(186, 26)
+        Me.cvs.Size = New System.Drawing.Size(208, 24)
         Me.cvs.Text = "Export To CSV"
         '
         'excel
         '
         Me.excel.Name = "excel"
-        Me.excel.Size = New System.Drawing.Size(186, 26)
+        Me.excel.Size = New System.Drawing.Size(208, 24)
         Me.excel.Text = "Export To Excel"
+        '
+        'ExportToAliasCBSToolStripMenuItem
+        '
+        Me.ExportToAliasCBSToolStripMenuItem.Name = "ExportToAliasCBSToolStripMenuItem"
+        Me.ExportToAliasCBSToolStripMenuItem.Size = New System.Drawing.Size(208, 24)
+        Me.ExportToAliasCBSToolStripMenuItem.Text = "Export To Alias CBS"
+        '
+        'CId
+        '
+        Me.CId.HeaderText = "Id"
+        Me.CId.Name = "CId"
+        Me.CId.ReadOnly = True
+        Me.CId.Width = 50
+        '
+        'CollectorName
+        '
+        Me.CollectorName.HeaderText = "COLLECTOR NAME"
+        Me.CollectorName.Name = "CollectorName"
+        Me.CollectorName.ReadOnly = True
+        Me.CollectorName.Width = 300
+        '
+        'cPhone
+        '
+        Me.cPhone.HeaderText = "PHONE"
+        Me.cPhone.Name = "cPhone"
+        Me.cPhone.ReadOnly = True
+        Me.cPhone.Width = 130
+        '
+        'cEmail
+        '
+        Me.cEmail.HeaderText = "EMAIL"
+        Me.cEmail.Name = "cEmail"
+        Me.cEmail.ReadOnly = True
+        Me.cEmail.Width = 180
+        '
+        'cAddress
+        '
+        Me.cAddress.HeaderText = "ADDRESS"
+        Me.cAddress.Name = "cAddress"
+        Me.cAddress.ReadOnly = True
+        Me.cAddress.Width = 220
+        '
+        'cEmployeeNumber
+        '
+        Me.cEmployeeNumber.HeaderText = "EMPLOYEE NUMBER"
+        Me.cEmployeeNumber.Name = "cEmployeeNumber"
+        Me.cEmployeeNumber.ReadOnly = True
+        Me.cEmployeeNumber.Width = 120
         '
         'Id
         '
         Me.Id.HeaderText = "Id"
         Me.Id.Name = "Id"
         Me.Id.ReadOnly = True
-        Me.Id.Visible = False
+        Me.Id.Width = 50
         '
         'BranchName
         '
@@ -678,6 +771,7 @@ Partial Class frmTransactionEnquery
         Me.Panel1.ResumeLayout(False)
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel3.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.cmsCustLoad.ResumeLayout(False)
         Me.cmsExport.ResumeLayout(False)
         Me.ResumeLayout(False)
@@ -710,16 +804,6 @@ Partial Class frmTransactionEnquery
     Friend WithEvents Label5 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents tDATE As DataGridViewTextBoxColumn
-    Friend WithEvents tInstitutionName As DataGridViewTextBoxColumn
-    Friend WithEvents tBranch As DataGridViewTextBoxColumn
-    Friend WithEvents tCollectorName As DataGridViewTextBoxColumn
-    Friend WithEvents tCustomerName As DataGridViewTextBoxColumn
-    Friend WithEvents tTransactionId As DataGridViewTextBoxColumn
-    Friend WithEvents tTransactionType As DataGridViewTextBoxColumn
-    Friend WithEvents tReference As DataGridViewTextBoxColumn
-    Friend WithEvents tAmount As DataGridViewTextBoxColumn
-    Friend WithEvents tTransactionStatus As DataGridViewTextBoxColumn
     Friend WithEvents cmsCustLoad As ContextMenuStrip
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
@@ -727,6 +811,27 @@ Partial Class frmTransactionEnquery
     Friend WithEvents cmsExport As ContextMenuStrip
     Friend WithEvents cvs As ToolStripMenuItem
     Friend WithEvents excel As ToolStripMenuItem
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents AccountNumber As DataGridViewTextBoxColumn
+    Friend WithEvents Balance As DataGridViewTextBoxColumn
+    Friend WithEvents Nominal As DataGridViewTextBoxColumn
+    Friend WithEvents AccountDescription As DataGridViewTextBoxColumn
+    Friend WithEvents Details As DataGridViewTextBoxColumn
+    Friend WithEvents ChqNo As DataGridViewTextBoxColumn
+    Friend WithEvents Debit As DataGridViewTextBoxColumn
+    Friend WithEvents Credit As DataGridViewTextBoxColumn
+    Friend WithEvents tDATE As DataGridViewTextBoxColumn
+    Friend WithEvents tInstitutionName As DataGridViewTextBoxColumn
+    Friend WithEvents tBranch As DataGridViewTextBoxColumn
+    Friend WithEvents tCollectorName As DataGridViewTextBoxColumn
+    Friend WithEvents tCustomerName As DataGridViewTextBoxColumn
+    Friend WithEvents tTransactionId As DataGridViewTextBoxColumn
+    Friend WithEvents AccNum As DataGridViewTextBoxColumn
+    Friend WithEvents tAmount As DataGridViewTextBoxColumn
+    Friend WithEvents tTransactionType As DataGridViewTextBoxColumn
+    Friend WithEvents tReference As DataGridViewTextBoxColumn
+    Friend WithEvents tTransactionStatus As DataGridViewTextBoxColumn
+    Friend WithEvents ExportToAliasCBSToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CId As DataGridViewTextBoxColumn
     Friend WithEvents CollectorName As DataGridViewTextBoxColumn
     Friend WithEvents cPhone As DataGridViewTextBoxColumn

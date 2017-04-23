@@ -22,12 +22,24 @@ Public Class frmMain
         cboCInstitutionNN.SelectedValue = institutionId
         cboCInstitutionNN.Enabled = 0
         RefreshAComboBox(cboCBranchNN, "SELECT  DISTINCT(BranchName) AS BranchName, id AS BranchID FROM branch WHERE Institution_id = " & institutionId & " ORDER BY  BranchName", "BranchName", "BranchID")
+        RefreshAComboBox(cboCCollectors, "SELECT  DISTINCT(NAME) AS `CollectorName`, id AS `CollectorID` FROM collectors WHERE institution_id =  " & institutionId & "  ORDER BY  CollectorName ", "CollectorName", "CollectorID")
+        RefreshAComboBox(cboUUsers, "SELECT  DISTINCT(NAME) AS `UserName`, id AS `UserID` FROM users WHERE institution_id =  " & institutionId & "  ORDER BY  UserName ", "UserName", "UserID")
+
 
         If UserRole = "super_user" Then
             cboIInstitutionNN.Enabled = True
             cboUInstitutionNN.Enabled = True
             cboCInstitutionNN.Enabled = True
+            tlpIMain.Enabled = True
         End If
+
+        DisableAllControls(tlpCMain)
+        DisableAllControls(tlpUMain)
+        btnUSave.Text = "Add"
+        'btnISave.Text = "Add"
+        btnCSave.Text = "Add"
+        'btnSave.Text = "Add"
+
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
@@ -451,9 +463,9 @@ Public Class frmMain
         End Try
     End Sub
 
-
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         ClearAllControls(tlpMain)
+        btnCSave.Text = "Add"
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles btnExit.Click, btnIExit.Click, btnUExit.Click, btnCExit.Click
@@ -461,11 +473,21 @@ Public Class frmMain
     End Sub
 
     Private Sub btnISave_Click(sender As Object, e As EventArgs) Handles btnISave.Click
-        Save(tlpIMain, "institution_admins", errError, sender, txtIEmailNN, txtIPasswordNN, txtIConfirmPasswordNN, txtIUserNameNN, txtIEmailNN, txtIUserNameNN)
+        Save(tlpIMain, "institution_admins", errError, sender, txtIEmailNN, txtIPasswordNN, txtIConfirmPasswordNN, txtIUserNameNN, txtIEmailNN, txtIUserNameNN, cboCCollectors)
     End Sub
 
     Private Sub btnUSave_Click(sender As Object, e As EventArgs) Handles btnUSave.Click
-        Save(tlpUMain, "users", errError, sender, txtUEmailNN, txtUPasswordNN, txtUConfimPasswordNN, txtUEmployeeNumberNN, txtUEmailNN, txtUUserNameNN)
+        If btnUSave.Text = "Add" OrElse btnUSave.Text = "Edit" Then
+            EnableAllControls(tlpUMain)
+            cboUUsers.Enabled = False
+            btnUSave.Text = "Save"
+            Exit Sub
+        End If
+        Save(tlpUMain, "users", errError, sender, txtUEmailNN, txtUPasswordNN, txtUConfimPasswordNN, txtUEmployeeNumberNN, txtUEmailNN, txtUUserNameNN, cboUUsers)
+        If cboUUsers.Enabled Then
+            btnUSave.Text = "Add"
+            RefreshAComboBox(cboUUsers, "SELECT  DISTINCT(NAME) AS `UserName`, id AS `UserID` FROM users WHERE institution_id =  " & institutionId & "  ORDER BY  UserName ", "UserName", "UserID")
+        End If
     End Sub
 
     Private Sub btnICancel_Click(sender As Object, e As EventArgs) Handles btnICancel.Click
@@ -474,11 +496,24 @@ Public Class frmMain
 
     Private Sub btnUCancel_Click(sender As Object, e As EventArgs) Handles btnUCancel.Click
         ClearAllControls(tlpUMain)
+        cboUUsers.SelectedIndex = -1
+        DisableAllControls(tlpUMain)
+        btnUSave.Text = "Add"
+        cboUUsers.Enabled = True
     End Sub
 
     Private Sub btnCSave_Click_1(sender As Object, e As EventArgs) Handles btnCSave.Click
-        Save(tlpCMain, "collectors", errError, sender, txtCEmailNN, txtCPasswordNN, txtCConfirmPasswordNN, txtCEmployeeNumberNN, txtCEmailNN, txtCUserNameNN)
-
+        If btnCSave.Text = "Add" OrElse btnCSave.Text = "Edit" Then
+            EnableAllControls(tlpCMain)
+            cboCCollectors.Enabled = False
+            btnCSave.Text = "Save"
+            Exit Sub
+        End If
+        Save(tlpCMain, "collectors", errError, sender, txtCEmailNN, txtCPasswordNN, txtCConfirmPasswordNN, txtCEmployeeNumberNN, txtCEmailNN, txtCUserNameNN, cboCCollectors)
+        If cboCCollectors.Enabled Then
+            btnCSave.Text = "Add"
+            RefreshAComboBox(cboCCollectors, "SELECT  DISTINCT(NAME) AS `CollectorName`, id AS `CollectorID` FROM collectors WHERE institution_id =  " & institutionId & "  ORDER BY  CollectorName ", "CollectorName", "CollectorID")
+        End If
     End Sub
 
     Private Sub txtPhoneNumberNN_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPhoneNumberNN.KeyPress, txtIPhoneNumberNN.KeyPress, txtUPhoneNumberNN.KeyPress, txtCPhoneNumberNN.KeyPress, txtcCollectorLimitNN.KeyPress
@@ -515,8 +550,76 @@ Public Class frmMain
         End Try
     End Sub
 
-    Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
+    Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboCCollectors.SelectedIndexChanged
+        ClearAllControls(tlpCMain)
+
+        If cboCCollectors.SelectedIndex > -1 Then
+            On Error Resume Next
+            Dim collector = FindEntity("SELECT `id`, `name`, `phone`,`email`, `address`,`password`, `pin`, `institution_id`, `status`, `collectorlimit`, `Branchid`, `employeenumber`, `date_created` FROM `mcollect`.`collectors` WHERE id = " & cboCCollectors.SelectedValue)
+            If Not IsNothing(collector) Then
+                On Error Resume Next
+                cboCInstitutionNN.SelectedValue = collector.Rows(0).Item("institution_id")
+                On Error Resume Next
+                cboCBranchNN.SelectedValue = collector.Rows(0).Item("branchid")
+                On Error Resume Next
+                txtCEmailNN.Text = collector.Rows(0).Item("email")
+                On Error Resume Next
+                txtCEmployeeNumberNN.Text = collector.Rows(0).Item("employeenumber")
+                On Error Resume Next
+                txtCUserNameNN.Text = collector.Rows(0).Item("name")
+                On Error Resume Next
+                txtCPhoneNumberNN.Text = collector.Rows(0).Item("phone")
+                ''On Error Resume Next
+                ''txtCPasswordNN.Text = collector.Rows(0).Item("password")
+                ''On Error Resume Next
+                ''txtCConfirmPasswordNN.Text = collector.Rows(0).Item("password")
+                On Error Resume Next
+                txtCAddress.Text = collector.Rows(0).Item("address")
+                On Error Resume Next
+                txtcCollectorLimitNN.Text = collector.Rows(0).Item("collectorlimit")
+                On Error Resume Next
+                cboCStatusNN.Text = collector.Rows(0).Item("status")
+                btnCSave.Text = "Edit"
+            End If
+        End If
 
     End Sub
 
+    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
+        ClearAllControls(tlpCMain)
+        cboCCollectors.SelectedIndex = -1
+        DisableAllControls(tlpCMain)
+        btnCSave.Text = "Add"
+        cboCCollectors.Enabled = True
+    End Sub
+
+    Private Sub cboUUsers_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboUUsers.SelectedIndexChanged
+        ClearAllControls(tlpUMain)
+
+        If cboUUsers.SelectedIndex > -1 Then
+            On Error Resume Next
+            Dim user = FindEntity("SELECT `id`, `name`, `phone`,`email`, `address`,`password`, `institution_id`, `status`, `role`, `Branchid`, `employeenumber` FROM `users` WHERE id = " & cboUUsers.SelectedValue)
+            If Not IsNothing(user) Then
+                On Error Resume Next
+                cboUInstitutionNN.SelectedValue = user.Rows(0).Item("institution_id")
+                On Error Resume Next
+                cboUBranchNN.SelectedValue = user.Rows(0).Item("branchid")
+                On Error Resume Next
+                txtUEmailNN.Text = user.Rows(0).Item("email")
+                On Error Resume Next
+                txtUEmployeeNumberNN.Text = user.Rows(0).Item("employeenumber")
+                On Error Resume Next
+                txtUUserNameNN.Text = user.Rows(0).Item("name")
+                On Error Resume Next
+                txtUPhoneNumberNN.Text = user.Rows(0).Item("phone")
+                On Error Resume Next
+                txtUAddress.Text = user.Rows(0).Item("address")
+                On Error Resume Next
+                txtUUserRoleNN.Text = user.Rows(0).Item("role")
+                On Error Resume Next
+                txtUUserStatusNN.Text = user.Rows(0).Item("status")
+                btnUSave.Text = "Edit"
+            End If
+        End If
+    End Sub
 End Class

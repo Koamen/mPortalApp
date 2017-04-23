@@ -281,6 +281,9 @@
   <ItemGroup>
     <None Include="Resources\Refresh_64px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\^1ECCA08C2C988543629CC5AC5E4B3BB578726F80A17EB21483^pimgpsh_fullsize_distr.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

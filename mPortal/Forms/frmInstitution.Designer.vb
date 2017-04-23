@@ -146,7 +146,7 @@ Partial Class frmInstitution
         Me.txtInstitutionNameNN.MaxLength = 250
         Me.txtInstitutionNameNN.Name = "txtInstitutionNameNN"
         Me.txtInstitutionNameNN.Size = New System.Drawing.Size(457, 30)
-        Me.txtInstitutionNameNN.TabIndex = 0
+        Me.txtInstitutionNameNN.TabIndex = 6
         Me.txtInstitutionNameNN.Tag = "name"
         '
         'txtShortNameNN
@@ -159,7 +159,7 @@ Partial Class frmInstitution
         Me.txtShortNameNN.MaxLength = 12
         Me.txtShortNameNN.Name = "txtShortNameNN"
         Me.txtShortNameNN.Size = New System.Drawing.Size(149, 30)
-        Me.txtShortNameNN.TabIndex = 1
+        Me.txtShortNameNN.TabIndex = 7
         Me.txtShortNameNN.Tag = "short_name"
         '
         'Label3
@@ -193,7 +193,7 @@ Partial Class frmInstitution
         Me.txtPhoneNumberNN.MaxLength = 16
         Me.txtPhoneNumberNN.Name = "txtPhoneNumberNN"
         Me.txtPhoneNumberNN.Size = New System.Drawing.Size(300, 30)
-        Me.txtPhoneNumberNN.TabIndex = 2
+        Me.txtPhoneNumberNN.TabIndex = 8
         Me.txtPhoneNumberNN.Tag = "phone"
         '
         'Label5
@@ -217,7 +217,7 @@ Partial Class frmInstitution
         Me.txtAddressNN.MaxLength = 60
         Me.txtAddressNN.Name = "txtAddressNN"
         Me.txtAddressNN.Size = New System.Drawing.Size(457, 30)
-        Me.txtAddressNN.TabIndex = 4
+        Me.txtAddressNN.TabIndex = 10
         Me.txtAddressNN.Tag = "address"
         '
         'Label8
@@ -255,7 +255,7 @@ Partial Class frmInstitution
         Me.txtEmailAddressNN.MaxLength = 60
         Me.txtEmailAddressNN.Name = "txtEmailAddressNN"
         Me.txtEmailAddressNN.Size = New System.Drawing.Size(305, 30)
-        Me.txtEmailAddressNN.TabIndex = 3
+        Me.txtEmailAddressNN.TabIndex = 9
         Me.txtEmailAddressNN.Tag = "email"
         '
         'Label1
@@ -309,7 +309,7 @@ Partial Class frmInstitution
         Me.btnBrowse.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnBrowse.Name = "btnBrowse"
         Me.btnBrowse.Size = New System.Drawing.Size(150, 33)
-        Me.btnBrowse.TabIndex = 6
+        Me.btnBrowse.TabIndex = 12
         Me.btnBrowse.Text = "Browse"
         Me.btnBrowse.UseVisualStyleBackColor = True
         '
@@ -368,7 +368,7 @@ Partial Class frmInstitution
         Me.txtLogoThumbnailNN.MaxLength = 64
         Me.txtLogoThumbnailNN.Name = "txtLogoThumbnailNN"
         Me.txtLogoThumbnailNN.Size = New System.Drawing.Size(300, 30)
-        Me.txtLogoThumbnailNN.TabIndex = 23
+        Me.txtLogoThumbnailNN.TabIndex = 13
         Me.txtLogoThumbnailNN.TabStop = False
         Me.txtLogoThumbnailNN.Tag = "thumbnail_url"
         Me.txtLogoThumbnailNN.Visible = False
@@ -394,7 +394,7 @@ Partial Class frmInstitution
         Me.cboStatusNN.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cboStatusNN.Name = "cboStatusNN"
         Me.cboStatusNN.Size = New System.Drawing.Size(151, 33)
-        Me.cboStatusNN.TabIndex = 33
+        Me.cboStatusNN.TabIndex = 11
         Me.cboStatusNN.Tag = "status"
         '
         'TabPage2

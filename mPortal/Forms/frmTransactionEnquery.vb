@@ -41,6 +41,7 @@ Public Class frmTransactionEnquery
         If cboInstitution.SelectedIndex > -1 Then
             LoadTransactions("c.institution_id = ", cboInstitution.SelectedValue, dgvCollections, dtFrom, dtTo)
             ShowTransactions()
+
         End If
     End Sub
     Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
@@ -55,12 +56,14 @@ Public Class frmTransactionEnquery
     End Sub
 
     Private Sub ShowTransactions()
+        DataGridView1.Rows.Clear()
         txtTotal.Text = 0.00
         TabControl2.SelectedIndex = 1
         Dim total As Decimal = 0D
         If dgvCollections.Rows.Count > 0 Then
             For Each r In dgvCollections.Rows
-                total += CDec(r.cells(8).value)
+                total += CDec(r.cells("tAmount").value)
+                DataGridView1.Rows.Add(r.cells("AccNum").value.ToString, 0D, "", "", r.cells("tReference").value.ToString, "", 0D, String.Format("{0:N2}", r.cells("tAmount").value))
             Next
         End If
         txtTotal.Text = String.Format("{0:N2}", total)
@@ -69,88 +72,54 @@ Public Class frmTransactionEnquery
         cmsExport.Show(btnExport, 0, btnExport.Height)
     End Sub
 
-    Private Sub releaseObject(ByVal obj As Object)
-        Try
-            System.Runtime.InteropServices.Marshal.ReleaseComObject(obj)
-            obj = Nothing
-        Catch ex As Exception
-            obj = Nothing
-        Finally
-            GC.Collect()
-        End Try
-    End Sub
+
 
     Private Sub btnReload_Click(sender As Object, e As EventArgs) Handles btnReload.Click
         cmsCustLoad.Show(btnReload, 0, btnReload.Height)
     End Sub
 
     Private Sub ExportToCSVToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles cvs.Click
-        If dgvCollections.Rows.Count > 0 Then
-            Dim headers = (From header As DataGridViewColumn In dgvCollections.Columns.Cast(Of DataGridViewColumn)()
-                           Select header.HeaderText).ToArray
-            Dim rows = From row As DataGridViewRow In dgvCollections.Rows.Cast(Of DataGridViewRow)()
-                       Where Not row.IsNewRow
-                       Select Array.ConvertAll(row.Cells.Cast(Of DataGridViewCell).ToArray, Function(c) If(c.Value IsNot Nothing, c.Value.ToString, ""))
+        Try
+            Cursor.Current = Cursors.WaitCursor
 
-            Dim saveFileDialog1 As New SaveFileDialog()
-            saveFileDialog1.Filter = "txt files (*.txt)|*.csv"
-            saveFileDialog1.FilterIndex = 2
-            saveFileDialog1.RestoreDirectory = True
+            If dgvCollections.Rows.Count > 0 Then
+                Dim headers = (From header As DataGridViewColumn In dgvCollections.Columns.Cast(Of DataGridViewColumn)()
+                               Select header.HeaderText).ToArray
+                Dim rows = From row As DataGridViewRow In dgvCollections.Rows.Cast(Of DataGridViewRow)()
+                           Where Not row.IsNewRow
+                           Select Array.ConvertAll(row.Cells.Cast(Of DataGridViewCell).ToArray, Function(c) If(c.Value IsNot Nothing, c.Value.ToString, ""))
 
-            If saveFileDialog1.ShowDialog() = DialogResult.OK Then
-                Dim fileName As String = saveFileDialog1.FileName.ToString.Substring(0, saveFileDialog1.FileName.ToString.Length - 4) & " FROM " & dtFrom.Value.Date.ToString("dd-MM-yyyy") & " TO " & dtTo.Value.Date.ToString("dd-MM-yyyy") & ".txt"
-                Using sw As New StreamWriter(fileName)
-                    sw.WriteLine(String.Join(",", headers))
-                    For Each r In rows
-                        sw.WriteLine(String.Join(",", r))
-                    Next
-                    If (sw IsNot Nothing) Then
-                        sw.Close()
-                    End If
-                End Using
-                Process.Start(fileName)
+                Dim saveFileDialog1 As New SaveFileDialog()
+                saveFileDialog1.Filter = "txt files (*.txt)|*.csv"
+                saveFileDialog1.FilterIndex = 2
+                saveFileDialog1.RestoreDirectory = True
+
+                If saveFileDialog1.ShowDialog() = DialogResult.OK Then
+                    Dim fileName As String = saveFileDialog1.FileName.ToString.Substring(0, saveFileDialog1.FileName.ToString.Length - 4) & " FROM " & dtFrom.Value.Date.ToString("dd-MM-yyyy") & " TO " & dtTo.Value.Date.ToString("dd-MM-yyyy") & ".txt"
+                    Using sw As New StreamWriter(fileName)
+                        sw.WriteLine(String.Join(",", headers))
+                        For Each r In rows
+                            sw.WriteLine(String.Join(",", r))
+                        Next
+                        If (sw IsNot Nothing) Then
+                            sw.Close()
+                        End If
+                    End Using
+                    Process.Start(fileName)
+                End If
             End If
-        End If
+        Catch ex As Exception
+        Finally
+            Cursor.Current = Cursors.Default
+        End Try
     End Sub
 
     Private Sub excel_Click(sender As Object, e As EventArgs) Handles excel.Click
-        Dim xlApp As Microsoft.Office.Interop.Excel.Application
-        Dim xlWorkBook As Workbook
-        Dim xlWorkSheet As Worksheet
-        Dim misValue As Object = Reflection.Missing.Value
-        Dim i As Integer
-        Dim j As Integer
-
-        xlApp = New ApplicationClass
-        xlWorkBook = xlApp.Workbooks.Add(misValue)
-        xlWorkSheet = xlWorkBook.Sheets("sheet1")
-
-
-        For i = 0 To dgvCollections.RowCount - 2
-            For j = 0 To dgvCollections.ColumnCount - 1
-                For k As Integer = 1 To dgvCollections.Columns.Count
-                    xlWorkSheet.Cells(1, k) = dgvCollections.Columns(k - 1).HeaderText
-                    xlWorkSheet.Cells(i + 2, j + 1) = dgvCollections(j, i).Value.ToString()
-                Next
-            Next
-        Next
-
-        Dim saveFileDialog1 As New SaveFileDialog()
-        saveFileDialog1.Filter = "Excel files (*.xlsx)|*.xlsx"
-        saveFileDialog1.FilterIndex = 2
-        saveFileDialog1.RestoreDirectory = True
-
-        If saveFileDialog1.ShowDialog() = DialogResult.OK Then
-            Dim fileName As String = saveFileDialog1.FileName.ToString.Substring(0, saveFileDialog1.FileName.ToString.Length - 5) & " FROM " & dtFrom.Value.Date.ToString("dd-MM-yyyy") & " TO " & dtTo.Value.Date.ToString("dd-MM-yyyy") & ".xlsx"
-            ' xlWorkSheet.SaveAs("D:\vbexcel.xlsx")
-            xlWorkSheet.SaveAs(fileName)
-            xlWorkBook.Close()
-            xlApp.Quit()
-            releaseObject(xlApp)
-            releaseObject(xlWorkBook)
-            releaseObject(xlWorkSheet)
-
-            MsgBox("You can find the file " & fileName)
-        End If
+        exportToXLS(dgvCollections, dtFrom.Value.Date.ToString("dd-MM-yyyy"), dtTo.Value.Date.ToString("dd-MM-yyyy"))
     End Sub
+
+    Private Sub ExportToAliasCBSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExportToAliasCBSToolStripMenuItem.Click
+        exportToXLS(DataGridView1, dtFrom.Value.Date.ToString("dd-MM-yyyy"), dtTo.Value.Date.ToString("dd-MM-yyyy"))
+    End Sub
+
 End Class

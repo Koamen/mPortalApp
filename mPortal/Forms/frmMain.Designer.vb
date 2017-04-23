@@ -118,7 +118,7 @@ Partial Class frmMain
         Me.txtcCollectorLimitNN = New System.Windows.Forms.TextBox()
         Me.FlowLayoutPanel6 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label52 = New System.Windows.Forms.Label()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.cboCCollectors = New System.Windows.Forms.ComboBox()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.tlpUMain = New System.Windows.Forms.TableLayoutPanel()
         Me.Label37 = New System.Windows.Forms.Label()
@@ -139,7 +139,6 @@ Partial Class frmMain
         Me.txtUEmployeeNumberNN = New System.Windows.Forms.TextBox()
         Me.Label44 = New System.Windows.Forms.Label()
         Me.txtUPhoneNumberNN = New System.Windows.Forms.TextBox()
-        Me.Button7 = New System.Windows.Forms.Button()
         Me.txtUConfimPasswordNN = New System.Windows.Forms.TextBox()
         Me.Label45 = New System.Windows.Forms.Label()
         Me.txtUPasswordNN = New System.Windows.Forms.TextBox()
@@ -152,7 +151,7 @@ Partial Class frmMain
         Me.cboUBranchNN = New System.Windows.Forms.ComboBox()
         Me.FlowLayoutPanel7 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label53 = New System.Windows.Forms.Label()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.cboUUsers = New System.Windows.Forms.ComboBox()
         Me.errError = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -192,8 +191,8 @@ Partial Class frmMain
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage4)
+        Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl1.Location = New System.Drawing.Point(4, 4)
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(4)
@@ -380,7 +379,7 @@ Partial Class frmMain
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(83, 44)
         Me.btnSave.TabIndex = 0
-        Me.btnSave.Text = "Save"
+        Me.btnSave.Text = "Add"
         Me.btnSave.UseVisualStyleBackColor = False
         '
         'cboUserStatusNN
@@ -614,6 +613,7 @@ Partial Class frmMain
         Me.tlpIMain.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.tlpIMain.Size = New System.Drawing.Size(840, 554)
         Me.tlpIMain.TabIndex = 28
+        Me.tlpIMain.Visible = False
         '
         'Label11
         '
@@ -947,6 +947,7 @@ Partial Class frmMain
         'Label51
         '
         Me.Label51.AutoSize = True
+        Me.Label51.Enabled = False
         Me.Label51.Location = New System.Drawing.Point(3, 0)
         Me.Label51.Name = "Label51"
         Me.Label51.Size = New System.Drawing.Size(118, 17)
@@ -955,6 +956,7 @@ Partial Class frmMain
         '
         'ComboBox1
         '
+        Me.ComboBox1.Enabled = False
         Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(3, 20)
@@ -1123,7 +1125,7 @@ Partial Class frmMain
         Me.btnCSave.Name = "btnCSave"
         Me.btnCSave.Size = New System.Drawing.Size(83, 44)
         Me.btnCSave.TabIndex = 0
-        Me.btnCSave.Text = "Save"
+        Me.btnCSave.Text = "Add"
         Me.btnCSave.UseVisualStyleBackColor = False
         '
         'cboCStatusNN
@@ -1313,9 +1315,9 @@ Partial Class frmMain
         Me.Label33.Location = New System.Drawing.Point(52, 221)
         Me.Label33.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(84, 17)
+        Me.Label33.Size = New System.Drawing.Size(109, 17)
         Me.Label33.TabIndex = 10
-        Me.Label33.Text = "User Name*"
+        Me.Label33.Text = "Collector Name*"
         '
         'Label50
         '
@@ -1366,7 +1368,7 @@ Partial Class frmMain
         'FlowLayoutPanel6
         '
         Me.FlowLayoutPanel6.Controls.Add(Me.Label52)
-        Me.FlowLayoutPanel6.Controls.Add(Me.ComboBox2)
+        Me.FlowLayoutPanel6.Controls.Add(Me.cboCCollectors)
         Me.FlowLayoutPanel6.Location = New System.Drawing.Point(429, 18)
         Me.FlowLayoutPanel6.Name = "FlowLayoutPanel6"
         Me.FlowLayoutPanel6.Size = New System.Drawing.Size(359, 64)
@@ -1381,15 +1383,15 @@ Partial Class frmMain
         Me.Label52.TabIndex = 1
         Me.Label52.Text = "Collectors"
         '
-        'ComboBox2
+        'cboCCollectors
         '
-        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(3, 20)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(353, 28)
-        Me.ComboBox2.TabIndex = 0
+        Me.cboCCollectors.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboCCollectors.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.cboCCollectors.FormattingEnabled = True
+        Me.cboCCollectors.Location = New System.Drawing.Point(3, 20)
+        Me.cboCCollectors.Name = "cboCCollectors"
+        Me.cboCCollectors.Size = New System.Drawing.Size(353, 28)
+        Me.cboCCollectors.TabIndex = 0
         '
         'TabPage4
         '
@@ -1426,7 +1428,6 @@ Partial Class frmMain
         Me.tlpUMain.Controls.Add(Me.txtUEmployeeNumberNN, 3, 8)
         Me.tlpUMain.Controls.Add(Me.Label44, 3, 9)
         Me.tlpUMain.Controls.Add(Me.txtUPhoneNumberNN, 3, 10)
-        Me.tlpUMain.Controls.Add(Me.Button7, 0, 15)
         Me.tlpUMain.Controls.Add(Me.txtUConfimPasswordNN, 1, 12)
         Me.tlpUMain.Controls.Add(Me.Label45, 1, 11)
         Me.tlpUMain.Controls.Add(Me.txtUPasswordNN, 1, 10)
@@ -1585,7 +1586,7 @@ Partial Class frmMain
         Me.txtUUserRoleNN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.txtUUserRoleNN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUUserRoleNN.FormattingEnabled = True
-        Me.txtUUserRoleNN.Items.AddRange(New Object() {"Admin", "User"})
+        Me.txtUUserRoleNN.Items.AddRange(New Object() {"admin", "user"})
         Me.txtUUserRoleNN.Location = New System.Drawing.Point(51, 445)
         Me.txtUUserRoleNN.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtUUserRoleNN.Name = "txtUUserRoleNN"
@@ -1668,17 +1669,6 @@ Partial Class frmMain
         Me.txtUPhoneNumberNN.Size = New System.Drawing.Size(356, 30)
         Me.txtUPhoneNumberNN.TabIndex = 7
         Me.txtUPhoneNumberNN.Tag = "phone"
-        '
-        'Button7
-        '
-        Me.Button7.Location = New System.Drawing.Point(3, 495)
-        Me.Button7.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(42, 30)
-        Me.Button7.TabIndex = 40
-        Me.Button7.Text = "Button7"
-        Me.Button7.UseVisualStyleBackColor = True
-        Me.Button7.Visible = False
         '
         'txtUConfimPasswordNN
         '
@@ -1796,7 +1786,7 @@ Partial Class frmMain
         'FlowLayoutPanel7
         '
         Me.FlowLayoutPanel7.Controls.Add(Me.Label53)
-        Me.FlowLayoutPanel7.Controls.Add(Me.ComboBox3)
+        Me.FlowLayoutPanel7.Controls.Add(Me.cboUUsers)
         Me.FlowLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FlowLayoutPanel7.Location = New System.Drawing.Point(426, 18)
         Me.FlowLayoutPanel7.Name = "FlowLayoutPanel7"
@@ -1812,14 +1802,15 @@ Partial Class frmMain
         Me.Label53.TabIndex = 1
         Me.Label53.Text = "Users"
         '
-        'ComboBox3
+        'cboUUsers
         '
-        Me.ComboBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(3, 20)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(353, 28)
-        Me.ComboBox3.TabIndex = 0
+        Me.cboUUsers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboUUsers.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.cboUUsers.FormattingEnabled = True
+        Me.cboUUsers.Location = New System.Drawing.Point(3, 20)
+        Me.cboUUsers.Name = "cboUUsers"
+        Me.cboUUsers.Size = New System.Drawing.Size(353, 28)
+        Me.cboUUsers.TabIndex = 0
         '
         'errError
         '
@@ -1946,7 +1937,6 @@ Partial Class frmMain
     Friend WithEvents txtUEmployeeNumberNN As TextBox
     Friend WithEvents Label44 As Label
     Friend WithEvents txtUPhoneNumberNN As TextBox
-    Friend WithEvents Button7 As Button
     Friend WithEvents txtUConfimPasswordNN As TextBox
     Friend WithEvents Label45 As Label
     Friend WithEvents txtUPasswordNN As TextBox
@@ -1992,8 +1982,8 @@ Partial Class frmMain
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents FlowLayoutPanel6 As FlowLayoutPanel
     Friend WithEvents Label52 As Label
-    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents cboCCollectors As ComboBox
     Friend WithEvents FlowLayoutPanel7 As FlowLayoutPanel
     Friend WithEvents Label53 As Label
-    Friend WithEvents ComboBox3 As ComboBox
+    Friend WithEvents cboUUsers As ComboBox
 End Class

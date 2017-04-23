@@ -1,4 +1,7 @@
-﻿Imports System.Text.RegularExpressions
+﻿Imports System.Security.Cryptography
+Imports System.Text
+Imports System.Text.RegularExpressions
+'Imports Microsoft.Office.Interop.Excel
 Imports MySql.Data.MySqlClient
 '**********
 'Create a New user user id=Alias; password=AliasPassw0rd On the cloud 
@@ -170,6 +173,55 @@ Module mdlGlobal
         Next
     End Sub
 
+    Public Sub DisableAllControls(tlpM As TableLayoutPanel)
+        For Each control In tlpM.Controls
+            If control.GetType.ToString = "System.Windows.Forms.TextBox" Then
+                control.enabled = False
+            End If
+            If control.GetType.ToString = "System.Windows.Forms.DateTimePicker" Then
+                control.enabled = False
+            End If
+            If control.GetType.ToString = "System.Windows.Forms.CheckBox" Then
+                control.enabled = False
+            End If
+            If control.GetType.ToString = "System.Windows.Forms.ComboBox" Then
+                If Not control.name.ToString.ToLower.Contains("institution") Then
+                    control.enabled = False
+                End If
+            End If
+
+
+        Next
+        For Each control In tlpM.Controls
+            If control.Name.ToString.Contains("Avail") Then
+                control.SelectedIndex = -1
+            End If
+        Next
+    End Sub
+
+    Public Sub EnableAllControls(tlpM As TableLayoutPanel)
+        For Each control In tlpM.Controls
+            If control.GetType.ToString = "System.Windows.Forms.TextBox" Then
+                control.enabled = True
+            End If
+            If control.GetType.ToString = "System.Windows.Forms.DateTimePicker" Then
+                control.enabled = True
+            End If
+            If control.GetType.ToString = "System.Windows.Forms.CheckBox" Then
+                control.enabled = True
+            End If
+            If control.GetType.ToString = "System.Windows.Forms.ComboBox" Then
+                If Not control.name.ToString.ToLower.Contains("institution") Then
+                    control.enabled = True
+                End If
+            End If
+        Next
+        For Each control In tlpM.Controls
+            If control.Name.ToString.Contains("Avail") Then
+                control.SelectedIndex = -1
+            End If
+        Next
+    End Sub
 
     Function DupicateOnFields(field As TextBox, tablename As String) As Boolean
         Dim Duplicate As New List(Of Array)
@@ -207,7 +259,7 @@ Module mdlGlobal
         Dim S As String = dtFrom.Value.Date.ToString("yyyy-MM-dd")
         'If UserRole = "super_admin" Then
         RefreshADgv(dgvCollections, "SELECT C.`date` AS `DATE`,i.name AS `INSTITUTION NAME`, b.`BranchName`  AS `BRANCH`, coltrs.`name` AS `COLLECTOR NAME`, ctmrs.`name` AS `CUSTOMER NAME`" &
-                                    ", c.id AS `TRANSACTION ID`,C.`trans_type` AS `TRANSACTION TYPE`, C.`reference` AS `REFERENCE`, C.`amount` AS `AMOUNT`, C.`status` AS `TRANSACTION STATUS`" &
+                                    ", c.id AS `TRANSACTION ID`,ctmrs.account_no AS `ACCOUNT NUMBER`, C.`amount` AS `AMOUNT`,C.`trans_type` AS `TRANSACTION TYPE`, C.`reference` AS `REFERENCE`, C.`status` AS `TRANSACTION STATUS`" &
                                     " FROM collections c " &
                                     " INNER Join institutions i  ON c.institution_id = i.id  " &
                                     " INNER JOIN branch b ON c.`Branchid`=b.`id` " &
@@ -228,6 +280,86 @@ Module mdlGlobal
         '                                id & " AND (C.`date` between  '" & dtFrom.Value.Date.ToString("yyyy-MM-dd") & "' AND '" & dtTo.Value.Date.ToString("yyyy-MM-dd") & "')  ORDER BY  `Date`")
         'End If
 
+    End Sub
+
+    Public Function FindEntity(sql As String) As DataTable
+        Dim table As New DataTable()
+        Using cn As New MySqlConnection(str)
+            Using comm As New MySqlCommand(sql, cn)
+                Using da As New MySqlDataAdapter(comm)
+                    Try
+                        cn.Open()
+                        da.Fill(table)
+                    Catch ex As Exception
+                        MsgBox("Contact Administrator!" & vbCrLf & "Error while connecting to SQL Server. " & vbCrLf & ex.Message & vbCrLf & ex.Source, MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "Server Error")
+                    Finally
+                        cn.Close()
+                    End Try
+                End Using
+            End Using
+        End Using
+        Return table
+    End Function
+
+    Public Sub exportToXLS(dgvCollections As DataGridView, dF As String, dT As String)
+        Try
+            Cursor.Current = Cursors.WaitCursor
+
+            Dim xlApp As Microsoft.Office.Interop.Excel.Application
+            Dim xlWorkBook As Microsoft.Office.Interop.Excel.Workbook
+            Dim xlWorkSheet As Microsoft.Office.Interop.Excel.Worksheet
+            Dim misValue As Object = Reflection.Missing.Value
+            Dim i As Integer
+            Dim j As Integer
+
+            xlApp = New Microsoft.Office.Interop.Excel.ApplicationClass
+            xlWorkBook = xlApp.Workbooks.Add(misValue)
+            xlWorkSheet = xlWorkBook.Sheets("sheet1")
+
+
+            For i = 0 To dgvCollections.RowCount - 1
+                For j = 0 To dgvCollections.ColumnCount - 1
+                    For k As Integer = 1 To dgvCollections.Columns.Count
+                        xlWorkSheet.Cells(1, k) = dgvCollections.Columns(k - 1).HeaderText
+                        xlWorkSheet.Cells(i + 2, j + 1) = dgvCollections(j, i).Value.ToString()
+                    Next
+                Next
+            Next
+
+            Dim saveFileDialog1 As New SaveFileDialog()
+            saveFileDialog1.Filter = "Excel files (*.xlsx)|*.xlsx"
+            saveFileDialog1.FilterIndex = 2
+            saveFileDialog1.RestoreDirectory = True
+
+            If saveFileDialog1.ShowDialog() = DialogResult.OK Then
+                Dim fileName As String = saveFileDialog1.FileName.ToString.Substring(0, saveFileDialog1.FileName.ToString.Length - 5) & " FROM " & dF & " TO " & dT & ".xlsx"
+                ' xlWorkSheet.SaveAs("D:\vbexcel.xlsx")
+                xlWorkSheet.SaveAs(fileName)
+                xlWorkBook.Close()
+                xlApp.Quit()
+                releaseObject(xlApp)
+                releaseObject(xlWorkBook)
+                releaseObject(xlWorkSheet)
+
+                MsgBox("You can find the file " & fileName)
+                Process.Start(fileName)
+
+            End If
+        Catch ex As Exception
+        Finally
+            Cursor.Current = Cursors.Default
+        End Try
+    End Sub
+
+    Private Sub releaseObject(ByVal obj As Object)
+        Try
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(obj)
+            obj = Nothing
+        Catch ex As Exception
+            obj = Nothing
+        Finally
+            GC.Collect()
+        End Try
     End Sub
 
     Public Sub RefreshAttachDgv(dgvName As DataGridView, SQL As String)
@@ -262,7 +394,25 @@ Module mdlGlobal
 #End Region
 
 #Region "Saving"
-    Public Sub Save(tlpMain As TableLayoutPanel, tableName As String, errError As ErrorProvider, sender As Button, txtEmailNN As TextBox, txtPasswordNN As TextBox, txtConfirmPasswordNN As TextBox, Optional field1 As Object = Nothing, Optional field2 As Object = Nothing, Optional field3 As Object = Nothing)
+    Public Function RunExecuteNonQuery(SQL As String) As Int16
+        Dim i As Int16 = 0
+        Using cn As New MySqlConnection(str)
+            Using cmdAdd As New MySqlCommand(SQL, cn)
+                Try
+                    cn.Open()
+                    cmdAdd.ExecuteNonQuery()
+                    i = 1
+                Catch ex As Exception
+                    MsgBox("Contact Administrator!" & vbCrLf & ex.Message & vbCrLf & ex.Source, MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "App Error")
+                Finally
+                    cn.Close()
+                End Try
+            End Using
+        End Using
+        Return i
+    End Function
+
+    Public Sub Save(tlpMain As TableLayoutPanel, tableName As String, errError As ErrorProvider, sender As Button, txtEmailNN As TextBox, txtPasswordNN As TextBox, txtConfirmPasswordNN As TextBox, Optional field1 As Object = Nothing, Optional field2 As Object = Nothing, Optional field3 As Object = Nothing, Optional cboUpdate As ComboBox = Nothing)
         Try
             errError.Clear()
 
@@ -354,8 +504,12 @@ Module mdlGlobal
             ''''EMAIL & PASSWORD VALIDATION
             Dim crypt As New CustomCrypt
             Dim key As String = "123"
-            Dim Password = crypt.Encrypt(txtPasswordNN.Text, key)
-            Dim CPassword = crypt.Encrypt(txtConfirmPasswordNN.Text, key)
+
+
+            ''''Dim Password = crypt.Encrypt(txtPasswordNN.Text, key)
+            ''''Dim CPassword = crypt.Encrypt(txtConfirmPasswordNN.Text, key)
+            Dim Password = GetMD5Hash(txtPasswordNN.Text)
+            Dim CPassword = GetMD5Hash(txtConfirmPasswordNN.Text)
 
             If Password <> CPassword Then
                 valide = False
@@ -395,28 +549,30 @@ Module mdlGlobal
             ''Next
 
             'If sender.text = "Create" Then
+            If cboUpdate.SelectedIndex = -1 Then
 
-            If field1 IsNot Nothing Then
-                Dim dupf1 As Boolean = DupicateOnFields(field1, tableName)
+                If field1 IsNot Nothing Then
+                    Dim dupf1 As Boolean = DupicateOnFields(field1, tableName)
 
-                If Not dupf1 Then
-                    Exit Sub
+                    If Not dupf1 Then
+                        Exit Sub
+                    End If
                 End If
-            End If
 
-            If field2 IsNot Nothing Then
-                Dim dupf2 As Boolean = DupicateOnFields(field2, tableName)
+                If field2 IsNot Nothing Then
+                    Dim dupf2 As Boolean = DupicateOnFields(field2, tableName)
 
-                If Not dupf2 Then
-                    Exit Sub
+                    If Not dupf2 Then
+                        Exit Sub
+                    End If
                 End If
-            End If
 
-            If field3 IsNot Nothing Then
-                Dim dupf3 As Boolean = DupicateOnFields(field3, tableName)
+                If field3 IsNot Nothing Then
+                    Dim dupf3 As Boolean = DupicateOnFields(field3, tableName)
 
-                If Not dupf3 Then
-                    Exit Sub
+                    If Not dupf3 Then
+                        Exit Sub
+                    End If
                 End If
             End If
             'End If
@@ -550,126 +706,127 @@ Module mdlGlobal
             ''''END CODE
 
             ''''CODE SAVE CREATED DATA
-            'If sender.Text = "Create" Then
-            Dim sql As String = "INSERT INTO  " & tableName & "  (" & COLUMNS & ")   VALUES   ( " & VALUES & ")"
-            Using cn As New MySqlConnection(str)
-                Using cmd As New MySqlCommand(sql, cn)
-                    Try
-                        For i As Int16 = 0 To genParamList.Count - 1
-                            Dim p As New MySqlParameter(genParamList(i), genValList(i))
-                            cmd.Parameters.Add(p)
-                        Next
-
-                        If genPicCol.Length > 0 Then
-                            For i As Int16 = 0 To genPicParamList.Count - 1
-                                Dim p As New MySqlParameter(genPicParamList(i), genPicValList(i))
+            If cboUpdate.SelectedIndex = -1 Then
+                Dim sql As String = "INSERT INTO  " & tableName & "  (" & COLUMNS & ")   VALUES   ( " & VALUES & ")"
+                Using cn As New MySqlConnection(str)
+                    Using cmd As New MySqlCommand(sql, cn)
+                        Try
+                            For i As Int16 = 0 To genParamList.Count - 1
+                                Dim p As New MySqlParameter(genParamList(i), genValList(i))
                                 cmd.Parameters.Add(p)
                             Next
-                        End If
 
-                        For i As Int16 = 0 To genNullParamList.Count - 1
-                            Dim p As New MySqlParameter(genNullParamList(i), DBNull.Value) 'genNullValList(i)) 
-                            cmd.Parameters.Add(p)
-                        Next
+                            If genPicCol.Length > 0 Then
+                                For i As Int16 = 0 To genPicParamList.Count - 1
+                                    Dim p As New MySqlParameter(genPicParamList(i), genPicValList(i))
+                                    cmd.Parameters.Add(p)
+                                Next
+                            End If
 
-                        Dim count As Int16 = 0
-                        cn.Open()
-                        count = cmd.ExecuteNonQuery()
-                        cn.Close()
-                        If count > 0 Then
-                            MsgBox("Record Successfully saved", vbInformation + MessageBoxButtons.OK, "Saved")
-                            ''EnableAllControls()
-                            ClearAllControls(tlpMain)
-                        Else
-                            MsgBox("Sorry, an error has occured operation cancelled.", vbCritical + MessageBoxButtons.OK, "Saving Error")
-                            Exit Sub
-                        End If
-                    Catch ex As Exception
-                        MsgBox("Contact Administrator!" & vbCrLf & "Error while connecting to SQL Server. " & vbCrLf & ex.Message & vbCrLf & ex.Source, MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "Server Error")
-                    Finally
-                        cn.Close()
-                    End Try
+                            For i As Int16 = 0 To genNullParamList.Count - 1
+                                Dim p As New MySqlParameter(genNullParamList(i), DBNull.Value) 'genNullValList(i)) 
+                                cmd.Parameters.Add(p)
+                            Next
+
+                            Dim count As Int16 = 0
+                            cn.Open()
+                            count = cmd.ExecuteNonQuery()
+                            cn.Close()
+                            If count > 0 Then
+                                MsgBox("Record Successfully saved", vbInformation + MessageBoxButtons.OK, "Saved")
+                                ''EnableAllControls()
+                                ClearAllControls(tlpMain)
+                            Else
+                                MsgBox("Sorry, an error has occured operation cancelled.", vbCritical + MessageBoxButtons.OK, "Saving Error")
+                                Exit Sub
+                            End If
+                        Catch ex As Exception
+                            MsgBox("Contact Administrator!" & vbCrLf & "Error while connecting to SQL Server. " & vbCrLf & ex.Message & vbCrLf & ex.Source, MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "Server Error")
+                        Finally
+                            cn.Close()
+                        End Try
+                    End Using
+
                 End Using
-            End Using
-
-            Exit Sub
-
-            'End If
-
-            ''If sender.Text = "Save" Then
-
-            ''    Dim UpdateStatement As String = "UPDATE " & cboPrimary.SelectedValue & " SET "
+                DisableAllControls(tlpMain)
+                cboUpdate.Enabled = True
+                Exit Sub
+            Else
+                Dim UpdateStatement As String = "UPDATE " & tableName & " SET "
 
 
-            ''    For i As Int16 = 0 To genParamList.Count - 1
-            ''        UpdateStatement += genParamList(i).Remove(0, 1) & " = " & genParamList(i) & ", "
-            ''    Next
+                For i As Int16 = 0 To genParamList.Count - 1
+                    UpdateStatement += genParamList(i).Remove(0, 1) & " = " & genParamList(i) & ", "
+                Next
 
-            ''    For i As Int16 = 0 To genPicParamList.Count - 1
-            ''        UpdateStatement += genPicParamList(i).Remove(0, 1) & " = " & genPicParamList(i) & ", "
-            ''    Next
+                For i As Int16 = 0 To genPicParamList.Count - 1
+                    UpdateStatement += genPicParamList(i).Remove(0, 1) & " = " & genPicParamList(i) & ", "
+                Next
 
-            ''    For i As Int16 = 0 To genNullParamList.Count - 1
-            ''        UpdateStatement += genNullParamList(i).Remove(0, 1) & " = " & genNullValList(i) & ", "
-            ''    Next
+                For i As Int16 = 0 To genNullParamList.Count - 1
+                    UpdateStatement += genNullParamList(i).Remove(0, 1) & " = " & genNullValList(i) & ", "
+                Next
 
-            ''    Dim IdControl As New Object
-            ''    For Each control In tlpMain.Controls
-            ''        If control.Name.ToString.Contains("Avail") Then
-            ''            IdControl = control
-            ''        End If
-            ''    Next
+                Dim IdControl As New Object
+                'For Each control In tlpMain.Controls
+                '    If control.Name.ToString.Contains("Avail") Then
+                '        IdControl = control
+                '    End If
+                'Next
 
-            ''    UpdateStatement = UpdateStatement.Remove(UpdateStatement.LastIndexOf(",")) & " WHERE Id = " & IdControl.SelectedValue
+                UpdateStatement = UpdateStatement.Remove(UpdateStatement.LastIndexOf(",")) & " WHERE Id = " & cboUpdate.SelectedValue
+                Using cn As New MySqlConnection(str)
+                    Using cmd As New MySqlCommand(UpdateStatement, cn)
+                        Try
 
-            ''    Dim cmd As New SqlCommand(UpdateStatement, cnn)
+                            For i As Int16 = 0 To genParamList.Count - 1
+                                Dim p As New MySqlParameter(genParamList(i), genValList(i))
+                                cmd.Parameters.Add(p)
+                            Next
 
-            ''    For i As Int16 = 0 To genParamList.Count - 1
-            ''        Dim p As New SqlParameter(genParamList(i), genValList(i))
-            ''        cmd.Parameters.Add(p)
-            ''    Next
+                            If genPicCol.Length > 0 Then
+                                For i As Int16 = 0 To genPicParamList.Count - 1
+                                    Dim p As New MySqlParameter(genPicParamList(i), genPicValList(i))
+                                    cmd.Parameters.Add(p)
+                                Next
+                            End If
 
-            ''    If genPicCol.Length > 0 Then
-            ''        For i As Int16 = 0 To genPicParamList.Count - 1
-            ''            Dim p As New SqlParameter(genPicParamList(i), genPicValList(i))
-            ''            cmd.Parameters.Add(p)
-            ''        Next
-            ''    End If
-
-            ''    For i As Int16 = 0 To genNullParamList.Count - 1
-            ''        Dim p As New SqlParameter(genNullParamList(i), DBNull.Value) 'genNullValList(i)) 
-            ''        cmd.Parameters.Add(p)
-            ''    Next
-
-            ''    cnn.Close()
-            ''    cnn.Open()
-            ''    cmd.ExecuteNonQuery()
-            ''    cnn.Close()
-
-
-            ''    Dim count As Int16 = 0
-            ''    cnn.Open()
-            ''    count = cmd.ExecuteNonQuery()
-            ''    cnn.Close()
-            ''    If count > 0 Then
-            ''        MsgBox(cboPrimary.Text & " has been successfully updated", vbInformation + MessageBoxButtons.OK, "Saved")
-            ''        For Each control In tlpMain.Controls
-            ''            If control.name.ToString.Contains("Avail") Then
-            ''                control.datasource = Nothing
-            ''                rfsCboKeyValue(control, "SELECT  DISTINCT " & cboPrimary.SelectedValue & ", Id  FROM " & cboPrimary.SelectedValue & "  ORDER BY " & cboPrimary.SelectedValue)
-            ''                Exit For
-            ''            End If
-            ''        Next
-            ''        EnableAllControls()
-            ''        ClearAllControls()
-            ''    Else
-            ''        MsgBox(cboPrimary.Text & " has not been upadted due to some error", vbCritical + MessageBoxButtons.OK, "Saving Error")
-            ''        Exit Sub
-            ''    End If
-
-            ''    Exit Sub
-            ''End If
-            ''Me.Cursor = Cursors.Default
+                            For i As Int16 = 0 To genNullParamList.Count - 1
+                                Dim p As New MySqlParameter(genNullParamList(i), DBNull.Value) 'genNullValList(i)) 
+                                cmd.Parameters.Add(p)
+                            Next
+                            cn.Open()
+                            cmd.ExecuteNonQuery()
+                            cn.Close()
+                            Dim count As Int16 = 0
+                            'cn.Open()
+                            'count = cmd.ExecuteNonQuery()
+                            'cn.Close()
+                            'If count > 0 Then
+                            MsgBox(cboUpdate.Text & " has been successfully updated", vbInformation + MessageBoxButtons.OK, "Saved")
+                            'For Each control In tlpMain.Controls
+                            '    If control.name.ToString.Contains("Avail") Then
+                            '        control.datasource = Nothing
+                            '        rfsCboKeyValue(control, "SELECT  DISTINCT " & cboPrimary.SelectedValue & ", Id  FROM " & cboPrimary.SelectedValue & "  ORDER BY " & cboPrimary.SelectedValue)
+                            '        Exit For
+                            '    End If
+                            'Next
+                            'Else
+                            '    MsgBox(cboUpdate.Text & " has not been upadted due to some error", vbCritical + MessageBoxButtons.OK, "Saving Error")
+                            '    Exit Sub
+                            'End If
+                        Catch ex As Exception
+                            MsgBox("Contact Administrator!" & vbCrLf & "Error while connecting to SQL Server. " & vbCrLf & ex.Message & vbCrLf & ex.Source, MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "Server Error")
+                        Finally
+                            cn.Close()
+                        End Try
+                    End Using
+                End Using
+                DisableAllControls(tlpMain)
+                ClearAllControls(tlpMain)
+                cboUpdate.Enabled = True
+                cboUpdate.SelectedIndex = -1
+            End If
 
         Catch ex As Exception
             MsgBox("Contact Administrator!" & vbCrLf & "Error while connecting to SQL Server. " & vbCrLf & ex.Message & vbCrLf & ex.Source, MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "Server Error")
@@ -680,7 +837,21 @@ Module mdlGlobal
 
         End Try
     End Sub
+    Public Function GetMD5Hash(strToHash As String) As String
 
+        Dim md5Obj As New MD5CryptoServiceProvider
+        Dim bytesToHash() As Byte = Encoding.UTF8.GetBytes(strToHash)
+
+        bytesToHash = md5Obj.ComputeHash(bytesToHash)
+        Dim strResult As New StringBuilder
+
+        For Each b As Byte In bytesToHash
+            strResult.Append(b.ToString("x2"))
+        Next
+
+        Return strResult.ToString
+
+    End Function
     Public Sub SaveInst(tlpMain As TableLayoutPanel, tableName As String, errError As ErrorProvider, sender As Button, Optional txtEmail As TextBox = Nothing, Optional field1 As Object = Nothing, Optional field2 As Object = Nothing, Optional field3 As Object = Nothing)
         Try
             errError.Clear()
@@ -1083,6 +1254,7 @@ Module mdlGlobal
 
         End Try
     End Sub
+
 
 #End Region
 
